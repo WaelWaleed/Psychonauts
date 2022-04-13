@@ -7,10 +7,10 @@ const app = express();
 const users = [];
 const bcrypt = require('bcrypt');
 const flash = require('express-flash');
-const session = require('express-session');
+
 const methodOverride = require('method-override');
 
-/*Connect to DB*/
+/************ Connect to DB **************/
 const mongodb = "mongodb+srv://waelwaleed4799:waelwaleed4799@cluster0.ybxwb.mongodb.net/testDB?retryWrites=true&w=majority"
 const mongoose = require('mongoose');
 mongoose.connect(mongodb).then(()=>{ console.log("Connected"); }).catch(err=>{ console.log(err); });
@@ -18,7 +18,21 @@ mongoose.connect(mongodb).then(()=>{ console.log("Connected"); }).catch(err=>{ c
 const userM = require('./models/userModel');
 const doctorM = require('./models/doctorModel');
 
-/*Connect to DB*/
+/************ EO Connect to DB ************/
+
+/************ Session ************/
+
+const session = require('express-session');
+const oneDay = 1000 * 60 * 60 * 24;
+app.use(session({
+    secret: "thisismysecretkeywersdf4799",
+    saveUninitialized: true,
+    cookie: { maxAge: oneDay },
+    resave: false
+}));
+
+/************ EO Session ************/
+
 
 const initializePassport = require('./passport-config');
 const passport = require('passport');
@@ -44,15 +58,22 @@ app.use(methodOverride('_method'));
 /***********  INDEX  ***********/
 app.get("/", (req,res)=>{
     // console.log(req.body.name ,req.body.password)
+
     res.render('index.ejs', { name: req.body.name, password: req.body.password });
 });
 
 app.use("/index", (req, res)=>{
-    res.render('index.ejs');
+    const session = req.session;
+    res.render('index.ejs', { name: session.name });
 })
 /***********  EO INDEX  ***********/
 
 /***********  Registeration  ***********/
+
+// app.get('/Dregister',(req,res)=>{
+//     res.render('Dregister.ejs')
+// });
+
 app.get("/register", (req,res)=>{
     res.render("register.ejs");
 });
@@ -60,7 +81,8 @@ app.get("/register", (req,res)=>{
 app.post('/register', async (req,res)=>{
 
     try{
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
         const newUser = new userM({
             id: Date.now().toString(),
             name: req.body.name,
@@ -74,7 +96,7 @@ app.post('/register', async (req,res)=>{
         res.redirect('/login');
     }catch{
         console.log("didn't make it");
-        res.redirect('/register');
+        res.redirect('/docRegister');
     }
 
 });
@@ -85,7 +107,8 @@ app.get('/docRegister', (req, res)=>{
 
 app.post('/docRegister', async (req, res) => {
     try{
-        const hashedPassword = await bcrypt.hash(req.body.password,10)
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
         const newDoc = new doctorM({
             id: Date.now().toString(),
             name: req.body.name,
@@ -112,18 +135,50 @@ app.get("/login", (req,res)=>{
 
 app.post('/login', async (req,res)=>{
     try{
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        const foundUser = (await userM.find({email: req.body.email}));
+        if(await userM.findOne({email: req.body.email})){
+            const foundUser = await userM.find({email: req.body.email});
+            console.log("found in users")
 
-        if( hashedPassword === foundUser[0]["password"] ){
-            console.log("Right password");
-            res.render('index.ejs', { name: foundUser[0]["name"], password: foundUser[0]["password"] })
+            const rightPassword = await bcrypt.compare(req.body.password, foundUser[0]["password"])
+            if(rightPassword){ 
+                console.log("Right password");
 
+                const session = req.session;
+                session.name = foundUser[0]["name"];
+                session.gender = foundUser[0]["gender"];
+                session.DOB = foundUser[0]["DOB"];
+                session.phoneNumber = foundUser[0]["phoneNumber"];
+                session.email = foundUser[0]["email"];
+                console.log(session.name, session.gender, session.DOB, session.email)
+
+                res.render('index.ejs', { name: session.name })
+            } else { 
+                console.log("wrong password"); 
+            }
+        }else if(await doctorM.findOne({email: req.body.email})){
+            const foundUser = await doctorM.find({email: req.body.email});
+            console.log("found in doctors")
+
+            const rightPassword = await bcrypt.compare(req.body.password, foundUser[0]["password"])
+            if(rightPassword){ 
+                console.log("Right password");
+
+                const session = req.session;
+                session.name = foundUser[0]["name"];
+                session.gender = foundUser[0]["gender"];
+                session.DOB = foundUser[0]["DOB"];
+                session.phoneNumber = foundUser[0]["phoneNumber"];
+                session.email = foundUser[0]["email"];
+                session.About = foundUser[0]["About"];
+                session.specifiedIn = foundUser[0]["specifiedIn"];
+                console.log(session.name, session.gender, session.DOB, session.email)
+
+                res.render('index.ejs', { name: session.name })
+            } else { 
+                console.log("wrong password"); 
+            }
         }else{
-            console.log(hashedPassword);
-            console.log(foundUser[0]["password"]);
-            console.log("wrong password");
-            res.redirect('/login')
+            console.log("not found");
         }
         
     }catch(err){
@@ -133,14 +188,10 @@ app.post('/login', async (req,res)=>{
 });
 
 app.delete('/logout', (req, res)=>{
-    req.logOut();
+    req.session.destroy();
     res.redirect('/login')
 })
 /***********  EO Log-in/Out  ***********/
-
-app.get('/Dregister',(req,res)=>{
-    res.render('Dregister.ejs')
-});
 
 // app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
 //     successRedirect: '/',
@@ -148,10 +199,6 @@ app.get('/Dregister',(req,res)=>{
 //     failureFlash: true
 // }));
 
-
-// app.use('/update', (req, res,)=>{
-//     res.render('update.ejs')
-// })
 app.get('/update', (req, res)=>{
     res.render('update.ejs', { name: req.user.name, email: req.user.email })
 })
@@ -170,22 +217,53 @@ app.post('/update', async ( req, res,)=>{
     res.redirect('/')
 })
 
-app.get('/DocList', (req,res,)=>{
-    const foundDocs = doctorM.find();
-    res.render('DocList.ejs', { docs: foundDocs });
+app.get('/DocList', async (req,res,)=>{
+    const foundDocs = await doctorM.find().then(result =>{
+        console.log(result );
+        res.render('DocList.ejs', { docs: result });
+    });
 });
 
-// app.post('/update', checkAuthenticated, async (req, res)=>{
-//     const oldUser = req.find(email);
-//     const hashedPassword = await bcrypt.hash(oldUser.password, 10)
-//     users.delete(oldUser.id)
-//     users.push({
-//         id: oldUser.id,
-//         name: oldUser.name,
-//         password: hashedPassword
-//     })
-//     console.log(users[oldUser])
-// })
+/***********  Profile  ***********/
+
+app.get('/profile', (req,res)=>{
+    const session = req.session;
+
+    // session.About = foundUser[0]["About"];
+    // session.specifiedIn = foundUser[0]["specifiedIn"];
+
+    if(session.About || session.specifiedIn){
+        res.render('profile.ejs', {
+            name: session.name,
+            gender: session.gender,
+            email: session.email,
+            phoneNumber: session.phoneNumber,
+            DOB: session.DOB,
+            About: session.About,
+            specifics: session.specifiedIn
+        })
+    }else{
+        res.render('profile.ejs', {
+            name: session.name,
+            gender: session.gender,
+            email: session.email,
+            phoneNumber: session.phoneNumber,
+            DOB: session.DOB
+        })
+    }
+});
+
+/***********  EO Profile  ***********/
+
+/***********  Doctors list  ***********/
+
+app.get('/DocList', async (req,res)=>{
+    try{
+        const ourDocs = doctorM.find().then()
+    }catch{}
+})
+
+/***********  EO Doctors list  ***********/
 
 /**********Functions**************/
 

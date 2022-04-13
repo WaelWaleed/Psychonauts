@@ -1,9 +1,17 @@
-<h1>Hi <%=name%></h1>
-<h1>Hi <%=password%></h1>
 
-<!-- <% if(name) { %> <h1>hello <%=name%></h1> <% } %>
-<% if(!name) { %> <h3>login please </h3> <% } %> -->
 
-<form action="/logout?_method=DELETE" method="post">
+<% if(name) { %> <h1>hello <%=name%></h1> <% } %>
+<% if(!name) { %>
+     <h3>login please </h3> 
+     <form action="/login">
+        <button type="submit">Log In</button>
+     </form>
+<% } %> 
+
+<form action="/profile">
+    <button type="submit">Profile</button>
+</form>
+
+<form action="/logout" method="post">
     <button type="submit">Log Out</button>
 </form>

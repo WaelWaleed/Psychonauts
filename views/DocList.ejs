@@ -2,13 +2,10 @@
 <html>
     <head></head>
     <body>
-
-        <% docs.forEach(doc => { %>
-            <ul>
-                <li><%= doc.name %></li>
-                <li><%= doc.email %></li>
-                <li><%= doc.gender %></li>
-            </ul>
-        <% }); %>
+        
+        <% for(var i=0; i < docs.length; i++) { %> 
+            <h3> <%= docs[i]["name"]%> </h3>
+        <% } %>
+o
     </body>
 </html>

@@ -29,6 +29,14 @@ const doctorSchema = new Schema({
     password:{
         type: String,
         required: true,
+    },
+    About: {
+        type: String,
+        required: false
+    },
+    specifiedIn: {
+        type: String,
+        required: false
     }
 });
 
