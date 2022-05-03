@@ -1,0 +1,1285 @@
+          <!-- View Profile Page -->
+
+
+          <html>
+            <head>
+            <meta charset="utf-8">
+         
+            <title>View Profile</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+        </head>
+          
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+           
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <nav class="navbar navbar-expand-sm navbar-dark"style=" 
+            color: #1a202c;
+            background-color: white;
+                        background-size: cover; " >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <img src="image/KK.png" alt="Logo Image" style="width: 60%;padding-left: 15%"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" >
+              <span class="navbar-toggler-icon"style="color: royalblue;background-color: #0995DA;" ></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: royalblue;">HOME   &nbsp; &nbsp; &nbsp; </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"style="color: royalblue;"> ABOUT  &nbsp; &nbsp; &nbsp;</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"style="color: royalblue;"> PHYSIOLOGICAL TESTS &nbsp; &nbsp; &nbsp;</a>
+                </li>    
+                   <li class="nav-item">
+                  <a class="nav-link" href="#"style="color: royalblue;"> THERAPIST LIST &nbsp; &nbsp; &nbsp;</a>
+                </li>
+                   <li class="nav-item">
+                  <a class="nav-link" href="#"style="color: royalblue;">  MAGAZINE&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#"style="color: royalblue;">  REGISTER&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+                </li>
+                  
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <body style=" 
+            color: #1a202c;
+            background-color: white;
+                        background-size: cover">
+            <div style=" 
+            color: #1a202c;
+            background-color: white;
+                        background-size: cover" >
+               <div class="container" >
+            <div class="main-body">
+                 
+                <br>
+            
+                  <div class="row gutters-sm" >
+                    <div class="col-md-4 mb-3"> <br>
+                      <div class="card"style="background-color:gainsboro;color: black"> <br> <br>
+                        <div class="card-body">
+                          <div class="d-flex flex-column align-items-center text-center"> 
+                            <img src="https://scontent.shezlong.com/therapist_profile_pictures/qhmhjbkcpivaqecinroxbhslqwbtluyv.jpg" alt="Admin" class="rounded-circle" width="150">
+                            <div class="mt-3" style="color: black">
+                                <br>
+                              <h4> <%= name %>  </h4>
+                              <p class=" mb-1" style="color: black">Counselor</p>
+                              <p class=" font-size-sm"style="color: black"> Specialized in: <%= specializedIn %>  </p>
+                                <div class="container bootstrap snippets bootdey">
+                                    <div class="btn-demo" id="btn-color-targets">
+                                    <button class="btn btn-outline-primary"> <a href="#" style="color: royalblue">Message</a></button>
+                                    <button  class="btn btn-primary"> <a href="#modalColor"  data-toggle="modal" class="btn btn-default " style="color: white">Book</a></button>
+                                </div>
+                                <br>
+            
+        <div class="modal fade " data-modal-color="lightgreen" id="modalColor" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content"style=" width: 750px; margin-left: -30%;">
+                    
+                    <div class="modal-body" >
+                     
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <div class="container">
+                        <div class="timetable-img text-center">
+                            <img src="img/content/timetable.png" alt="">
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr class="bg-light-gray">
+                                        <th class="text-uppercase">Time
+                                        </th>
+                                        
+                                        <th class="text-uppercase">Sunday</th> <th class="text-uppercase">Monday</th>
+        
+                                        <th class="text-uppercase">Tuesday</th>
+                                        <th class="text-uppercase">Wednesday</th>
+                                        <th class="text-uppercase">Thursday</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle">09:00am</td>
+                                        <td>
+                                             <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                            
+                                        </td>
+                                        <td>
+                                          <a href="#" ><span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            
+                                        </td>
+        
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                        </td>
+                                        <td>
+                                            <a href="#" ><span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                        </td>
+                                        <td>
+                                             <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                        </td>
+                                       
+                                    </tr>
+        
+                                    <tr>
+                                       <td class="align-middle">10:00am</td>
+                                        <td>
+                                            <a href="#" >   <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                            
+                                        </td>
+                                        <td>
+                                            <a href="#" > <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                            
+                                        </td>
+        
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                        </td>
+                                        <td>
+                                            <a href="#" >  <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                        </td>
+                                        <td>
+                                            <a href="#" > <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                        </td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td class="align-middle">11:00am</td>
+                                        <td>
+                                             <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy<br></span><br>
+                                            
+                                        </td>
+                                        <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span><br>
+                                            
+                                        </td>
+        
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span><br>
+                                        </td>
+                                        <td>
+                                           <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span><br>
+                                        </td>
+                                        <td>
+                                             <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span><br>
+                                        </td>
+                                    </tr>
+        
+                                    <tr>
+                                <td class="align-middle">12:00am</td>
+                                        <td>
+                                             <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                            
+                                        </td>
+                                        <td>
+                                            <a href="#" > <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">12:00-13:00</div>
+                                            
+                                        </td>
+        
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                        </td>
+                                        <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                        </td>
+                                        <td>
+                                             <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                        </td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td class="align-middle">13:00am</td>
+                                        <td>
+                                            <a href="#" ><span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                            <div class="margin-10px-top font-size14">13:00-14:00</div>
+                                        </td>
+                                        <td>
+                                          <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                            
+                                        </td>
+        
+                                        <td>
+                                            <a href="#" > <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a><div class="margin-10px-top font-size14">13:00-14:00</div>
+                                        </td>
+                                        <td>
+                                           <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
+                                        </td>
+                                        <td>
+                                            <a href="#" >  <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
+                                                                                <div class="margin-10px-top font-size14">13:00-14:00</div>
+        
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+        
+        <style type="text/css">
+        body{
+            margin-top:20px;
+        }
+        .bg-light-gray {
+            background-color: #f7f7f7;
+        }
+        .table-bordered thead td, .table-bordered thead th {
+            border-bottom-width: 2px;
+        }
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #dee2e6;
+        }
+        
+        
+        .bg-sky.box-shadow {
+            box-shadow: 0px 5px 0px 0px #00a2a7
+        }
+        
+        .bg-orange.box-shadow {
+            box-shadow: 0px 5px 0px 0px #af4305
+        }
+        
+        .bg-green.box-shadow {
+            box-shadow: 0px 5px 0px 0px #4ca520
+        }
+        
+        .bg-yellow.box-shadow {
+            box-shadow: 0px 5px 0px 0px #dcbf02
+        }
+        
+        .bg-pink.box-shadow {
+            box-shadow: 0px 5px 0px 0px #e82d8b
+        }
+        
+        .bg-purple.box-shadow {
+            box-shadow: 0px 5px 0px 0px #8343e8
+        }
+        
+        .bg-lightred.box-shadow {
+            box-shadow: 0px 5px 0px 0px #d84213
+        }
+        
+        
+        .bg-sky {
+            background-color: #02c2c7
+        }
+        
+        .bg-orange {
+            background-color: #e95601
+        }
+        
+        .bg-green {
+            background-color: #5bbd2a
+        }
+        
+        .bg-yellow {
+            background-color: #f0d001
+        }
+        
+        .bg-pink {
+            background-color: #ff48a4
+        }
+        
+        .bg-purple {
+            background-color: #9d60ff
+        }
+        
+        .bg-lightred {
+            background-color: #ff5722
+        }
+        
+        .padding-15px-lr {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .padding-5px-tb {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .margin-10px-bottom {
+            margin-bottom: 10px;
+        }
+        .border-radius-5 {
+            border-radius: 5px;
+        }
+        
+        .margin-10px-top {
+            margin-top: 10px;
+        }
+        .font-size14 {
+            font-size: 14px;
+        }
+        
+        .text-light-gray {
+            color: #d6d5d5;
+        }
+        .font-size13 {
+            font-size: 13px;
+        }
+        
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #dee2e6;
+        }
+        .table td, .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <style type="text/css">
+        body{margin-top:20px;}
+        
+        .modal[data-modal-color] {
+          color: #fff;
+        }
+        
+        .modal .modal-header {
+          padding: 23px 26px;
+          border-bottom: 1px solid transparent;
+        }
+        
+        .modal .modal-content {
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.31);
+          border-radius: 3px;
+          border: 0;
+        }
+        
+        .modal-footer {
+          padding: 15px;
+          text-align: right;
+          border-top: 1px solid transparent;
+        }
+        
+        .modal[data-modal-color] .modal-footer {
+          background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal[data-modal-color] .modal-footer .btn-link {
+          font-weight: 400;
+        }
+        
+        .modal[data-modal-color] .modal-title, .modal[data-modal-color] .modal-footer .btn-link {
+          color: royalblue;
+        }
+        
+        .modal .modal-footer .btn-link {
+          font-size: 14px;
+          color: #000;
+          font-weight: 500;
+        }
+        
+        .btn-link {
+          color: #797979;
+          text-decoration: none;
+          border-radius: 2px;
+        }
+        
+        .modal[data-modal-color] .modal-footer .btn-link:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+          text-decoration:none;
+        }
+        
+        .modal[data-modal-color] .modal-footer .btn-link {
+          font-weight: 400;
+        }
+        
+        .modal[data-modal-color="cyan"] .modal-content {
+          background: white;
+        }
+        
+        </style>
+        
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('body').on('click', '#btn-color-targets > .btn', function(){
+                var color = $(this).data('target-color');
+                $('#modalColor').attr('data-modal-color', color);
+            });
+        });
+        </script>
+        
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card mb-3">
+                        <div class="card-body" style="background-color:gainsboro;color: black">
+                          
+                    
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0"style="color: black">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                              <%= email %>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Mobile</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                             <%= fullNumber %>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Clinic Address</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                           Amman / Shamiya Trading Center, Wasfi Al Tal St 143. 
+                            </div>
+                          </div>
+                            <hr>
+                           <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Session price</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+        <i class="fa fa-money" aria-hidden="true"></i> &nbsp; <%= Salary %>  </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+        
+                      <div class="row gutters-sm" >
+                        <div class="col-sm-6 mb-3">
+                          <div class="card h-100">
+                            <div class="card-body" style="background-color:gainsboro;">
+                            <h4 style="color: red">Experience :<br></h4>  <br>
+        <h6>Psychologist</h6>
+                                <h9>Be perfect</h9><br>
+                                <small style="color: royalblue">Apr 2018 - Present<br></small><br>
+                                <h6>Psychologist</h6>
+                                <h9>Alwatanya for counseling psychology</h9><br>
+                                <small  style="color: royalblue">Apr 2018 - Present<br></small><br>
+        <h6>Psychologist</h6>
+                                <h9>Alhayat for PsyAddiction cure</h9><br>
+                                <small  style="color: royalblue">Mar 2016 - Present</small><br>
+        
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                          <div class="card h-100">
+                            <div class="card-body"style="background-color:gainsboro">
+                               
+                              <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Psychonauts</i>Rating</h6>
+                              <small>Feedback from users</small>
+                              <div class="progress mb-3" style="height: 5px" >
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 10%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Respect the time</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Good handling</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Experience</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+        
+                      </div></div>
+                
+                    </div>
+                   
+            <meta charset="utf-8">
+           
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <div class="container">
+           <br>
+                        <h4 class="m-0" style="color: #505050">Reviews :</h4>
+        <br>
+        <div class="d-flex align-items-center justify-content-between mb-4"style="background-color:gainsboro;">
+        
+            <div class="review-list" ><br><br>
+                <ul>
+                    <li>
+                        <div class="d-flex">
+                            <div class="left">
+                                <span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="profile-pict-img img-fluid" alt="">
+                                </span>
+                            </div>
+                            <div class="right">
+                                <h4>
+                                    Osama Horani
+                                    <span class="gig-rating text-body-2">
+                                       <i class="fa fa-star" aria-hidden="true"></i>
+        
+                                        4.0
+                                    </span>
+                                </h4>
+                                <div class="country d-flex align-items-center">
+                                   
+                                    <div class="country-name font-accent"style="color: royalblue">Amman</div>
+                                </div>
+                                <div class="review-description">
+                                    <p>
+                                       Excellent therapist, very nice to deal with.
+                                    </p>
+                                </div>
+                                <span class="publish py-3 d-inline-block w-100"style="color: royalblue">Published 1 week ago</span>
+                   <hr style="width:50%;">
+                                <div class="response-item mt-4 d-flex">
+                                   <div class="left">
+                                <span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="">
+                                </span>
+                            </div>
+                            <div class="right">
+                                <h4>
+                                    Belal Omar
+                                    <span class="gig-rating text-body-2">
+                                       <i class="fa fa-star" aria-hidden="true"></i>
+        
+                                        5.0
+                                    </span>
+                                </h4>
+                                <div class="country d-flex align-items-center">
+                                   
+                                    <div class="country-name font-accent"style="color: royalblue">Irbid</div>
+                                </div>
+                                <div class="review-description">
+                                    <p>
+                                      He give me big self love power , I highly recommend it.
+                                    </p>
+                                </div>
+                                <span class="publish py-3 d-inline-block w-100" style="color: royalblue">Published 4 weeks ago</span>
+                                </div>
+                            </div>
+                            </div></div>
+                        
+                    </li>
+                    <style>.contact-form .form-control {
+          border: none;
+          border-bottom: 1px solid #20247b;
+          background: transparent;
+          border-radius: 0;
+          padding-left: 0;
+          box-shadow: none !important;
+        }
+        .contact-form .form-control:focus {
+          border-bottom: 1px solid royalblue;
+        }
+        .contact-form .form-control.invalid {
+          border-bottom: 1px solid #ff0000;
+        }
+        .contact-form .send {
+          margin-top: 20px;
+        }
+        @media (max-width: 767px) {
+          .contact-form .send {
+            margin-bottom: 20px;
+          }
+        }
+                                    
+        .section-title h2 {
+            font-weight: 700;
+            color: #20247b;
+            font-size: 45px;
+            margin: 0 0 15px;
+            border-left: 5px solid royalblue;
+            padding-left: 15px;
+        }
+        .section-title {
+            padding-bottom: 45px;
+        }
+        .contact-form .send {
+            margin-top: 20px;
+                                    }
+                    .px-btn .arrow {
+            width: 13px;
+            height: 2px;
+            background: currentColor;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 25px;
+        }
+        .px-btn .arrow:after {
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid currentColor;
+            border-top: 2px solid currentColor;
+            content: "";
+            position: absolute;
+            top: -3px;
+            right: 0;
+            display: inline-block;
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+                    .contact-form .send {
+          margin-top: 20px;
+        }
+        @media (max-width: 767px) {
+          .contact-form .send {
+            margin-bottom: 20px;
+          }
+        }
+        
+        .section-title h2 {
+            font-weight: 700;
+            color: #20247b;
+            font-size: 45px;
+            margin: 0 0 15px;
+            border-left: 5px solid royalblue;
+            padding-left: 15px;
+        }
+        .section-title {
+            padding-bottom: 45px;
+        }
+        .contact-form .send {
+            margin-top: 20px;
+        }
+                        .px-btn {
+            padding: 0 50px 0 20px;
+            line-height: 60px;
+            position: relative;
+            display: inline-block;
+            color: #20247b;
+            background: none;
+            border: none;
+        }
+        .px-btn:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid rgba(252, 83, 86, 0.6);
+            border-right: 1px solid transparent;
+            -moz-transition: ease all 0.35s;
+            -o-transition: ease all 0.35s;
+            -webkit-transition: ease all 0.35s;
+            transition: ease all 0.35s;
+            width: 60px;
+            height: 60px;
+        }
+        .px-btn .arrow {
+            width: 13px;
+            height: 2px;
+            background: currentColor;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 25px;
+        }
+        .px-btn .arrow:after {
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid currentColor;
+            border-top: 2px solid currentColor;
+            content: "";
+            position: absolute;
+            top: -3px;
+            right: 0;
+            display: inline-block;
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+                    </style>
+                    <article>
+                        
+                    <div class="contact-form article-comment">
+                                <h4 style=" color: #20247b;
+          font-weight: 600;
+          margin-bottom: 15px;">Leave a Reply</h4>
+        
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <div class="form-group" id="rating-ability-wrapper">
+                <label class="control-label" for="rating">
+                <span class="field-label-info"></span>
+                <input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
+                </label>
+                <h4 class="bold rating-header">
+                            <span class="field-label-header" style="font-size: 15;color: #20247b;">Please click the stars to vote :</span>
+        
+                <span class="selected-rating">0</span><small> / 5</small>
+                </h4>
+                <button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </button>
+            </div>
+        
+        <script>	jQuery(document).ready(function($){
+                
+            $(".btnrating").on('click',(function(e) {
+            
+            var previous_value = $("#selected_rating").val();
+            
+            var selected_value = $(this).attr("data-attr");
+            $("#selected_rating").val(selected_value);
+            
+            $(".selected-rating").empty();
+            $(".selected-rating").html(selected_value);
+            
+            for (i = 1; i <= selected_value; ++i) {
+            $("#rating-star-"+i).toggleClass('btn-warning');
+            $("#rating-star-"+i).toggleClass('btn-default');
+            }
+            
+            for (ix = 1; ix <= previous_value; ++ix) {
+            $("#rating-star-"+ix).toggleClass('btn-warning');
+            $("#rating-star-"+ix).toggleClass('btn-default');
+            }
+            
+            }));
+            
+                
+        });
+        </script>
+                       <br>
+                                <form id="contact-form" method="POST">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input name="Name" id="name" placeholder="Name *" class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input name="Email" id="email" placeholder="Email *" class="form-control" type="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea name="message" id="message" placeholder="Your message *" rows="4" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="send">
+                                                <button class="px-btn theme"><span>Submit</span> <i class="arrow"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div></article>
+                </ul>
+            </div>
+        </div>
+                   </div>
+        
+        <style type="text/css">
+        
+        .review-list ul li .left span {
+             width: 32px;
+             height: 32px;
+             display: inline-block;
+        }
+         .review-list ul li .left {
+             flex: none;
+             max-width: none;
+             margin: 0 10px 0 0;
+        }
+         .review-list ul li .left span img {
+             border-radius: 50%;
+        }
+         .review-list ul li .right h4 {
+             font-size: 16px;
+             margin: 0;
+             display: flex;
+        }
+         .review-list ul li .right h4 .gig-rating {
+             display: flex;
+             align-items: center;
+             margin-left: 10px;
+             color: #ffbf00;
+        }
+         .review-list ul li .right h4 .gig-rating svg {
+             margin: 0 4px 0 0px;
+        }
+         .country .country-flag {
+             width: 16px;
+             height: 16px;
+             vertical-align: text-bottom;
+             margin: 0 7px 0 0px;
+             border: 1px solid #fff;
+             border-radius: 50px;
+             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+         .country .country-name {
+             color: #95979d;
+             font-size: 13px;
+             font-weight: 600;
+        }
+         .review-list ul li {
+             border-bottom: 1px solid #dadbdd;
+             padding: 0 0 30px;
+             margin: 0 0 30px;
+        }
+         .review-list ul li .right {
+             flex: auto;
+        }
+         .review-list ul li .review-description {
+             margin: 20px 0 0;
+        }
+         .review-list ul li .review-description p {
+             font-size: 14px;
+             margin: 0;
+        }
+         .review-list ul li .publish {
+             font-size: 13px;
+             color: #95979d;
+        }
+        
+        .review-section h4 {
+             font-size: 20px;
+             color: #222325;
+             font-weight: 700;
+        }
+         .review-section .stars-counters tr .stars-filter.fit-button {
+             padding: 6px;
+             border: none;
+             color: #4a73e8;
+             text-align: left;
+        }
+         .review-section .fit-progressbar-bar .fit-progressbar-background {
+             position: relative;
+             height: 8px;
+             background: #efeff0;
+             -webkit-box-flex: 1;
+             -ms-flex-positive: 1;
+             flex-grow: 1;
+             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+             background-color: #ffffff;
+            ;
+             border-radius: 999px;
+        }
+         .review-section .stars-counters tr .star-progress-bar .progress-fill {
+             background-color: #ffb33e;
+        }
+         .review-section .fit-progressbar-bar .progress-fill {
+             background: #2cdd9b;
+             background-color: rgb(29, 191, 115);
+             height: 100%;
+             position: absolute;
+             left: 0;
+             z-index: 1;
+             border-radius: 999px;
+        }
+         .review-section .fit-progressbar-bar {
+             display: flex;
+             align-items: center;
+        }
+         .review-section .stars-counters td {
+             white-space: nowrap;
+        }
+         .review-section .stars-counters tr .progress-bar-container {
+             width: 100%;
+             padding: 0 10px 0 6px;
+             margin: auto;
+        }
+         .ranking h6 {
+             font-weight: 600;
+             padding-bottom: 16px;
+        }
+         .ranking li {
+             display: flex;
+             justify-content: space-between;
+             color: #95979d;
+             padding-bottom: 8px;
+        }
+         .review-section .stars-counters td.star-num {
+             color: #4a73e8;
+        }
+         .ranking li>span {
+             color: #62646a;
+             white-space: nowrap;
+             margin-left: 12px;
+        }
+         .review-section {
+             border-bottom: 1px solid #dadbdd;
+             padding-bottom: 24px;
+             margin-bottom: 34px;
+             padding-top: 64px;
+        }
+         .review-section select, .review-section .select2-container {
+             width: 188px !important;
+             border-radius: 3px;
+        }
+        ul, ul li {
+            list-style: none;
+            margin: 0px;
+        }
+        .helpful-thumbs, .helpful-thumb {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+                  </div>
+        
+         
+           
+        <style type="text/css">
+        
+        .main-body {
+            padding: 15px;
+        }
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+        }
+        
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+        
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem;
+        }
+        
+        .gutters-sm {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+        
+        .gutters-sm>.col, .gutters-sm>[class*=col-] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+        .mb-3, .my-3 {
+            margin-bottom: 1rem!important;
+        }
+        
+        .bg-gray-300 {
+            background-color: #e2e8f0;
+        }
+        .h-100 {
+            height: 100%!important;
+        }
+        .shadow-none {
+            box-shadow: none!important;
+        }
+        
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        <!--footer -->
+                
+        
+                
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+          
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous">
+        <footer class="footer bg-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                       
+                    <div class="footer-left">
+        
+                        <h3 style="color:  #ffffff;
+            font: normal 36px 'Cookie', cursive;
+            margin: 0;">Psychonauts<span style="color:  #5383d3;">website</span></h3>
+        
+                        <p class="footer-links" style="font-size: 15; font-family: serif;" >
+                    Feeling better starts with a single click ..
+                            <a href="#" style="font-size: 20; font-family: serif;">Join us !</a>
+                        </p>
+        
+                        <p class="footer-company-name">Psychonauts &copy; 2022</p>
+                    </div>
+        
+                    </div><!--end col-->
+        
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <h4 class="text-light footer-head">Psychonauts</h4>
+                  
+                        <ul class="list-unstyled footer-list mt-4">
+                            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> HOME</a></li>
+                            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> PHYSIOLOGICAL TESTS </a></li>
+                                                <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
+                            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> MAGAZINE</a></li>
+        
+                        </ul>
+                    </div><!--end col-->
+        
+                    <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                     <div class="footer-center">
+        
+                        <div style="font-size: 15; font-family: serif;">
+                            
+                            <p ><span style="font-size: 17; font-family: serif;"><i class="fa fa-map-marker"></i>&nbsp;Amman </span> , &nbsp;Jordan</p>
+                        
+                            <p style="font-size: 17; font-family: serif;"><i class="fa fa-phone"></i>&nbsp;028398308</p>
+                        
+                            
+                    </div>
+        
+                    </div>
+                    </div><!--end col-->
+        
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                           <p class="footer-company-about">
+                            <span style="color: white">About our company<br></span><br>
+                            Psychonauts is a website for For people who need immediate psychological help.
+                        </p>
+        
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </footer>
+        <footer class="footer bg-footer footer-bar">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="text-sm-left">
+                            <p class="mb-0">© 2022. Design with <i class="mdi mdi-heart text-danger"></i></p>
+                        </div>
+                    </div><!--end col-->
+        
+                    <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <ul class="list-unstyled text-sm-right social-icon social mb-0">
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-google-plus" title="Google +"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-linkedin" title="Linkedin"></i></a></li>
+                        </ul><!--end icon-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </footer>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+            <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="style.css">
+        <style>
+         
+        .main {
+            height: 550px;;
+            background-color: #262626;
+            color: white;
+            font-size: 38pt;
+            text-align: center;
+            line-height: 550px;
+        }
+        footer{
+            bottom: 0;
+        }
+        
+        
+        @media (max-width: 880px) {
+        
+            .footer-distributed{
+                font: bold 14px sans-serif;
+        
+            }
+        
+            .footer-distributed .footer-left,
+            .footer-distributed .footer-center,
+            .footer-distributed .footer-right{
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+        
+            .footer-distributed .footer-center i{
+                margin-left: 0;
+            }
+            .main {
+                line-height: normal;
+                font-size: auto;
+            }
+        
+        }
+            
+            </style>
+        <style type="text/css">
+        body{margin-top:20px;}
+        .bg-footer {
+            background-color: #3b4757 !important;
+            
+        }
+        .footer {
+          padding: 50px 0;
+          position: relative;
+          color: #adb5bd;
+        }
+        
+        .footer .logo-footer {
+          font-weight: 700;
+          font-size: 22px;
+          padding: 2px 0;
+          letter-spacing: 1px;
+        }
+        
+        .footer .footer-head {
+          font-size: 18px;
+          letter-spacing: 0.8px;
+          font-weight: 600;
+        }
+        
+        .footer .text-foot {
+          color: #adb5bd;
+        }
+        
+        .footer .footer-list {
+          margin-bottom: 0;
+        }
+        
+        .footer .footer-list li {
+          margin-bottom: 10px;
+        }
+        
+        .footer .footer-list li a {
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+        }
+        
+        .footer .footer-list li a:hover {
+          color: #6dc77a !important;
+        }
+        
+        .footer .footer-list li:last-child {
+          margin-bottom: 0;
+        }
+        
+        .footer.footer-bar {
+          padding: 30px 0;
+          border-top: 1px solid #6c757d;
+        }
+        
+        .footer.footer-bar .payment-cards img {
+          height: 25px;
+        }
+        
+        .social-icon.social li a {
+            color: #adb5bd;
+            border-color: #adb5bd;
+        }
+        .social-icon li a {
+            color: #35404e;
+            border: 1px solid #35404e;
+            display: inline-block;
+            height: 32px;
+            text-align: center;
+            font-size: 15px;
+            width: 32px;
+            line-height: 30px;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        .rounded {
+            border-radius: 5px !important;
+        }
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+            </div>
+              
+              
+              <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        
+        
+                </body></html>

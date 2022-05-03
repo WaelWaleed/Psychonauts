@@ -1,9 +1,19 @@
+<html>
+    <head></head>
+    <body>
 
-<% if(name) { %>
-    <h2> <%=name%> </h2>
-<% } %> 
-<% if(!name) { %> 
-    <h2>No name found </h2> 
-<% } %>
+        <% if(name) { %>
+            <h2> <%=name%> </h2>
+            <form action="/update">
+                <button type="submit">update Information</button>
+            </form>
+        <% } %> 
+        <% if(!name) { %> 
+            <h2>No name found </h2> 
+        <% } %>
 
+
+
+    </body>
+</html>
 

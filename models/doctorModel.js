@@ -14,6 +14,14 @@ const doctorSchema = new Schema({
         type: String,
         required: true
     },
+    lineSwitch: {
+        type: String,
+        required: true
+    },
+    fullNumber: {
+        type: String,
+        required: true
+    },
     phoneNumber: {
         type: String,
         required: true
@@ -34,10 +42,23 @@ const doctorSchema = new Schema({
         type: String,
         required: false
     },
-    specifiedIn: {
+    specializedIn: {
         type: String,
         required: false
-    }
+    },
+    Salary:{
+        type: String,
+        required: false
+    },
+    image: {
+        data: Buffer,
+        contentType: String,
+        required: false
+    },
+    type:{
+        type: String,
+        required: true
+    },
 });
 
 const doctors = mongoose.model('doctors', doctorSchema);

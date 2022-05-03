@@ -1,9 +1,127 @@
-<h1>Login</h1>
+<!-- <h1>Login</h1> -->
 
 <% if(messages.error) { %>
     <%= messages.error %>
 <% } %> 
 
+
+<html>
+<head><title>Sign in</title>
+<style>
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;   
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+.backgroundreglog
+    {
+
+    
+    background-image: url(https://www.shezlong.com/assets/images/home/gift-section-bg.svg);
+    background-position: center;
+    background-size: 100% 100%;
+
+    }
+
+</style>
+
+
+</head>
+<body>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+<div class="backgroundreglog">
+<div class="container">
+ 
+<br>
+<br><br>
+<div class="card bg-light">
+<article class="card-body mx-auto"style="max-width: 400px;" >
+<meta charset="utf-8">
+   
+   
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<form action="/login" method="post">
+        <div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+                <h4 class="loginbox-title" style="color: #263159;font-size:25;"><center>Sign in</center></h4>
+               <hr><br>
+            <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input name="email" class="form-control" placeholder="Email " type="email" required>
+    </div> 
+           
+             <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input class="form-control" placeholder="Password" type="password" name="password">
+    </div>
+                <div class="loginbox-forgot">
+                    <a href="#" style="color: royalblue;">Forgot Password?</a>
+                </div><br>
+                <div class="loginbox-forgot">
+                    <p style="color: black">By signing up you accept <a href="https://policies.google.com/terms"><span  style="color: royalblue">Our Terms Of Use.</span></a></p>
+                </div>
+                <div class="loginbox-submit"><br>
+                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                </form>
+
+                </div>
+                  <div class="loginbox-forgot"><br>
+                  <center> Don't have account? <a href="/docRegister" style="color: royalblue">  Sign up here </a></center>
+                </div>
+            </div>
+            
+        
+
+<br>
+ <br> 
+    </article></div></div></div>
+    </body></html>
+
+
+<!-- /*************************************/ -->
 <form action="/login" method="post">
     <div>
         <label for="email">Email</label>

@@ -54,12 +54,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
 
+app.use(express.static("views"));
+app.use(express.static("views/Profile"));
+app.use(express.static("views/homepagefinal"));
+
 
 /***********  INDEX  ***********/
 app.get("/", (req,res)=>{
     // console.log(req.body.name ,req.body.password)
 
-    res.render('index.ejs', { name: req.body.name, password: req.body.password });
+    res.render('homepagefinal/home.ejs', { name: req.body.name, password: req.body.password });
 });
 
 app.use("/index", (req, res)=>{
@@ -88,9 +92,12 @@ app.post('/register', async (req,res)=>{
             name: req.body.name,
             gender: req.body.gender,
             DOB: req.body.DOB,
-            phoneNumber: req.body.lineSwitch + req.body.phoneNumber,
+            lineSwitch: req.body.lineSwitch,
+            phoneNumber: req.body.phoneNumber,
+            fullNumber: req.body.lineSwitch + req.body.phoneNumber,
             email: req.body.email,
-            password: hashedPassword
+            password: hashedPassword,
+            type: "user"
         });
         newUser.save().then(()=>{ console.log("new user added") });
         res.redirect('/login');
@@ -113,10 +120,13 @@ app.post('/docRegister', async (req, res) => {
             id: Date.now().toString(),
             name: req.body.name,
             DOB: req.body.DOB,
-            phoneNumber: req.body.lineSwitch + req.body.phoneNumber,
+            lineSwitch: req.body.lineSwitch,
+            phoneNumber: req.body.phoneNumber,
+            fullNumber: req.body.lineSwitch + req.body.phoneNumber,
             gender: req.body.gender,
             email: req.body.email,
-            password: hashedPassword
+            password: hashedPassword,
+            type: "doctor"
         });
         newDoc.save().then(()=>{ console.log("Doctor added successfuly") });
         //newUser.save().then(()=>{ console.log("new user added") });
@@ -149,9 +159,13 @@ app.post('/login', async (req,res)=>{
                 session.DOB = foundUser[0]["DOB"];
                 session.phoneNumber = foundUser[0]["phoneNumber"];
                 session.email = foundUser[0]["email"];
-                console.log(session.name, session.gender, session.DOB, session.email)
+                session.type = foundUser[0]["type"];
+                session.lineSwitch = foundUser[0]["lineSwitch"];
+                session.fullNumber = foundUser[0]["fullNumber"];
 
-                res.render('index.ejs', { name: session.name })
+                console.log(session.name, session.gender, session.DOB, session.email, session.type )
+
+                res.render('homepagefinal/home.ejs', { name: session.name })
             } else { 
                 console.log("wrong password"); 
             }
@@ -168,12 +182,17 @@ app.post('/login', async (req,res)=>{
                 session.gender = foundUser[0]["gender"];
                 session.DOB = foundUser[0]["DOB"];
                 session.phoneNumber = foundUser[0]["phoneNumber"];
+                session.lineSwitch = foundUser[0]["lineSwitch"];
+                session.fullNumber = foundUser[0]["fullNumber"];
                 session.email = foundUser[0]["email"];
                 session.About = foundUser[0]["About"];
-                session.specifiedIn = foundUser[0]["specifiedIn"];
-                console.log(session.name, session.gender, session.DOB, session.email)
+                session.specializedIn = foundUser[0]["specializedIn"];
+                session.type = foundUser[0]["type"];
+                session.Salary = foundUser[0]["Salary"];
 
-                res.render('index.ejs', { name: session.name })
+                console.log(session.name, session.gender, session.DOB, session.email, session.type );
+
+                res.render('homepagefinal/home.ejs', { name: session.name })
             } else { 
                 console.log("wrong password"); 
             }
@@ -187,34 +206,113 @@ app.post('/login', async (req,res)=>{
     }
 });
 
-app.delete('/logout', (req, res)=>{
+app.post('/logout', (req, res)=>{
     req.session.destroy();
     res.redirect('/login')
 })
+
 /***********  EO Log-in/Out  ***********/
 
-// app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-//     successRedirect: '/',
-//     failureRedirect: '/login',
-//     failureFlash: true
-// }));
+/***********  Update  ***********/
 
 app.get('/update', (req, res)=>{
-    res.render('update.ejs', { name: req.user.name, email: req.user.email })
+    const session = req.session;
+    if(session.name){
+        if(session.type == "doctor"){
+            res.render('profile/doctorprofileedit.ejs', {
+                name: session.name,
+                gender: session.gender,
+                email: session.email,
+                phoneNumber: session.phoneNumber,
+                lineSwitch: session.lineSwitch,
+                fullNumber: session.fullNumber,
+                DOB: session.DOB,
+                About: session.About,
+                specializedIn: session.specializedIn,
+                Salary: session.Salary,
+                type: session.type,
+            })
+        }else{
+            res.render('profile/doctorprofileedit.ejs', {
+                name: session.name,
+                gender: session.gender,
+                email: session.email,
+                phoneNumber: session.phoneNumber,
+                lineSwitch: session.lineSwitch,
+                fullNumber: session.fullNumber,
+                DOB: session.DOB,
+                type: session.type,
+            })
+        }
+    }else{
+        res.redirect('/')
+    }
+    
 })
 
 app.post('/update', async ( req, res,)=>{
     // const user = users.find(req.body.id)
     // console.log(user)
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
-    users.push({
-        id: Date.now().toString(),
-        name: req.body.name,
-        email: req.body.email,
-        password: hashedPassword
-    })
-    console.log(users)
-    res.redirect('/')
+    const session = req.session;
+    if(session.type == "doctor"){
+        try{
+            const foundDoc = await doctorM.findOneAndUpdate({ email: session.email }, {
+                name: req.body.userName,
+                email: req.body.email,
+                lineSwitch: req.body.lineSwitch,
+                phoneNumber: req.body.phoneNumber,
+                gender: req.body.gender,
+                specializedIn: req.body.specializedIn,
+                DOB: req.body.DOB,
+                Salary: req.body.Salary,
+                About: req.body.About,
+                fullNumber: req.body.lineSwitch + req.body.phoneNumber
+            }).then(result=>{
+                doctorM.findOne({ email: session.email }),
+                session.name = req.body.name,
+                session.email = req.body.email,
+                session.lineSwitch = req.body.lineSwitch,
+                session.phoneNumber = req.body.phoneNumber,
+                session.gender = req.body.gender,
+                session.specializedIn = req.body.specializedIn,
+                session.DOB = req.body.DOB,
+                session.Salary = req.body.Salary,
+                session.About = req.body.About,
+                session.fullNumber = req.body.fullNumber
+            });
+            res.redirect('/profile');
+    
+        }catch(err){
+            console.log(err);
+            res.render('/profile');
+        }
+    }else if(session.type == "user"){
+        try{
+            const foundDoc = await userM.findOneAndUpdate({ email: session.email }, {
+                name: req.body.userName,
+                email: req.body.email,
+                lineSwitch: req.body.lineSwitch,
+                phoneNumber: req.body.phoneNumber,
+                gender: req.body.gender,
+                DOB: req.body.DOB,
+                fullNumber: req.body.lineSwitch + req.body.phoneNumber
+            }).then(()=>{
+                session.name = req.body.name,
+                session.email = req.body.email,
+                session.lineSwitch = req.body.lineSwitch,
+                session.phoneNumber = req.body.phoneNumber,
+                session.gender = req.body.gender,
+                session.DOB = req.body.DOB,
+                session.fullNumber = req.body.fullNumber,
+                res.redirect('/profile');
+            });
+        }catch(err){
+            console.log(err);
+            res.render('profile.ejs');
+        }
+    }else{
+        console.log("not a doctor nor a user");
+    }
 })
 
 app.get('/DocList', async (req,res,)=>{
@@ -224,32 +322,43 @@ app.get('/DocList', async (req,res,)=>{
     });
 });
 
+/***********  EO Update  ***********/
+
 /***********  Profile  ***********/
 
 app.get('/profile', (req,res)=>{
     const session = req.session;
-
-    // session.About = foundUser[0]["About"];
-    // session.specifiedIn = foundUser[0]["specifiedIn"];
-
-    if(session.About || session.specifiedIn){
-        res.render('profile.ejs', {
-            name: session.name,
-            gender: session.gender,
-            email: session.email,
-            phoneNumber: session.phoneNumber,
-            DOB: session.DOB,
-            About: session.About,
-            specifics: session.specifiedIn
-        })
+    if(!session.name){
+        res.redirect('/login')
     }else{
-        res.render('profile.ejs', {
-            name: session.name,
-            gender: session.gender,
-            email: session.email,
-            phoneNumber: session.phoneNumber,
-            DOB: session.DOB
-        })
+        if(session.type == "doctor"){
+            console.log("doctor Profile");
+            res.render('profile/doctorprofile.ejs', {
+                name: session.name,
+                gender: session.gender,
+                email: session.email,
+                phoneNumber: session.phoneNumber,
+                DOB: session.DOB,
+                About: session.About,
+                specializedIn: session.specializedIn,
+                fullNumber: session.fullNumber,
+                lineSwitch: session.lineSwitch,
+                type: session.type,
+                Salary: session.Salary,
+            })
+        }else{
+            res.render('profile/doctorprofile.ejs', {
+                name: session.name,
+                gender: session.gender,
+                email: session.email,
+                phoneNumber: session.phoneNumber,
+                DOB: session.DOB,
+                fullNumber: session.fullNumber,
+                lineSwitch: session.lineSwitch,
+                type: session.type,
+            })
+            console.log("user profile");
+        }
     }
 });
 
@@ -257,13 +366,39 @@ app.get('/profile', (req,res)=>{
 
 /***********  Doctors list  ***********/
 
-app.get('/DocList', async (req,res)=>{
+app.get('/DocList', (req,res)=>{
     try{
-        const ourDocs = doctorM.find().then()
-    }catch{}
+        const ourDocs = doctorM.find();
+    }catch(err){
+        console.log(err);
+    }
+})
+
+app.post('/viewProfile', async (req,res)=>{
+    try{
+        console.log(req.body.email);
+        const currentDoc = await doctorM.findOne({ email: req.body.email });
+        res.render('viewProfile.ejs', {
+            name: currentDoc.name,
+            email: currentDoc.email,
+            specializedIn: currentDoc.specializedIn,
+            fullNumber: currentDoc.fullNumber,
+            Salary: currentDoc.Salary,
+        })
+    }catch(err){
+        console.log(req.body.email);
+        console.log(err);
+        res.redirect('/');
+    }
 })
 
 /***********  EO Doctors list  ***********/
+
+/***********  TESTING ONLY  ***********/
+// app.get('/viewProf', (req,res)=>{
+//     res.render('viewProfile.ejs');
+// });
+
 
 /**********Functions**************/
 

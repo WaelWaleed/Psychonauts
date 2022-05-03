@@ -1,11 +1,887 @@
 
-<html>
+<!-- <html>
     <head></head>
     <body>
         
-        <% for(var i=0; i < docs.length; i++) { %> 
-            <h3> <%= docs[i]["name"]%> </h3>
-        <% } %>
-o
+        <% //for(var i=0; i < docs.length; i++) { %> 
+            <h3> // </h3>
+        <% //} %>
     </body>
-</html>
+</html> -->
+
+
+<html ><head>
+    <meta charset="utf-8">
+    
+    <title>Therapist List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+              
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img src="image/KK.png" alt="Logo Image" style="width: 60%;padding-left: 15%"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" >
+      <span class="navbar-toggler-icon"style="color: royalblue;background-color: #0995DA;" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: royalblue;">HOME   &nbsp; &nbsp; &nbsp; </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> ABOUT  &nbsp; &nbsp; &nbsp;</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> PHYSIOLOGICAL TESTS &nbsp; &nbsp; &nbsp;</a>
+        </li>    
+           <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> THERAPIST LIST &nbsp; &nbsp; &nbsp;</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;">  MAGAZINE&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;">  REGISTER&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+        </li>
+          
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+ 
+<body >
+    <div style=" margin-top:-20px;
+    background:#eee;">
+        <br>
+<div class="container" >
+<div class="col-md-12">
+    <div class="page-people-directory">
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="page-title"><b>Therapist List</b></h5>
+                <ul class="nav nav-pills nav-stacked nav-contacts">
+                    <li class="active">
+                     <a class=" btn btn-lg btn-default" data-toggle="tab" href="#allther" style="font-size: 15;">
+                            All Therapists
+                            <span class="badge pull-right"style="font-size: 12;">20+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class=" btn btn-lg btn-default" data-toggle="tab" href="#myther" style="font-size: 15;">My Therapists
+                        
+                            <span class="badge pull-right"style="font-size: 12;">3</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+                
+                <br>
+                
+                <h5><b>Top Therapists</b></h5>
+                <div class="list-group people-group">
+                    <a href="#" class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="img-circle" src="image/Andrew%20Nady.jpg" alt="...">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"style="font-size: 18;">Dr. Andrew Nady</h4>
+                                <small>Specialized in: Depression , Addiction</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="img-circle" src="image/Ibrahim%20magdy.jpg" alt="...">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"style="font-size: 18;">Ibrahim magdy</h4>
+                                <small>Specialized in: Attention-Deficit Hyperactivity Disorder , Addiction</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="img-circle" src="image/Abeer%20Toson%20Ahmed.jpg" alt="...">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"style="font-size: 18;">Abeer Toson Ahmed</h4>
+                                <small>Specialized in: Anxiety Disorders , Learning Disorders</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="img-circle" src="image/Dr%20Mohamed%20Taha.png" alt="...">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"style="font-size: 18;">Dr. Mohamed Taha</h4>
+                                <small>Professor and Consultant Psychiatrist</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="col-md-9">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="text" placeholder="Search Therapist" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group" style="display:block">
+                              <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" style="width: 90%; border-radius: 0px; background: white;  color: gray; border-color: #ddd;">Select Specialization</button>
+                              <ul class="dropdown-menu bullet pull-right animated pulse margin-top-45">
+                               <li>
+                                  <input type="radio" id="ex1_3" name="ex1" value="1"checked="">
+                                  <label for="ex1_3">ALL</label>
+                                </li>
+                                  <li>
+                                   
+                                  <input type="radio" id="ex1_1" name="ex1" value="3" >
+                                  <label for="ex1_1">Child disorders</label>
+                                </li>
+                                   
+                                <li>
+                                  <input type="radio" id="ex1_2" name="ex1" value="2">
+                                  <label for="ex1_2">Adolescence disorders</label>
+                                </li>
+                                  
+                                <li>
+                                  <input type="radio" id="ex1_3" name="ex1" value="4">
+                                  <label for="ex1_3">Depression</label>
+                                </li>
+                              </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+               
+                 <div id="allther" class="tab-pane  in active">
+
+	<form action="#" >
+                    <div class="list-group contact-group"  >
+                     <div class="row">
+                    <div class="col-md-6">
+                        <h3> All Therapists</h3>
+                    </div>
+                    
+                </div>
+
+                <% for(var i=0; i < docs.length; i++) { %> 
+                    <form action="/viewProfile" method="post">
+                        <a href="#" class="list-group-item">
+                            <input type="hidden" name="email" value="<%= docs[i]["email"] %>">
+                            
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="img-circle" src="https://scontent.shezlong.com/therapist_profile_pictures/qhmhjbkcpivaqecinroxbhslqwbtluyv.jpg" alt="..." >
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><br ><span style="color: black ;  font-weight: bold;"> <%= docs[i]["name"]%> </span> <small>Main focus : Posttraumatic Stress Disorder, Addiction</small></h4>
+                                    <div class="media-content">
+                                        <b style="color: darkblue">Joining Date : </b>4 months ago.<br>
+                                        <b style="color: darkblue">Specialties :</b> <%= docs[i]["specializedIn"] %>  <br>
+                                        <b style="color: darkblue">Phone Number :</b> <%= docs[i]["fullNumber"] %>.<br>
+                                        <b style="color: darkblue"> Clinic Address : </b>   Amman / Shamiya Trading Center, Wasfi Al Tal St 143.  <br>
+                                        <b style="color: darkblue" name="email">Email :</b> <%= docs[i]["email"] %>  <br>
+
+                                        <ul class="list-unstyled">
+                                        
+                                        <li> <button type="submit" class="btn btn-primary" style="background-color: royalblue">View Profile</button></li>
+
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                            
+                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align" style="font-size: 12px;">
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"style="font-size: 12px;">
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"style="font-size: 12px;">
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"style="font-size: 12px;">
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"style="font-size: 12px;">
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>							
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </form> 
+                <% } %> 
+        </div></form>
+                    </div>
+                <br>
+                 <div id="myther" class="tab-pane fade">
+
+<form action="#" >
+               
+                    <div  class="list-group contact-group">
+                         <div class="row">
+                    <div class="col-md-6">
+                        <h3> My Therapists</h3>
+                    </div>
+                    
+                </div>
+                    <a href="#" class="list-group-item">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="img-circle" src="https://scontent.shezlong.com/therapist_profile_pictures/qhmhjbkcpivaqecinroxbhslqwbtluyv.jpg" alt="..." >
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><br ><span style="color: black ;  font-weight: bold;">Mahmoud Rashed</span> <small>Main focus : Posttraumatic Stress Disorder, Addiction</small></h4>
+                                <div class="media-content">
+                                    
+                                   
+    <b style="color: darkblue">Joining Date : </b>4 months ago.<br>
+
+<b style="color: darkblue">Specialties :</b> Posttraumatic Stress Disorder , Addiction.<br>
+                                    <b style="color: darkblue">Phone Number :</b> 0799273681.<br>
+                                    <b style="color: darkblue"> Clinic Location : </b>   Amman / Shamiya Trading Center, Wasfi Al Tal St 143.  <br>
+                                                                        <b style="color: darkblue">Email :</b> mahmoudrashid190@gmail.com<br>
+
+                                    <ul class="list-unstyled">
+                                       
+                                         <li> <button type="button" class="btn btn-primary" style="background-color: royalblue">View Profile</button>
+                                         </li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align" style="font-size: 12px;">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"style="font-size: 12px;">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align"style="font-size: 12px;">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"style="font-size: 12px;">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align"style="font-size: 12px;">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+							
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </a> 
+                    <br>
+    </div></form>
+                </div>
+              <!--numbering-->
+                <div class="pull-right">
+                    <ul class="pagination pagination-split pagination-sm pagination-contact">
+                        <li ><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-pull-right" data-easein="fadeInRight" data-easeout="fadeOutRight" id="modal-pull-right-add" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeOutRight">
+                    <div class="modal-body">
+                        <div class="row modal-close">
+                            <div class="col-md-12 padding-bottom-8 padding-top-8 bg-silver">
+                                <h4 class="pull-left"><b>Create New Contact</b></h4>
+                                <ul class="list-unstyled list-inline text-right">
+                                    <li class="close-right-modal"><span class="fa fa-times fa-2x" data-dismiss="modal"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="contact-add-content">
+                                    <form class="form-horizontal tabular-form margin-top-10">
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-2 control-label">Name</label>
+                                            <div class="col-sm-10 tabular-border">
+                                                <input type="text" class="form-control" id="name" placeholder="Full Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-10 tabular-border">
+                                                <input type="text" class="form-control" id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone" class="col-sm-2 control-label">Phone</label>
+                                            <div class="col-sm-10 tabular-border">
+                                                <input type="text" class="form-control" id="phone" placeholder="Phone">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address" class="col-sm-2 control-label">Address</label>
+                                            <div class="col-sm-10 tabular-border">
+                                                <input type="text" class="form-control" id="address" placeholder="Address">
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="button" class="btn btn-silver btn-flat">Cancel</button> <button type="button" class="btn btn-green btn-flat">Save Changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+   
+<style type="text/css">
+
+.nav.nav-pills > li > a {
+    color: #777;
+    border-radius: 0!important;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.nav.nav-pills > li.active > a, 
+.nav.nav-pills > li.active > a:hover,
+.nav.nav-pills > li.active > a:focus {
+    color: #fff !important;
+    background-color: #2ECC71 !important;
+
+}
+
+.page-people-directory .nav-contacts {
+    margin-bottom: 20px;
+}
+
+.page-people-directory .nav-contacts li a {
+    color: #666;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.page-people-directory .nav-contacts li .badge {
+    background: none;
+    font-weight: 500;
+    color: #333;
+}
+
+.page-people-directory .nav-contacts li.active .badge {
+    color: #fff;
+    background: none;
+}
+
+.page-people-directory .people-group .media img {
+    width: 45px;
+}
+
+.page-people-directory .people-group .list-group-item {
+    -moz-transition: all 0.2s ease-out 0s;
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0;
+    border-width: 0;
+}
+
+.page-people-directory .people-group .media-heading {
+    margin-top: 5px;
+}
+
+.page-people-directory .people-group .media-heading,
+.page-people-directory .people-group .media-body {
+    line-height: normal;
+}
+
+.page-people-directory .pagination-contact {
+    margin-top: -3px;
+}
+
+.page-people-directory .contact-group {
+    margin-top: 20px;
+}
+
+.page-people-directory .contact-group .media img {
+    width: 80px;
+}
+
+/* .page-people-directory .contact-group .list-group-item {
+
+} */
+
+.page-people-directory .contact-group .media-heading {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.page-people-directory .contact-group .media-heading small {
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #999;
+}
+
+.page-people-directory .contact-group .list-group-item {
+    border: none;
+    margin-top: 10px;
+}
+
+.page-people-directory .contact-group .list-group-item:hover {
+    background-color: #fcfcfc;
+}
+
+.page-people-directory .contact-group .media-content {
+    margin-top: 5px;
+}
+
+.page-people-directory .contact-group .fa:before {
+    font-size: 20px;
+    color:gray;
+}
+
+.page-people-directory .contact-group .media-content ul {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.page-people-directory .contact-group .media-content ul > li {
+    display: inline-block;
+    min-width: 200px;
+    margin-bottom: 5px;
+}
+
+.page-people-directory .well {
+    border-radius: 0px;
+    border: none;
+}
+
+.page-people-directory .list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.page-people-directory .page-title {
+    text-transform: uppercase;
+}
+
+.page-people-directory .btn-add-new-contact {
+    float: right;
+}
+
+@media (max-width: 992px) { 
+    .page-people-directory .btn-add-new-contact {
+        float: left;
+    }
+}
+
+
+
+.page-people-directory .modal-pull-right .modal-dialog {
+    max-width: 720px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body {
+    width: 100%;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .modal-close h4 {
+    padding-left: 15px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .col-md-12 {
+    padding: 0px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header {
+    width: 100%;
+    height: 280px;
+    text-align: center;
+    overflow: inherit;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    border-bottom: 5px solid gray;
+    filter:grayscale(100%);
+    -webkit-filter:grayscale(100%);
+    -moz-filter:grayscale(100%);
+    -webkit-transition:all 0.3s ease;
+    -moz-transition:all 0.3s ease;
+    -o-transition:all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    transition:all 0.3s ease;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header:hover {
+    filter:grayscale(0%);
+    -webkit-filter:grayscale(0%);
+    -moz-filter:grayscale(0%);
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .profile-image-container {
+    margin-top: 211px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .profile-image-container img {
+    border:5px solid gray;
+    border-radius: 60%;
+    -moz-border-radius: 60%;
+    -webkit-border-radius: 60%;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .contact-info {
+    width: 100%;
+    position: absolute;
+    margin-top: 120px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .contact-info .contact-name {
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px;
+    text-align:center;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .contact-info .contact-skills ul {
+    list-style: none;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .contact-info .contact-skills ul li {
+    display: block;
+    width: 60px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .dialog-close {
+    width: 100%;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .dialog-close li {
+    cursor: pointer;
+    color: white;
+    text-align: right;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .dialog-close li span.fa {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-header .dialog-close li span.fa:hover {
+    color: gray;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-view-content .contact-view-action {
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.page-people-directory .modal-pull-right .modal-dialog .modal-body .contact-view-content .contact-view-info {
+    margin-top: 15px;
+}
+
+.page-people-directory .contact-info-container {
+    height: 250px;
+    margin-top: 80px;
+    position: absolute;
+    width: 100%;
+}   
+
+.page-people-directory .contact-add-content {
+    padding: 40px;
+}
+
+.page-people-directory .close-right-modal {
+    cursor: pointer;
+}
+
+.page-people-directory .close-right-modal:hover {
+    opacity: .8;
+}
+
+.page-people-directory .basic-info-scroll {
+    height: 425px;
+    overflow-x: hidden;
+}
+
+
+@media (max-width: 800px) {
+    .page-people-directory .contact-top-bar {
+        text-align: left;
+        width: 100%;
+    }
+
+    .page-people-directory .contact-top-bar .btn-add-new-contact {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .page-people-directory .contact-top-bar .txt-search-contact {
+        margin-bottom: -5px;
+    }
+}
+
+
+
+</style>
+
+<script type="text/javascript">
+
+
+
+</script>
+
+<br>
+<!--footer -->
+        
+
+		
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous">
+<footer class="footer bg-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+               
+			<div class="footer-left">
+
+				<h3 style="color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;">Psychonauts<span style="color:  #5383d3;">website</span></h3>
+
+				<p class="footer-links" style="font-size: 15; font-family: serif;" >
+			Feeling better starts with a single click ..
+					<a href="#" style="font-size: 20; font-family: serif;">Join us !</a>
+				</p>
+
+				<p class="footer-company-name">Psychonauts &copy; 2022</p>
+			</div>
+
+            </div><!--end col-->
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <h4 class="text-light footer-head">Psychonauts</h4>
+          
+                <ul class="list-unstyled footer-list mt-4">
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> HOME</a></li>
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> PHYSIOLOGICAL TESTS </a></li>
+                                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> MAGAZINE</a></li>
+
+                </ul>
+            </div><!--end col-->
+
+            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+             <div class="footer-center">
+
+				<div style="font-size: 15; font-family: serif;">
+					
+					<p ><span style="font-size: 17; font-family: serif;"><i class="fa fa-map-marker"></i>&nbsp;Amman </span> , &nbsp;Jordan</p>
+				
+					<p style="font-size: 17; font-family: serif;"><i class="fa fa-phone"></i>&nbsp;028398308</p>
+				
+					
+			</div>
+
+			</div>
+            </div><!--end col-->
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+               	<p class="footer-company-about">
+					<span style="color: white">About our company<br></span><br>
+					Psychonauts is a website for For people who need immediate psychological help.
+				</p>
+
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</footer>
+<footer class="footer bg-footer footer-bar">
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="text-sm-left">
+                    <p class="mb-0">© 2022. Design with <i class="mdi mdi-heart text-danger"></i></p>
+                </div>
+            </div><!--end col-->
+
+            <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <ul class="list-unstyled text-sm-right social-icon social mb-0">
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-google-plus" title="Google +"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-linkedin" title="Linkedin"></i></a></li>
+                </ul><!--end icon-->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</footer>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css">
+<style>
+ 
+.main {
+	height: 550px;;
+	background-color: #262626;
+	color: white;
+	font-size: 38pt;
+	text-align: center;
+	line-height: 550px;
+}
+footer{
+	bottom: 0;
+}
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.main {
+		line-height: normal;
+		font-size: auto;
+	}
+
+}
+
+    
+    </style>
+<style type="text/css">
+body{margin-top:20px;}
+.bg-footer {
+    background-color: #3b4757 !important;
+    
+}
+.footer {
+  padding: 50px 0;
+  position: relative;
+  color: #adb5bd;
+}
+
+.footer .logo-footer {
+  font-weight: 700;
+  font-size: 22px;
+  padding: 2px 0;
+  letter-spacing: 1px;
+}
+
+.footer .footer-head {
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.footer .text-foot {
+  color: #adb5bd;
+}
+
+.footer .footer-list {
+  margin-bottom: 0;
+}
+
+.footer .footer-list li {
+  margin-bottom: 10px;
+}
+
+.footer .footer-list li a {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.footer .footer-list li a:hover {
+  color: #6dc77a !important;
+}
+
+.footer .footer-list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer.footer-bar {
+  padding: 30px 0;
+  border-top: 1px solid #6c757d;
+}
+
+.footer.footer-bar .payment-cards img {
+  height: 25px;
+}
+
+.social-icon.social li a {
+    color: #adb5bd;
+    border-color: #adb5bd;
+}
+.social-icon li a {
+    color: #35404e;
+    border: 1px solid #35404e;
+    display: inline-block;
+    height: 32px;
+    text-align: center;
+    font-size: 15px;
+    width: 32px;
+    line-height: 30px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+.rounded {
+    border-radius: 5px !important;
+}
+</style>
+
+<script type="text/javascript">
+
+</script>
+    </div>
+ 
+      
+      
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    </body></html>

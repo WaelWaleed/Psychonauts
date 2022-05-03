@@ -18,7 +18,15 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    lineSwitch: {
+        type: String,
+        required: true
+    },
     phoneNumber: {
+        type: String,
+        required: true
+    },
+    fullNumber: {
         type: String,
         required: true
     },
@@ -29,7 +37,11 @@ const userSchema = new Schema({
     password:{
         type: String,
         required: true
-    }
+    },
+    type:{
+        type: String,
+        required: true
+    },
 })
 const users = mongoose.model('users', userSchema);
 module.exports = users;
