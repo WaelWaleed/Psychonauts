@@ -1,0 +1,553 @@
+<!--Insomnia Test for Psychonauts Website -->
+<!-- Copyright (c) Dania & Wael 2022 -->
+
+<html lang="en"><head>
+        <title>Insomnia Test</title>
+
+    <meta charset="utf-8">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body >
+
+
+
+<style>
+
+          
+* {
+  box-sizing: border-box;
+    
+}
+
+
+#regForm {
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 30%;
+  
+    
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width:100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #005D79;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #005D79;
+}
+</style>
+<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css');
+
+.funkyradio div {
+  clear: both;
+  overflow: hidden;width: 100%;
+}
+
+.funkyradio label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+}
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+  display: none;width: 100%;
+}
+
+.funkyradio input[type="radio"]:empty ~ label,
+.funkyradio input[type="checkbox"]:empty ~ label {
+  position: relative; 
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before,
+.funkyradio input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked ~ label,
+.funkyradio input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before,
+.funkyradio input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus ~ label:before,
+.funkyradio input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-default input[type="radio"]:checked ~ label:before,
+.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio-primary input[type="radio"]:checked ~ label:before,
+.funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.funkyradio-success input[type="radio"]:checked ~ label:before,
+.funkyradio-success input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.funkyradio-danger input[type="radio"]:checked ~ label:before,
+.funkyradio-danger input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+.funkyradio-warning input[type="radio"]:checked ~ label:before,
+.funkyradio-warning input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+.funkyradio-info input[type="radio"]:checked ~ label:before,
+.funkyradio-info input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5bc0de;
+}
+
+    </style>
+    
+    
+    
+
+<nav class="navbar fixed-top navbar-expand-md custom-navbar navbar-dark" style="box-shadow: 8px 8px 8px #eee ; background-color: #fff ;">
+  <img src="KK.png" id="logo_custom"style="width: 12%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%"  >
+                            
+</nav>
+
+
+<form id="regForm" action="/saveResult" method="post" style="padding-top: 0%;">
+  
+  <!-- One "tab" for each step in the form: -->
+     <div class="tab"><cenetr>  <img src="ins.png" style="border-radius: 50%;width: 50%;"/><br><cenetr><h1 style="font-weight: 300;color:  #005D79">Insomnia Test</h1></center>
+ <br><p style="font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;font-size: 17;">For each statement, select the number that best describes the way you have been feeling for the past week.
+         </p></cenetr>
+  </div>
+    
+    
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600;font-size: 23;  text-align: center;color: #005D79;">
+        Difficulty falling a sleep
+      </p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="1" id="radio3" style=" width: 130px;" value="0" />
+        <label for="radio3">None</label>
+      </div>
+      <div class="funkyradio-primary">
+        <input type="radio" name="1" id="radio2" value="1" />
+        <label for="radio2">Moderate</label>
+      </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="1" id="radio5" value="3" />
+          <label for="radio5">Severe</label>
+        </div>
+      <div class="funkyradio-danger">
+        <input type="radio" name="1" id="radio4" value="4" />
+        <label for="radio4">Very</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: center;color: #005D79;">
+        Difficulty staying  a sleep
+      </p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="2" id="radio200" value="0" />
+        <label for="radio200">None</label>
+    </div>
+    <div class="funkyradio-primary">
+      <input type="radio" name="2" id="radio2001" value="1" />
+      <label for="radio2001">Moderate</label>
+    </div>
+    <div class="funkyradio-warning">
+      <input type="radio" name="2" id="radio2002" value="3" />
+      <label for="radio2002">Severe</label>
+    </div>
+    <div class="funkyradio-danger">
+      <input type="radio" name="2" id="radio2003" value="4" />
+      <label for="radio2003">Very</label>
+    </div>
+    </div>
+  </div>
+  
+  
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: center;color: #005D79;">
+        Problem waking up too early
+      </p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="3" id="radio100" value="0" />
+        <label for="radio100">None</label>
+      </div>
+      <div class="funkyradio-primary">
+        <input type="radio" name="3" id="radio1001" value="1" />
+        <label for="radio1001">Moderate</label>
+      </div>
+      <div class="funkyradio-warning">
+        <input type="radio" name="3" id="radio1002" value="3" />
+        <label for="radio1002">Severe</label>
+      </div>
+      <div class="funkyradio-danger">
+        <input type="radio" name="3" id="radio1003" value="4" />
+        <label for="radio1003">Very</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: center;color: #005D79;">
+        How satisfied/dissatisfied are you with your current sleep pattern?
+      </p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="4" id="radio31" value="0" />
+        <label for="radio31">Satisfied</label>
+      </div>
+      <div class="funkyradio-primary">
+        <input type="radio" name="4" id="radio21" value="1" />
+        <label for="radio21">Somewhat Satisfied</label>
+      </div>
+      <div class="funkyradio-warning">
+        <input type="radio" name="4" id="radio51" value="3" />
+        <label for="radio51">Dissatisfied</label>
+      </div>
+      <div class="funkyradio-danger">
+        <input type="radio" name="4" id="radio41" value="4" />
+        <label for="radio41">Very Dissatisfied</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: center;color: #005D79;">
+        To what extent do you consider your sleep problem to INTERFERE with your daily functioning ?
+      </p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="5" id="radio381" value="0" />
+        <label for="radio381">Not at all Interfering</label>
+      </div>
+      <div class="funkyradio-primary">
+        <input type="radio" name="5" id="radio3819" value="1" />
+        <label for="radio3819">A Little</label>
+      </div>
+      <div class="funkyradio-warning">
+        <input type="radio" name="5" id="radio3817" value="3" />
+        <label for="radio3817">Much</label>
+      </div>
+      <div class="funkyradio-danger">
+        <input type="radio" name="5" id="radio3818" value="4" />
+        <label for="radio3818">Very Much Interfering</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: center;color: #005D79;">
+        How NOTICEABLE to others do you think your sleeping problem is in terms of impairing the quality of your life?
+      </p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="6" id="radio75" value="0" />
+        <label for="radio75">Not at all Noticeable</label>
+      </div>
+      <div class="funkyradio-primary">
+        <input type="radio" name="6" id="radio751" value="1" />
+        <label for="radio751">Barely</label>
+      </div>
+      <div class="funkyradio-warning">
+        <input type="radio" name="6" id="radio752" value="3" />
+        <label for="radio752">Much</label>
+      </div>
+      <div class="funkyradio-danger">
+        <input type="radio" name="6" id="radio753" value="4" />
+        <label for="radio753">Very Much Noticeable</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: center;color: #005D79;">
+        How WORRIED/stressed are you about your current sleep problem?
+      </p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="7" id="radio771" value="0" />
+        <label for="radio771">Not at all </label>
+      </div>
+      <div class="funkyradio-primary">
+        <input type="radio" name="7" id="radio7712" value="1" />
+        <label for="radio7712">A Little</label>
+      </div>
+      <div class="funkyradio-warning">
+        <input type="radio" name="7" id="radio7713" value="3" />
+        <label for="radio7713">Much</label>
+      </div>
+      <div class="funkyradio-danger">
+        <input type="radio" name="7" id="radio7714" value="4" />
+        <label for="radio7714">Very Much </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab">
+    <cenetr>  
+      <img src="https://cdn-icons-png.flaticon.com/512/1028/1028924.png?w=740" style="border-radius: 50%;width: 20%;"/><br>
+    </cenetr>
+    <br>
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: center;color: #005D79;">
+        Thank you for taking the time to complete your Personal Assessment , to see the results please click submit button below.
+      </p>
+    </cenetr>
+  </div>
+  <br>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <div id="btns">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)" style="color: white">Next</button>
+      </div>
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+          <span class="step"></span>
+
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+          <span class="step"></span>
+    <span class="step"></span><span class="step"></span>
+  
+
+
+
+  </div>
+</form>
+
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    var sbmt = document.getElementById("btns").innerHTML = `
+    <input type="hidden" name="testName" value="Insomnia">
+    <input type="hidden" name="result" value="${total}">
+    <button type="submit" style="color: white">Submit</button>`;
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+
+
+var total = 0;
+var question = 1;
+
+$('button').click(function(){
+
+  if(document.querySelector('input[name="1"]:checked').value){
+    total += parseInt(document.querySelector(`input[name="${question}"]:checked`).value);
+    question++;
+  }
+  else{
+    total = 0;
+  }
+  console.log(total + " " + question);
+
+})
+
+
+</script>
+
+</body>
+</html>

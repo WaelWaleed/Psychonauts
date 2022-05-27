@@ -152,8 +152,6 @@ initial-scale=1.0, user-scalable=yes">
                                     <li class="nav-item">
                                         <a class="nav-link" id="bonus-list-tab" data-toggle="tab" href="#bonus-list" role="tab" aria-controls="contact" aria-selected="false"> Appointments</a>
                                     </li>
-
-
                                 </ul>
                             </div>
                             <div class="tab-content card-body" id="myTabContent">
@@ -490,39 +488,32 @@ initial-scale=1.0, user-scalable=yes">
                                 <div class="tab-pane fade" id="bonus-list" role="tabpanel"
                                     aria-labelledby="bonus-list-tab">
                                     <div class="alert alert-success" role="alert">
-                                        There is a 3 appointments this week!
+                                        There are <%= apps.length %> appointments this week!
                                     </div>
                                     <table class="table table-sm table-hover table-bordered table-striped">
                                         <thead class="thead-light">
                                             <tr>
                                                 <th scope="col" scope="col" style="width:20%">Name</th>
-                                                <th scope="col">Date</th>
+                                                <th scope="col">Day</th>
                                                 <th scope="col" style="width:10%">Time</th>
                                                 <th scope="col">Notes</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr><span>
-                                                    <th scope="row">UnKnown</th>
-                                                    <td>Today</td>
-                                                    <td>2:30 PM</td>
-                                                    <td>None</td>
-
-                                                </span>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Ameera Nabulsi</th>
-                                                <td>7.6.2022</td>
-                                                <td>3 PM</td>
-                                                <td>None</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Ahmed Ali</th>
-                                                <td>8.6.2022</td>
-                                                <td>6 PM</td>
-                                                <td>If there is a morning appointment instead of mine, please let me
-                                                    know .</td>
-                                            </tr>
+                                            <% for(var i=0; i<apps.length; i++) { %>
+                                                <tr>
+                                                    <span>
+                                                        <form action="/deleteAppointment" method="post">
+                                                            <th scope="row"><%= apps[i]["doctor"] %> </th>
+                                                            <input type="hidden" name="day" value="<%= apps[i]["day"] %> ">
+                                                            <td><%= apps[i]["day"] %> </td>
+                                                            <input type="hidden" name="from" value="<%= apps[i]["from"] %> ">
+                                                            <td><%= apps[i]["from"] %> </td>
+                                                            <td>None</td>
+                                                        </form>
+                                                    </span>
+                                                </tr>
+                                            <% } %>
                                         </tbody>
                                     </table>
                                 </div>

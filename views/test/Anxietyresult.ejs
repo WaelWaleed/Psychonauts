@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Anxiety Disorders Test Results</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous">
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i> &nbsp; &nbsp;Amman,Jordan</small> &nbsp; &nbsp; &nbsp;
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i> &nbsp; &nbsp;0799237865</small> &nbsp; &nbsp; &nbsp;
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i> &nbsp; &nbsp;Psychonauts2022@gmail.com</small> &nbsp; &nbsp; &nbsp;
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                   
+                    <a class="btn btn-sm   " href="#"><p style="color:  #ffffff;
+	font: normal 20px 'Cookie', cursive;
+	margin: 0;">Psychonauts<span style="color:  #5383d3;">Test</span></p> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">Your status report:</h5>
+                    </div>
+                    <p class="mb-4">
+                        
+<ul  style="color: black; ">
+  <li>Your Anxiety Disorder score is : <span> <%= result %>  /27</span></li>
+  <li>Level : 
+    <% if(result >= 0 && result <= 4) { %> 
+        <span>Normal</span>
+    <% } %> 
+    <% if(result >= 5 && result <= 9) { %> 
+        <span>Mild</span>
+    <% } %> 
+    <% if(result >= 10 && result <= 14) { %> 
+        <span>Moderate</span>
+    <% } %> 
+    <% if(result >= 15 && result <= 21) { %> 
+        <span>Severe</span>
+    <% } %> 
+    </li>
+  <li>Instructions : <span> <%= advice %>  </span></li>
+                    </ul>
+           <p>             Experiencing symptoms is common. By engaging in therapy will you learn strategies to reduce symptoms and manage everyday stressors.
+</p>
+                   
+                    <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Match with a therapist</a>
+                </div>
+            
+        
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"><br><br><br><br>
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 120px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+<img src="https://img.icons8.com/ultraviolet/344/test-failed.png" style="width: 90%"/>
+
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Score :</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up"> <%= result %>  </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    
+                 
+    </div>
+     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.3s" style="position: relative;
+background-size: cover;
+    background-color: #f5f5ff;padding-left: 0%;padding-right: 0%;">
+
+      <section class="pt-5" id="manager">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6"><img class="img-fluid" src="image-removebg-preview%20(2).png" alt=""  style="border-radius: 30%;"/></div>
+            <div class="col-lg-6">
+                       <h1 class="mb-4 fs-9 fw-bold" style="color: royalblue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are not alone
+</h1>
+              <p class="mb-6 lead text-secondary">In the midst of anxious thoughts or intensive fear, you may feel stuck in a spiral. But there is a way out and Psychonauts is here to help. By answering the anxiety questionnaire and connecting with a therapist, you will begin to identify the thoughts and behaviors holding you back — and learn to overcome them. 
+
+</p>
+                   <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+         <iframe width="800" height="500" src="https://www.youtube.com/embed/vtUdHOx494E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+                
+              <div class="text-center text-md-start"  style="color: royalblue"><a class="btn btn-warning me-3 btn-lg" href="#" role="button" style="background-color: royalblue;color: white">Get started</a>
+                  <a class="btn btn-link text-warning fw-medium" href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo" style="color: royalblue;background-color: white"><span class="fas fa-play me-2" style="color: royalblue"></span><sapn  style="color: royalblue">Watch the video</sapn> </a>
+             <br>
+                
+                </div>
+            </div>
+          </div><br>
+        </div>
+         </section></div>  <br>
+      
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.3s">
+
+      <section class="pt-5" id="marketer">
+
+        <div class="container" >
+          <div class="row">
+            <div class="col-lg-6">
+              <p class="mb-2 fs-8 fw-bold" style="color: black">How Is Anxiety Disorders Treated?</p>
+            
+              <h4 class="fw-bold fs-1"style="color: royalblue">Get help early</h4>
+              <p class="mb-4 fw-medium text-secondary">Anxiety, like many other mental health conditions, can be harder to treat if you wait.
+</p>
+              <h4 class="fw-bold fs-1"style="color: royalblue">Stay active
+</h4>
+              <p class="mb-4 fw-medium text-secondary">Participate in activities that you enjoy and that make you feel good about yourself. Enjoy social interaction and caring relationships, which can lessen your worries.
+
+</p>
+              <h4 class="fw-bold fs-1"style="color: royalblue">Therapy for Anxiety Disorders
+</h4>
+              <p class="mb-4 fw-medium text-secondary">Each anxiety therapy may be used alone, or combined with other types of therapy. Anxiety therapy may be conducted individually, or it may take place in a group of people with similar anxiety problems. But the goal is the same: to lower your anxiety levels, calm your mind, and overcome your fears.
+
+</p>
+            </div>
+            <div class="col-lg-6"><br><br><br><br><br><br><img class="img-fluid" src="https://img.freepik.com/free-vector/student-stress-concept-illustration_114360-9018.jpg?t=st=1652096281~exp=1652096881~hmac=7e03c3b670efa2d2207593c4fa69f3587e3c3ad9084585b4362ce2abad444336&w=740" alt="" /></div>
+          </div>
+        </div>
+        </section></div>
+<br><br>
+
+
+    <meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="faq_area section_padding_130" id="faq">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-lg-6">
+                <!-- Section Heading-->
+                <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <h3><span>Frequently </span> Asked Questions</h3>
+<br>                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <!-- FAQ Area-->
+            <div class="col-12 col-sm-10 col-lg-8">
+                <div class="accordion faq-accordian" id="faqAccordion">
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingOne">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How do I get tested for generalized anxiety?<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>Psychonauts offers free anxiety tests to help give you a better understanding of your anxiety symptoms, however for a clinical diagnosis you will need to see a licensed therapist or primary care provider for a mental health evaluation.
+
+
+
+
+</p>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingThree">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">How do I know if I suffer from anxiety?
+
+<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>A clinical diagnosis can be administered by a licensed professional to determine if you have anxiety. Common symptoms of anxiety and generalized anxiety disorder may include:
+<ul>
+
+<li>Fear</li> 
+<li>Nausea </li> 
+<li>Sweaty hands </li> 
+<li>Palpitations</li> 
+<li>Excessive worrying </li> 
+<li>Irritability</li> 
+
+</ul>
+
+</p>
+                            </div>
+                        </div>
+                    </div>
+                         <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingTwo">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Can I get diagnosed with anxiety by an online mental health provider?
+
+<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>Yes, a virtual clinical diagnosis can be made by a licensed mental health professional. Online services, like Psychonauts, enable an accurate diagnosis by matching you with a licensed mental health professional who can conduct a virtual mental health assessment.
+
+
+
+
+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Support Button-->
+                <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <p class="mb-0 px-2">Can't find your answers?</p>
+                    <a href="#" style="color: royalblue"> Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style type="text/css">
+.section_padding_130 {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+.faq_area {
+    position: relative;
+    z-index: 1;
+    background-color: #f5f5ff;
+}
+
+.faq-accordian {
+    position: relative;
+    z-index: 1;
+}
+.faq-accordian .card {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+.faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-accordian .card .card-header {
+    background-color: #ffffff;
+    padding: 0;
+    border-bottom-color: #ebebeb;
+}
+.faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-accordian .card .card-header h6.collapsed {
+    color: #070a57;
+}
+.faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+}
+.faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .support-button p {
+        font-size: 14px;
+    }
+}
+
+.support-button i {
+    color: #3f43fd;
+    font-size: 1.25rem;
+}
+@media only screen and (max-width: 575px) {
+    .support-button i {
+        font-size: 1rem;
+    }
+}
+
+.support-button a {
+    text-transform: capitalize;
+    color: #2ecc71;
+}
+@media only screen and (max-width: 575px) {
+    .support-button a {
+        font-size: 13px;
+    }
+}
+
+</style>
+
+<script type="text/javascript">
+
+</script>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

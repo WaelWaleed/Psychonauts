@@ -1,0 +1,582 @@
+<!-- Depression Test for Psychonauts Website -->
+<!-- Copyright (c) Dania & Wael 2022 -->
+
+<html lang="en">
+  <head>
+    <title>Depression Test</title>
+    <meta charset="utf-8">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  </head>
+
+<body >
+
+
+
+<style>
+
+          
+* {
+  box-sizing: border-box;
+    
+}
+
+
+#regForm {
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 30%;
+  min-width: 300px;
+    
+}
+
+h1 {
+  text-align: cenetr;  
+}
+
+input {
+  padding: 10px;
+  width:100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #005D79;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #005D79;
+}
+</style>
+<style>
+/* @import()  */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css");
+
+.funkyradio div {
+  clear: both;
+  overflow: hidden;
+}
+
+.funkyradio label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+}
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+  display: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label,
+.funkyradio input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before,
+.funkyradio input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked ~ label,
+.funkyradio input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before,
+.funkyradio input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus ~ label:before,
+.funkyradio input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-default input[type="radio"]:checked ~ label:before,
+.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio-primary input[type="radio"]:checked ~ label:before,
+.funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.funkyradio-success input[type="radio"]:checked ~ label:before,
+.funkyradio-success input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.funkyradio-danger input[type="radio"]:checked ~ label:before,
+.funkyradio-danger input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+.funkyradio-warning input[type="radio"]:checked ~ label:before,
+.funkyradio-warning input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+.funkyradio-info input[type="radio"]:checked ~ label:before,
+.funkyradio-info input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5bc0de;
+}
+
+    </style>
+    
+    
+    
+
+<nav class="navbar fixed-top navbar-expand-md custom-navbar navbar-dark" style="box-shadow: 8px 8px 8px #eee ; background-color: #fff ;">
+  <img src="KK.png" id="logo_custom"style="width: 12%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%"  >
+</nav>
+
+
+<form id="regForm" action="/saveResult" method="post" style="padding-top: 0%;">
+  
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">
+    <cenetr>
+      <img src="s.png" style="border-radius: 50%;width: 50%;"/><br><cenetr><h1 style="font-weight: 300;color:  #005D79 ">Depression Test</h1></cenetr>
+      <br>
+      <p style="font-family: 'Barlow Condensed', sans-serif; font-family: 'Josefin Sans', sans-serif; font-family: 'Montserrat', sans-serif; font-family: 'Roboto', sans-serif; font-family: 'Roboto Slab', serif;font-size: 17;">For each statement, select the number that best describes the way you have been feeling for the past week.</p>
+    </cenetr>
+  </div>
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: cenetr;color: #005D79; ">Little interest <span style="color: royalblue;font-size: 16"> OR</span> pleasure in doing things</p>
+    </cenetr>
+    <div class="funkyradio">
+      <div class="funkyradio-success">
+        <input type="radio" name="1" id="radio3" value="0" />
+        <label for="radio3"> Not at all</label>
+      </div>
+      <div class="funkyradio-primary">
+        <input type="radio" name="1" id="radio2" value="1"/>
+        <label for="radio2">Several days</label>
+      </div>
+      <div class="funkyradio-warning">
+          <input type="radio" name="1" id="radio5" value="2"/>
+          <label for="radio5">More than half the days</label>
+      </div>
+      <div class="funkyradio-danger">
+        <input type="radio" name="1" id="radio4" value="3"/>
+        <label for="radio4">Nearly every day</label>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="tab">
+      <cenetr>
+        <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: cenetr;color: #005D79; ">Feeling down, depressed<span style="color: royalblue;font-size: 16"> OR</span> hopeless</p>
+      </cenetr>
+      <div class="funkyradio">
+        <div class="funkyradio-success">
+          <input type="radio" name="2" id="radio55" value="0" />
+          <label for="radio55"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+          <input type="radio" name="2" id="radio11" value="1" />
+          <label for="radio11">Several days</label>
+        </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="2" id="radio70" value="2" />
+          <label for="radio70">More than half the days</label>
+        </div>
+        <div class="funkyradio-danger">
+          <input type="radio" name="2" id="radio74" value="3" />
+          <label for="radio74">Nearly every day</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab">
+      <cenetr>
+       <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: cenetr;color: #005D79; ">Trouble falling <span style="color: royalblue;font-size: 16"> OR</span>  staying asleep<span style="color: royalblue;font-size: 16"> OR</span> sleeping too much</p>
+      </cenetr>
+      <div class="funkyradio">
+        <div class="funkyradio-success">
+          <input type="radio" name="3" id="radio90" value="0" />
+          <label for="radio90"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+            <input type="radio" name="3" id="radio91" value="1" />
+            <label for="radio91">Several days</label>
+        </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="3" id="radio92" value="2" />
+          <label for="radio92">More than half the days</label>
+        </div>
+        <div class="funkyradio-danger">
+          <input type="radio" name="3" id="radio93" value="3" />
+          <label for="radio93">Nearly every day</label>
+        </div>
+      </div>
+  </div>
+   <div class="tab">
+     <cenetr>
+       <p style="font-family: 'Dongle', sans-serif;font-weight: 600;font-size: 23;  text-align: cenetr;color: #005D79;">Feeling tired <span style="color: royalblue;font-size: 16"> OR </span>having little energy</p>
+      </cenetr>
+      <div class="funkyradio">
+        <div class="funkyradio-success">
+          <input type="radio" name="4" id="radio100" value="0" />
+          <label for="radio100"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+          <input type="radio" name="4" id="radio101" value="1" />
+          <label for="radio101">Several days</label>
+        </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="4" id="radio102" value="2" />
+          <label for="radio102">More than half the days</label>
+        </div>
+        <div class="funkyradio-danger">
+          <input type="radio" name="4" id="radio103" value="3" />
+          <label for="radio103">Nearly every day</label>
+        </div>
+      </div>
+    </div>
+   
+  <div class="tab">
+    <cenetr>
+      <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: cenetr;color: #005D79;">Poor appetite <span style="color: royalblue;font-size: 16"> OR</span> overeating</p>
+    </cenetr>
+
+   
+    <div class="funkyradio">
+  <div class="funkyradio-success">
+            <input type="radio" name="5" id="radio500" value="0" />
+            <label for="radio500"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+            <input type="radio" name="5" id="radio501" value="1" />
+            <label for="radio501">Several days</label>
+        </div>
+       
+        
+        <div class="funkyradio-warning">
+            <input type="radio" name="5" id="radio502" value="2" />
+            <label for="radio502">More than half the days</label>
+        </div>
+     <div class="funkyradio-danger">
+            <input type="radio" name="5" id="radio503" value="3" />
+            <label for="radio503">Nearly every day</label>
+        </div>
+    </div>
+</div>
+    <div class="tab">
+      <cenetr>
+        <p style="font-family: 'Dongle', sans-serif;font-weight: 600;font-size: 23;  text-align: cenetr;color: #005D79; ">Feeling bad about yourself <span style="color: royalblue;font-size: 16"> OR</span> that you are a failure <span style="color: royalblue;font-size: 16"> OR</span> have let yourself <span style="color: royalblue;font-size: 16"> OR</span> your family down</p>
+      </cenetr>
+      <div class="funkyradio">
+        <div class="funkyradio-success">
+          <input type="radio" name="6" id="radio300" value="0" />
+          <label for="radio300"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+          <input type="radio" name="6" id="radio301" value="1" />
+          <label for="radio301">Several days</label>
+        </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="6" id="radio302" value="2" />
+          <label for="radio302">More than half the days</label>
+        </div>
+        <div class="funkyradio-danger">
+          <input type="radio" name="6" id="radio303" value="3" />
+          <label for="radio303">Nearly every day</label>
+        </div>
+      </div>
+    </div>
+    <div class="tab">
+      <cenetr>
+        <p style="font-family: 'Dongle', sans-serif;font-weight: 600;font-size: 23;  text-align: cenetr;color: #005D79;">Trouble concentrating on things, such as reading the newspaper<span style="color: royalblue;font-size: 16"> OR</span> watching television</p>
+      </cenetr>
+      <div class="funkyradio">
+        <div class="funkyradio-success">
+          <input type="radio" name="7" id="radio2200" value="0" />
+          <label for="radio2200"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+          <input type="radio" name="7" id="radio22001" value="1" />
+          <label for="radio22001">Several days</label>
+        </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="7" id="radio220011" value="2" />
+          <label for="radio220011">More than half the days</label>
+        </div>
+        <div class="funkyradio-danger">
+          <input type="radio" name="7" id="radio220023" value="3" />
+          <label for="radio220023">Nearly every day</label>
+        </div>
+      </div>
+    </div>
+    <div class="tab">
+      <cenetr>
+        <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: cenetr;color: #005D79; ">Moving <span style="color: royalblue;font-size: 16">OR</span> speaking so slowly that other people could have noticed <span style="color: royalblue;font-size: 16">OR</span> moving around a lot more than usual.</p>
+      </cenetr>
+      <div class="funkyradio">
+        <div class="funkyradio-success">
+          <input type="radio" name="8" id="radio1222" value="0" />
+          <label for="radio1222"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+          <input type="radio" name="8" id="radio12222" value="1" />
+          <label for="radio12222">Several days</label>
+        </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="8" id="radio12229" value="2" />
+          <label for="radio12229">More than half the days</label>
+        </div>
+        <div class="funkyradio-danger">
+          <input type="radio" name="8" id="radio12228" value="3" />
+          <label for="radio12228">Nearly every day</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="tab">
+      <cenetr>
+        <p style="font-family: 'Dongle', sans-serif;font-weight: 600;font-size: 23;  text-align: cenetr;color: #005D79;">Thoughts that you would be better off dead<span style="color: royalblue;font-size: 16"> OR </span>of hurting yourself.</p>
+      </cenetr>
+      <div class="funkyradio">
+        <div class="funkyradio-success">
+          <input type="radio" name="9" id="radio219" value="0" />
+          <label for="radio219"> Not at all</label>
+        </div>
+        <div class="funkyradio-primary">
+          <input type="radio" name="9" id="radio218" value="1" />
+          <label for="radio218">Several days</label>
+        </div>
+        <div class="funkyradio-warning">
+          <input type="radio" name="9" id="radio2199" value="2" />
+          <label for="radio2199">More than half the days</label>
+        </div>
+        <div class="funkyradio-danger">
+          <input type="radio" name="9" id="radio21987" value="3" />
+          <label for="radio21987">Nearly every day</label>
+        </div>
+      </div>
+    </div>
+    <div class="tab">
+      <cenetr>
+        <img src="https://cdn-icons-png.flaticon.com/512/1028/1028924.png?w=740" style="border-radius: 50%;width: 20%;"/>
+        <br>
+      </cenetr>
+      <br>
+      <cenetr>
+        <p style="font-family: 'Dongle', sans-serif;font-weight: 600; font-size: 23;  text-align: cenetr;color: #005D79;">Thank you for taking the time to complete your Personal Assessment , to see the results please click submit button below.</p>
+      </cenetr>
+    </div>
+    <br>
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <div id="btns">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)" style="color: white">Next</button>
+        </div>
+      </div>
+    </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:cenetr;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+
+
+  </div>
+</form>
+
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    var sbmt = document.getElementById("btns").innerHTML = `
+    <input type="hidden" name="testName" value="Deppression">
+    <input type="hidden" name="result" value="${total}">
+    <button type="submit" style="color: white">Submit</button>`;
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    // document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+
+var total = 0;
+var question = 1;
+
+$('button').click(function(){
+
+  if(document.querySelector('input[name="1"]:checked').value){
+    total += parseInt(document.querySelector(`input[name="${question}"]:checked`).value);
+    question++;
+  }
+  else{
+    total = 0;
+  }
+  console.log(total + " " + question);
+
+})
+
+</script>
+
+</body>
+</html>

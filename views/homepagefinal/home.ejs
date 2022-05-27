@@ -1,5 +1,8 @@
-    <!-- Home Page for Psychonauts Website -->
+<!-- Home Page for Psychonauts Website -->
 <!-- Copyright (c) Dania & Wael 2022 -->
+
+
+<!-- <%- //include('../nav/navbar.ejs') %>  -->
 
 <html lang="en"><head>
     
@@ -32,7 +35,7 @@
    
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+     <div class="container-fluid bg-dark px-5 d-none d-lg-block">
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
@@ -43,9 +46,7 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                  <a class="btn btn-sm   " href="#"><p style="color:  #ffffff;
-	font: normal 20px 'Cookie', cursive;
-	margin: 0;">Psychonauts<span style="color:  #5383d3;">Website</span></p> </a>
+                  <a class="btn btn-sm   " href="#"><p style="color:  #ffffff; font: normal 20px 'Cookie', cursive; margin: 0;">Psychonauts<span style="color:  #5383d3;">Website</span></p> </a>
                 </div>
             </div>
         </div>
@@ -53,6 +54,7 @@
     <!-- Topbar End -->
 
     <!-- Navbar & Carousel Start -->
+
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="#" class="navbar-brand p-0">
@@ -63,37 +65,34 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="#" class="nav-item nav-link active">HOME</a>
+                    <a href="/" class="nav-item nav-link active">HOME</a>
                     <a href="#ab" class="nav-item nav-link" >ABOUT</a>
-                                        <a href="#" class="nav-item nav-link"> THERSPISTS LIST</a>
-
-                                        <a href="#" class="nav-item nav-link">BLOG</a>
+                    <a href="/DocList" class="nav-item nav-link"> THERAPISTS LIST</a>
+                    <a href="#" class="nav-item nav-link">BLOG</a>
 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">PHYSIOLOGICAL TESTS</a>
                         <div class="dropdown-menu m-0">
-                                                        <a href="#" class="dropdown-item">Anxiety Test</a>
-
-                                                        <a href="#" class="dropdown-item">Depression Test</a>
-                            
-                                                                                    <a href="#" class="dropdown-item">Insomnia Test</a>
-
-
+                            <a href="/test" class="dropdown-item">All Tests</a>
+                            <a href="/Anxietytest" class="dropdown-item">Anxiety Test</a>
+                            <a href="/Depressiontest" class="dropdown-item">Depression Test</a>
+                            <a href="/Insomniatest" class="dropdown-item">Insomnia Test</a>
                         </div>
                     </div>
              
                     <a href="#targetname"class="nav-item nav-link">Contact</a>
                 </div>
-                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal" ><i class="fa fa-search"></i></butaton>
+                <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal" ><i class="fa fa-search"></i></button>
                 <% if(!name) { %> 
-                    <a href="/login" class="btn btn-primary py-2 px-4 ms-3">REGISTER</a>
+                    <form action="/login" method="get">
+                        <button type="submit" class="btn text-primary ms-3">ٌ Register </button>
+                    </form>
                 <% } %> 
                 <% if(name) { %> 
-                    <a href="/profile" class="btn btn-primary py-2 px-4 ms-3"><%= name %></a>
+                    <button type="button" class="btn text-primary ms-3"> <a href="/profile" ><%= name  %></a>  </button>
                 <% } %> 
-
             </div>
-        </nav>
+        </nav> 
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -102,9 +101,7 @@
 
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h6 class="display-1 text-white mb-md-4 animated zoomIn">Feeling better starts
-with a single message !
-                                </h6>
+                            <h6 class="display-1 text-white mb-md-4 animated zoomIn">Feeling better starts with a single message !</h6>
                             <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
                         </div>
                     </div>
@@ -163,7 +160,7 @@ with a single message !
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Happy Visitors</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">100</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up"><%= users.length %></h1>
                         </div>
                     </div>
                 </div>
@@ -174,7 +171,7 @@ with a single message !
                         </div>
                         <div class="ps-4">
                             <h5 class="text-primary mb-0">Sessions Done</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">15</h1>
+                            <h1 class="mb-0" data-toggle="counter-up"><%= apps.length %></h1>
                         </div>
                     </div>
                 </div>
@@ -185,7 +182,7 @@ with a single message !
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Therapists</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">20</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up"> <%= docs.length %>  </h1>
                         </div>
                     </div>
                 </div>
@@ -230,7 +227,7 @@ with a single message !
                             <h4 class="text-primary mb-0">07992378659</h4>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">Get Started</a>
+                    <a href="/docRegister" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">Get Started</a>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -409,24 +406,24 @@ Get matched with a licensed therapist who specializes in teens</p>
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s" style="visibility: hidden; animation-delay: 0.9s; animation-name: none;">
-                        <form>
+                        <form method="post" action="/feedback">
                             <div class="row g-3">
                                 <div class="col-xl-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input name="name" type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input name="email" type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
+                                    <select name="category" class="form-select bg-light border-0" style="height: 55px;">
                                         <option selected="">Select A Service</option>
-                                        <option value="1">Make a complaint</option>
-                                        <option value="2">Provide feedback</option>
-                                        <option value="3">Financial problems</option>
+                                        <option value="complaint">Make a complaint</option>
+                                        <option value="feedback">Provide feedback</option>
+                                        <option value="Financial">Financial problems</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
+                                    <textarea name="message" class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-dark w-100 py-3" type="submit">Submit</button>
@@ -459,8 +456,7 @@ Get matched with a licensed therapist who specializes in teens</p>
                             <small class="text-uppercase">@momtazibra</small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-It helped me out so much. I was always scared of therapy. Depression is real. Anxiety is real. Not good to keep it bottled up. Worth every penny.                    </div>
+                    <div class="pt-4 pb-5 px-5">It helped me out so much. I was always scared of therapy. Depression is real. Anxiety is real. Not good to keep it bottled up. Worth every penny.                    </div>
                 </div>
                 <div class="testimonial-item bg-light my-4">
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
@@ -652,7 +648,7 @@ New Year’s Resolutions</h4>
                 <ul class="list-unstyled footer-list mt-4">
                     <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> HOME</a></li>
                     <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> PHYSIOLOGICAL TESTS </a></li>
-                                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
                     <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> BLOG</a></li>
 
                 </ul>

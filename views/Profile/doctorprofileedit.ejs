@@ -21,7 +21,7 @@ initial-scale=1.0, user-scalable=yes">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark">
+    <!-- <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"> <img src="image/KK.png" alt="Logo Image"
                     style="width: 60%;padding-left: 15%"></a>
@@ -55,7 +55,7 @@ initial-scale=1.0, user-scalable=yes">
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
 
     <script>
@@ -176,8 +176,7 @@ initial-scale=1.0, user-scalable=yes">
                                             aria-selected="false"> Wallet</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="bonus-list-tab" data-toggle="tab" href="#bonus-list"
-                                            role="tab" aria-controls="contact" aria-selected="false"> Appointments</a>
+                                        <a class="nav-link" id="bonus-list-tab" data-toggle="tab" href="#bonus-list" role="tab" aria-controls="contact" aria-selected="false"> Appointments</a>
                                     </li>
 
                                     <!--<li class="nav-item">
@@ -563,19 +562,18 @@ initial-scale=1.0, user-scalable=yes">
                                 </div>
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-                                <script>
-                                    $(document).ready(function () {
-                                        $("button").click(function () {
-                                            $("tr").remove();
-                                        });
-                                    });
-                                </script>
+                                <!-- <script>
+                                    // $(document).ready(function () {
+                                    //     $("button").click(function () {
+                                    //         $("tr").remove();
+                                    //     });
+                                    // });
+                                </script> -->
 
 
-                                <div class="tab-pane fade" id="bonus-list" role="tabpanel"
-                                    aria-labelledby="bonus-list-tab">
+                                <div class="tab-pane fade" id="bonus-list" role="tabpanel" aria-labelledby="bonus-list-tab">
                                     <div class="alert alert-success" role="alert">
-                                        There is a 3 appointments this week!
+                                        There are <%= apps.length %>  appointments this week!
                                     </div>
                                     <table class="table table-sm table-hover table-bordered table-striped">
                                         <thead class="thead-light">
@@ -587,35 +585,24 @@ initial-scale=1.0, user-scalable=yes">
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr><span>
-                                                    <th scope="row">UnKnown</th>
-                                                    <td>Today</td>
-                                                    <td>2:30 PM</td>
-                                                    <td>None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                            href="#"><i class="fa fa-times" aria-hidden="true"
-                                                                style="color:red;"></i></a>
-                                                    </td>
-
-                                                </span>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Ameera Nabulsi</th>
-                                                <td>7.6.2022</td>
-                                                <td>3 PM</td>
-                                                <td>None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                        href="#"><i class="fa fa-times" aria-hidden="true"
-                                                            style="color:red;"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Ahmed Ali</th>
-                                                <td>8.6.2022</td>
-                                                <td>6 PM</td>
-                                                <td>If there is a morning appointment instead of mine, please let me
-                                                    know
-                                                    .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                        href="#"><i class="fa fa-times" aria-hidden="true"
-                                                            style="color:red;"></i></a></td>
-                                            </tr>
+                                            <% for(var i=0; i<apps.length; i++) { %>
+                                                <tr>
+                                                    <span>
+                                                        <form action="/deleteAppointment" method="post" >
+                                                            <input type="hidden" name="doctor" value="<%= apps[i]["doctor"] %>">
+                                                            <th scope="row"><%= apps[i]["doctor"] %> </th>
+                                                            <input type="hidden" name="day" value="<%= apps[i]["day"] %>">
+                                                            <td><%= apps[i]["day"] %> </td>
+                                                            <input type="hidden" name="from" value="<%= apps[i]["from"] %>">
+                                                            <td><%= apps[i]["from"] %> </td>
+                                                            <td>None</td>
+                                                            <td>
+                                                                <button type="submit" class="btn btn-danger"><a><i class="fa fa-times" aria-hidden="true" style="color:red;"></i></a></button>
+                                                            </td>
+                                                        </form>
+                                                    </span>
+                                                </tr>
+                                            <% } %>
                                         </tbody>
                                     </table>
                                 </div>

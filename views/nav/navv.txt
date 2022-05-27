@@ -1,0 +1,102 @@
+<!-- view profile for Psychonauts Website -->
+<!-- Copyright (c) Dania & Wael 2022 -->
+
+<html lang="en"><head>
+    
+<title>Home Page</title>
+    <meta charset="utf-8">
+ 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Icon Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+        <!-- It is in other file in the homepage folder -->
+
+    <link href="lib/daniaandwael/assets/dania.and.wael.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- It is in other file in the homepage folder as "css/bootstrap.min.css" name -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- It is in other file in the homepage folder as "css/style.css" name -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body >
+   
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; &nbsp; 
+Amman,Jordan</small> &nbsp; &nbsp; &nbsp;
+                  <small class="me-3 text-light"><i class="fa fa-mobile" aria-hidden="true"></i>
+ &nbsp; &nbsp;0799237865</small> &nbsp; &nbsp; &nbsp;
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i> &nbsp; &nbsp;Psychonauts2022@gmail.com</small> &nbsp; &nbsp; &nbsp;
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                  <a class="btn btn-sm   " href="#"><p style="color:  #ffffff;
+	font: normal 20px 'Cookie', cursive;
+	margin: 0;">Psychonauts<span style="color:  #5383d3;">Website</span></p> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="#" class="navbar-brand p-0">
+               <img src="image/logo.png" style="width: 50%">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="#" class="nav-item nav-link ">HOME</a>
+                    <a href="#ab" class="nav-item nav-link" >ABOUT</a>
+ <div class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> THERSPISTS LIST</a>
+                        <div class="dropdown-menu m-0">
+                                                        <a href="#" class="dropdown-item">All Therapists </a>
+
+                                                        <a href="#" class="dropdown-item">My Therapists</a>
+                            
+
+
+                        </div>
+                    </div>
+                                        <a href="#" class="nav-item nav-link">BLOG</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">PHYSIOLOGICAL TESTS</a>
+                        <div class="dropdown-menu m-0">
+                                                        <a href="#" class="dropdown-item">Anxiety Test</a>
+
+                                                        <a href="#" class="dropdown-item">Depression Test</a>
+                            
+                                                                                    <a href="#" class="dropdown-item">Insomnia Test</a>
+
+
+                        </div>
+                    </div>
+             
+                    <a href="#targetname"class="nav-item nav-link">Contact</a>
+                </div>
+               
+                <a href="#" class="btn btn-primary py-2 px-4 ms-3">REGISTER</a>
+            </div>
+        </nav>
+

@@ -76,7 +76,10 @@
                               <p class=" font-size-sm"style="color: black"> Specialized in: <%= specializedIn %>  </p>
                                 <div class="container bootstrap snippets bootdey">
                                     <div class="btn-demo" id="btn-color-targets">
-                                    <button class="btn btn-outline-primary"> <a href="#" style="color: royalblue">Message</a></button>
+                                    <button class="btn btn-outline-primary"> <a href="/chat" style="color: royalblue">Message</a></button>
+                                    <form action="/reserve" method="get">
+                                        <a><button type="submit">Book</button></a>
+                                    </form>
                                     <button  class="btn btn-primary"> <a href="#modalColor"  data-toggle="modal" class="btn btn-default " style="color: white">Book</a></button>
                                 </div>
                                 <br>
@@ -100,15 +103,11 @@
                             <table class="table table-bordered text-center">
                                 <thead>
                                     <tr class="bg-light-gray">
-                                        <th class="text-uppercase">Time
-                                        </th>
-                                        
+                                        <th class="text-uppercase">Time</th>
                                         <th class="text-uppercase">Sunday</th> <th class="text-uppercase">Monday</th>
-        
                                         <th class="text-uppercase">Tuesday</th>
                                         <th class="text-uppercase">Wednesday</th>
                                         <th class="text-uppercase">Thursday</th>
-                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -116,7 +115,6 @@
                                         <td class="align-middle">09:00am</td>
                                         <td>
                                              <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
-                                            
                                         </td>
                                         <td>
                                           <a href="#" ><span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
@@ -189,7 +187,6 @@
                                 <td class="align-middle">12:00am</td>
                                         <td>
                                              <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Busy</span>
-                                            
                                         </td>
                                         <td>
                                             <a href="#" > <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Available</span></a>
@@ -1067,16 +1064,13 @@
           
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous">
         <footer class="footer bg-footer">
-            <div class="container">
+            <div>
                 <div class="row">
                     <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                        
                     <div class="footer-left">
         
-                        <h3 style="color:  #ffffff;
-            font: normal 36px 'Cookie', cursive;
-            margin: 0;">Psychonauts<span style="color:  #5383d3;">website</span></h3>
-        
+                        <h3 style="color:  #ffffff; font: normal 36px 'Cookie', cursive; margin: 0;">Psychonauts<span style="color:  #5383d3;">website</span></h3>
                         <p class="footer-links" style="font-size: 15; font-family: serif;" >
                     Feeling better starts with a single click ..
                             <a href="#" style="font-size: 20; font-family: serif;">Join us !</a>
