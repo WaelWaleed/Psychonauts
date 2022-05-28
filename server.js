@@ -8,6 +8,8 @@ const users = [];
 const bcrypt = require('bcrypt');
 const flash = require('express-flash');
 const http = require('http');
+const axios = require('axios');
+const math = require('math');
 const methodOverride = require('method-override');
 const server = http.createServer(app);
 
@@ -65,6 +67,7 @@ app.use(express.static("views/nav"));
 app.use(express.static("views/chat"));
 app.use(express.static("views/therapists-list"));
 app.use(express.static("views/test"));
+app.use(express.static("views/magaz"));
 
 
 /***********  INDEX  ***********/
@@ -569,8 +572,6 @@ app.get('/Depressiontest', (req,res)=>{
     }
 })
 
-/***********  EO TESTS  ***********/
-
 
 
 app.post('/saveResult', async (req,res)=>{
@@ -694,6 +695,101 @@ app.post('/saveResult', async (req,res)=>{
         res.redirect('/');
     }
 });
+
+/***********  EO TESTS  ***********/
+
+
+/***********  Magazine  ***********/
+
+const news = require('newsapi');
+const newsapi = new news('83e927dd538d4ea3b8eeef09e2cd9250');
+
+
+app.get('/magHome', async (req,res)=>{
+
+    try{
+
+        var Depression = `http://newsapi.org/v2/everything?` + 
+        `q=Depression&` +
+        `sortBy=relevancy&` +
+        `apiKey=83e927dd538d4ea3b8eeef09e2cd9250`;
+
+        var Insomnia = `http://newsapi.org/v2/everything?` + 
+        `q=Insomnia&` +
+        `sortBy=relevancy&` +
+        `apiKey=83e927dd538d4ea3b8eeef09e2cd9250`;
+
+        var Anxiety = `http://newsapi.org/v2/everything?` + 
+        `q=Anxiety&` +
+        `sortBy=relevancy&` +
+        `apiKey=83e927dd538d4ea3b8eeef09e2cd9250`;
+
+
+        var get_Depression = await axios.get(Depression);
+        var get_Insomnia = await axios.get(Insomnia);
+        var get_Anxiety = await axios.get(Anxiety);
+        // var articles = get_news.data.articles[0]["title"];
+        const Darticles = get_Depression.data.articles;
+        const Iarticles = get_Insomnia.data.articles;
+        const Aarticles = get_Anxiety.data.articles;
+        // console.log("news: " + articles);
+        res.render('magaz/magazHomepage.ejs', { Depp: Darticles, Anx: Aarticles, Ins: Iarticles });
+
+    }catch(err){
+        console.log(err);
+        res.redirect('/')
+    }
+
+})
+
+app.post('/article', (req, res)=>{
+    console.log(req.body.articleName);
+    res.render('Magaz/' + req.body.articleName + ".ejs");
+})
+
+/***********  EO Magazine  ***********/
+
+
+/***********  News  ***********/
+
+app.get('/news', async (req, res)=>{
+    try{
+        // await newsapi.v2.everything({
+        //     q: 'Depression,Anxiety,Insomnia,mentalhealth',
+        //     sortBy: 'relevancy'
+        //     // from: '2022-04-28',
+        //     // to: '2022-05-01',
+        // }).then(result => {
+        //     const article = result["articles"];
+        //     console.log(article);
+        //     res.render('news.ejs', { news: article });
+        // })
+
+
+        // https://newsapi.org/v2/everything?q=bitcoin&
+        var url = `http://newsapi.org/v2/everything?` + 
+        `q=Insomnia&Anxiety&` +
+        `sortBy=relevancy&` +
+        `apiKey=83e927dd538d4ea3b8eeef09e2cd9250`;
+
+        var get_news = await axios.get(url);
+        // var articles = get_news.data.articles[0]["title"];
+        const articles = get_news.data.articles;
+        console.log("news: " + articles);
+        res.render('news.ejs', { news: articles });
+        // res.redirect('/magHome');
+
+    }catch(err){
+        console.log(err);
+        res.redirect('/');
+    }
+})
+
+
+
+/***********  EO News  ***********/
+
+
 
 
 /***********  TESTING ONLY  ***********/

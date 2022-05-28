@@ -1,0 +1,18 @@
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <% for(var i=0; i < news.length; i++) { %>
+            <h4>
+                <%= news[i]["title"] %><br>
+                <%= news[i]["author"] %><br>
+                <a href="<%= news[i]["url"] %> "> <%= news[i]["url"] %>  </a><br>
+                <a href="<%= news[i]["urlToImage"] %> "> <%= news[i]["urlToImage"] %>  </a><br>
+                 
+            
+            </h4>
+        <% } %> 
+    </body>
+</html>

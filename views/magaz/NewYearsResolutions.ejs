@@ -1,0 +1,865 @@
+
+     <!-- New Year’s Resolutions-->
+
+<html>
+    <head>
+     <title>New Year’s Resolutions</title>
+     
+     <meta name="viewport" content="width=device-width,
+initial-scale=1.0, user-scalable=yes">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+                      
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+    </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img src="image/KK.png" alt="Logo Image" style="width: 60%;padding-left: 15%"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" >
+      <span class="navbar-toggler-icon"style="color: royalblue;background-color: #0995DA;" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: royalblue;">HOME   &nbsp; &nbsp; &nbsp; </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> ABOUT  &nbsp; &nbsp; &nbsp;</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> PHYSIOLOGICAL TESTS &nbsp; &nbsp; &nbsp;</a>
+        </li>    
+           <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> THERAPIST LIST &nbsp; &nbsp; &nbsp;</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;">  MAGAZINE&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;">  REGISTER&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+        </li>
+          
+      </ul>
+    </div>
+  </div>
+</nav>
+<style>body{margin-top:20px;}
+.blog-listing {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.gray-bg {
+    background-color: #f5f5f5;
+}
+/* Blog 
+---------------------*/
+.blog-grid {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.blog-grid .blog-img {
+  position: relative;
+}
+.blog-grid .blog-img .date {
+  position: absolute;
+  background: royalblue;
+  color: #ffffff;
+  padding: 8px 15px;
+  left: 10px;
+  top: 10px;
+  border-radius: 4px;
+}
+.blog-grid .blog-img .date span {
+  font-size: 22px;
+  display: block;
+  line-height: 22px;
+  font-weight: 700;
+}
+.blog-grid .blog-img .date label {
+  font-size: 14px;
+  margin: 0;
+}
+.blog-grid .blog-info {
+  padding: 20px;
+}
+.blog-grid .blog-info h5 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.blog-grid .blog-info h5 a {
+  color: #20247b;
+}
+.blog-grid .blog-info p {
+  margin: 0;
+}
+.blog-grid .blog-info .btn-bar {
+  margin-top: 20px;
+}
+
+
+/* Blog Sidebar
+-------------------*/
+.blog-aside .widget {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+.blog-aside .widget-body {
+  padding: 15px;
+}
+.blog-aside .widget-title {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.blog-aside .widget-title h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: royalblue;
+  margin: 0;
+}
+.blog-aside .widget-author .media {
+  margin-bottom: 15px;
+}
+.blog-aside .widget-author p {
+  font-size: 16px;
+  margin: 0;
+}
+.blog-aside .widget-author .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.blog-aside .widget-author h6 {
+  font-weight: 600;
+  color: #20247b;
+  font-size: 22px;
+  margin: 0;
+  padding-left: 20px;
+}
+.blog-aside .post-aside {
+  margin-bottom: 15px;
+}
+.blog-aside .post-aside .post-aside-title h5 {
+  margin: 0;
+}
+.blog-aside .post-aside .post-aside-title a {
+  font-size: 18px;
+  color: #20247b;
+  font-weight: 600;
+}
+.blog-aside .post-aside .post-aside-meta {
+  padding-bottom: 10px;
+}
+.blog-aside .post-aside .post-aside-meta a {
+  color: #6F8BA4;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 10px;
+}
+.blog-aside .latest-post-aside + .latest-post-aside {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+.blog-aside .latest-post-aside .lpa-right {
+  width: 90px;
+}
+.blog-aside .latest-post-aside .lpa-right img {
+  border-radius: 3px;
+}
+.blog-aside .latest-post-aside .lpa-left {
+  padding-right: 15px;
+}
+.blog-aside .latest-post-aside .lpa-title h5 {
+  margin: 0;
+  font-size: 15px;
+}
+.blog-aside .latest-post-aside .lpa-title a {
+  color: #20247b;
+  font-weight: 600;
+}
+.blog-aside .latest-post-aside .lpa-meta a {
+  color: #6F8BA4;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.tag-cloud a {
+  padding: 4px 15px;
+  font-size: 13px;
+  color: #ffffff;
+  background: #20247b;
+  border-radius: 3px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+.tag-cloud a:hover {
+  background:royalblue;
+}
+
+.blog-single {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.article {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 15px;
+  margin: 15px 0 30px;
+}
+.article .article-title {
+  padding: 15px 0 20px;
+}
+.article .article-title h6 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.article .article-title h6 a {
+  text-transform: uppercase;
+  color: gray;
+  border-bottom: 1px solid grey;
+}
+.article .article-title h2 {
+  color: #20247b;
+  font-weight: 600;
+}
+.article .article-title .media {
+  padding-top: 15px;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 20px;
+}
+.article .article-title .media .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.article .article-title .media .media-body {
+  padding-left: 8px;
+}
+.article .article-title .media .media-body label {
+  font-weight: 600;
+  color: royalblue ;
+  margin: 0;
+}
+.article .article-title .media .media-body span {
+  display: block;
+  font-size: 12px;
+}
+.article .article-content h1,
+.article .article-content h2,
+.article .article-content h3,
+.article .article-content h4,
+.article .article-content h5,
+.article .article-content h6 {
+  color: #20247b;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.article .article-content blockquote {
+  max-width: 600px;
+  padding: 15px 0 30px 0;
+  margin: 0;
+}
+.article .article-content blockquote p {
+  font-size: 20px;
+  font-weight: 500;
+  color: royalblue;
+  margin: 0;
+}
+.article .article-content blockquote .blockquote-footer {
+  color: #20247b;
+  font-size: 16px;
+}
+.article .article-content blockquote .blockquote-footer cite {
+  font-weight: 600;
+}
+.article .tag-cloud {
+  padding-top: 10px;
+}
+
+.article-comment {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 20px;
+}
+.article-comment h4 {
+  color: #20247b;
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+img {
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+/* Contact Us
+---------------------*/
+.contact-name {
+  margin-bottom: 30px;
+}
+.contact-name h5 {
+  font-size: 22px;
+  color: #20247b;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.contact-name p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.social-share a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+  margin-right: 10px;
+}
+.social-share .dribbble {
+  box-shadow: 0 8px 30px -4px rgba(234, 76, 137, 0.5);
+  background-color: #ea4c89;
+}
+.social-share .behance {
+  box-shadow: 0 8px 30px -4px rgba(0, 103, 255, 0.5);
+  background-color: #0067ff;
+}
+.social-share .linkedin {
+  box-shadow: 0 8px 30px -4px rgba(1, 119, 172, 0.5);
+  background-color: #0177ac;
+}
+
+.contact-form .form-control {
+  border: none;
+  border-bottom: 1px solid #20247b;
+  background: transparent;
+  border-radius: 0;
+  padding-left: 0;
+  box-shadow: none !important;
+}
+.contact-form .form-control:focus {
+  border-bottom: 1px solid royalblue;
+}
+.contact-form .form-control.invalid {
+  border-bottom: 1px solid #ff0000;
+}
+.contact-form .send {
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .contact-form .send {
+    margin-bottom: 20px;
+  }
+}
+
+.section-title h2 {
+    font-weight: 700;
+    color: #20247b;
+    font-size: 45px;
+    margin: 0 0 15px;
+    border-left: 5px solid royalblue;
+    padding-left: 15px;
+}
+.section-title {
+    padding-bottom: 45px;
+}
+.contact-form .send {
+    margin-top: 20px;
+}
+.px-btn {
+    padding: 0 50px 0 20px;
+    line-height: 60px;
+    position: relative;
+    display: inline-block;
+    color: #20247b;
+    background: none;
+    border: none;
+}
+.px-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid rgba(252, 83, 86, 0.6);
+    border-right: 1px solid transparent;
+    -moz-transition: ease all 0.35s;
+    -o-transition: ease all 0.35s;
+    -webkit-transition: ease all 0.35s;
+    transition: ease all 0.35s;
+    width: 60px;
+    height: 60px;
+}
+.px-btn .arrow {
+    width: 13px;
+    height: 2px;
+    background: currentColor;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 25px;
+}
+.px-btn .arrow:after {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 0;
+    display: inline-block;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+</style>
+<div class="blog-single gray-bg">
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-lg-8 m-15px-tb">
+                    <article class="article">
+                        <div class="article-img">
+                            <img src="image/New%20Year%E2%80%99s%20Resolutions.jpg" style="height:50%;width: 50% " title="" alt="">
+                        </div>
+                        <div class="article-title">
+                            <h6 style="color: red">News</h6>
+                            <h2>New Year’s Resolutions
+</h2>
+                            <div class="media">
+                                <div class="avatar">
+                                    <img src="https://static.toiimg.com/photo/83890830/83890830.jpg?v=3" title="" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <label>Ahmed Khaled</label>
+                                    <span>26 Dec 2020</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <p>While new year’s resolutions are seen by some people as a total joke, if done correctly, it actually requires us to do some self-reflection that is of immense value. It takes courage to be honest with ourselves and carefully assess if our actions line up with the value systems we set for ourselves. Even though this could bring about some uncomfortable feelings, it’s essential for living a fulfilling life, where we constantly strive to be the best version of ourselves.
+</p>
+                            <h4>Have you ever wondered why a lot of people suddenly decide to change different aspects of their lives at the start of each year? </h4>
+                            <p>Interestingly, a few studies have coined the term “fresh start effect” to refer to the phenomenon of important temporal (relating to time) landmarks, such as the beginning of a new year, that can motivate aspirational behaviors. Needless to say, resolutions are easy to make, but challenging to maintain. Many of us abandon our resolutions by the end of March and return to our old behaviors and patterns. </p>
+                          
+                            <p>However, instead of beating ourselves up for not being able to reach our goals and letting our setbacks drive us to abandon our resolutions altogether, we should foster self-compassion. Self-compassion offers a context, where it’s safe to face the negative aspects of yourself and try to work on them, judgment-free. It involves treating yourself with kindness and understanding when you fall off the wagon. While many of us engage in self-criticism when we stray off course, self-compassion, according to research, is more likely to make one believe they can still improve and re-engage with their goals. On the other hand, self-criticism is associated with stress, rumination, and procrastination. None of these are beneficial in motivating individuals to persevere in pursuing a goal.  </p>
+                            <h4 style="font-size: 19;">
+                            References:
+                            
+                            </h4>
+                           <ul style="list-style-type:disc; font-size: 14;font-style: italic ">
+                               <li>Ardito, R. B., & Rabellino, D. (2011). Therapeutic alliance and outcome of psychotherapy: historical excursus, measurements, and prospects for research. Frontiers in psychology, 2, 270. <a href="https://doi.org/10.3389/fpsyg.2011.00270">https://doi.org/10.3389/fpsyg.2011.00270</a>
+</li>
+                               <li>Understanding psychotherapy and how it works. (n.d.). Retrieved from <a href="https://www.apa.org/topics/psychotherapy/understanding"> https://www.apa.org/topics/psychotherapy/understanding</a>
+</li>
+                            </ul>
+                        </div>
+                        <div class="nav tag-cloud">
+                            <a href="#">Self love</a>
+                            <a href="#">Physiology</a>
+                            <a href="#">Love</a>
+                            <a href="#">New Year</a>
+                            <a href="#">2021</a>
+                            <a href="#">Magazine</a>
+                        </div>
+                    </article>
+                    <div class="contact-form article-comment">
+                        <h4>Leave a Reply</h4>
+                        <form id="contact-form" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input name="Name" id="name" placeholder="Name *" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input name="Email" id="email" placeholder="Email *" class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" placeholder="Your message *" rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="send">
+                                        <button class="px-btn theme"><span>Submit</span> <i class="arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 m-15px-tb blog-aside">
+                    <!-- Author -->
+                    <div class="widget widget-author">
+                        <div class="widget-title">
+                            <h3 style="color: dimgray">Author</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="media align-items-center">
+                                <div class="avatar">
+                                    <img src="https://static.toiimg.com/photo/83890830/83890830.jpg?v=3" title="" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h6>Hello, I'm<br> Ahmed Khaled</h6>
+                                </div>
+                            </div>
+                            <p>I Write a lot of self encourage for people of all ages , specializing in future plan , self development and work power.</p>
+                        </div>
+                    </div>
+                    <!-- End Author -->
+                    <!-- Trending Post -->
+                    <div class="widget widget-post">
+                        <div class="widget-title">
+                            <h3>Trending Now</h3><br>
+                            <a href="#" > <p> Effective Ways to Overcome Shame .. </p></a>
+                        </div>
+                        <div class="widget-body">
+
+                        </div>
+                    </div>
+                    <!-- End Trending Post -->
+                    <!-- Latest Post -->
+                    <div class="widget widget-latest-post">
+                        <div class="widget-title">
+                            <h3 style="color: dimgray">Latest Post</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="latest-post-aside media">
+                                <div class="lpa-left media-body">
+                                    <div class="lpa-title">
+                                        <h5><a href="#">8 Steps to Enhance Your Wellbeing</a></h5>
+                                    </div>
+                                    <div class="lpa-meta">
+                                        <a class="name" href="#">
+                                           Hala Osama
+                                        </a>
+                                        <a class="date" href="#">
+                                            8 Nov 2020
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="lpa-right">
+                                    <a href="#">
+                                        <img src="image/steps.jpg" title="" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="latest-post-aside media">
+                                <div class="lpa-left media-body">
+                                    <div class="lpa-title">
+                                        <h5><a href="#">First Therapy Session: What To Expect</a></h5>
+                                    </div>
+                                    <div class="lpa-meta">
+                                        <a class="name" href="#">
+                                            Omar Ali
+                                        </a>
+                                        <a class="date" href="#">
+                                            26 FEB 2020
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="lpa-right">
+                                    <a href="#">
+                                        <img src="image/First%20Therapy%20Session.jpg" title="" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- End Latest Post -->
+                    <!-- widget Tags -->
+                    <div class="widget widget-tags">
+                        <div class="widget-title">
+                            <h3 style="color: dimgray">Latest Tags</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="nav tag-cloud">
+  
+                                <a href="#">Physiology</a>
+                                <a href="#">2021</a>
+                                <a href="#">Travel</a>
+                                <a href="#">Magazine</a>
+                                <a href="#">Self love</a>
+                                <a href="#">Research</a>
+                                <a href="#">2022</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End widget Tags -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+<br>
+<!--footer -->
+        
+
+		
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous">
+<footer class="footer bg-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+               
+			<div class="footer-left">
+
+				<h3 style="color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;">Psychonauts<span style="color:  #5383d3;">website</span></h3>
+
+				<p class="footer-links" style="font-size: 15; font-family: serif;" >
+			Feeling better starts with a single click ..
+					<a href="#" style="font-size: 20; font-family: serif;">Join us !</a>
+				</p>
+
+				<p class="footer-company-name">Psychonauts &copy; 2022</p>
+			</div>
+
+            </div><!--end col-->
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <h4 class="text-light footer-head">Psychonauts</h4>
+          
+                <ul class="list-unstyled footer-list mt-4">
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> HOME</a></li>
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> PHYSIOLOGICAL TESTS </a></li>
+                                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> MAGAZINE</a></li>
+
+                </ul>
+            </div><!--end col-->
+
+            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+             <div class="footer-center">
+
+				<div style="font-size: 15; font-family: serif;">
+					
+					<p ><span style="font-size: 17; font-family: serif;"><i class="fa fa-map-marker"></i>&nbsp;Amman </span> , &nbsp;Jordan</p>
+				
+					<p style="font-size: 17; font-family: serif;"><i class="fa fa-phone"></i>&nbsp;028398308</p>
+				
+					
+			</div>
+
+			</div>
+            </div><!--end col-->
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+               	<p class="footer-company-about">
+					<span style="color: white">About our company<br></span><br>
+					Psychonauts is a website for For people who need immediate psychological help.
+				</p>
+
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</footer>
+<footer class="footer bg-footer footer-bar">
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="text-sm-left">
+                    <p class="mb-0">© 2022. Design with <i class="mdi mdi-heart text-danger"></i></p>
+                </div>
+            </div><!--end col-->
+
+            <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <ul class="list-unstyled text-sm-right social-icon social mb-0">
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-google-plus" title="Google +"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-linkedin" title="Linkedin"></i></a></li>
+                </ul><!--end icon-->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</footer>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css">
+<style>
+ 
+.main {
+	height: 550px;;
+	background-color: #262626;
+	color: white;
+	font-size: 38pt;
+	text-align: center;
+	line-height: 550px;
+}
+footer{
+	bottom: 0;
+}
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.main {
+		line-height: normal;
+		font-size: auto;
+	}
+
+}
+
+    
+    </style>
+<style type="text/css">
+body{margin-top:20px;}
+.bg-footer {
+    background-color: #3b4757 !important;
+    
+}
+.footer {
+  padding: 50px 0;
+  position: relative;
+  color: #adb5bd;
+}
+
+.footer .logo-footer {
+  font-weight: 700;
+  font-size: 22px;
+  padding: 2px 0;
+  letter-spacing: 1px;
+}
+
+.footer .footer-head {
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.footer .text-foot {
+  color: #adb5bd;
+}
+
+.footer .footer-list {
+  margin-bottom: 0;
+}
+
+.footer .footer-list li {
+  margin-bottom: 10px;
+}
+
+.footer .footer-list li a {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.footer .footer-list li a:hover {
+  color: #6dc77a !important;
+}
+
+.footer .footer-list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer.footer-bar {
+  padding: 30px 0;
+  border-top: 1px solid #6c757d;
+}
+
+.footer.footer-bar .payment-cards img {
+  height: 25px;
+}
+
+.social-icon.social li a {
+    color: #adb5bd;
+    border-color: #adb5bd;
+}
+.social-icon li a {
+    color: #35404e;
+    border: 1px solid #35404e;
+    display: inline-block;
+    height: 32px;
+    text-align: center;
+    font-size: 15px;
+    width: 32px;
+    line-height: 30px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+.rounded {
+    border-radius: 5px !important;
+}
+</style>
+
+<script type="text/javascript">
+
+</script>
+    
+			
+      
+      
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    </body></html>

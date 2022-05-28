@@ -1,0 +1,690 @@
+
+     <!-- Magazine-->
+
+<html>
+  <head>
+      <title>Magazine</title>
+     
+     <meta name="viewport" content="width=device-width,
+initial-scale=1.0, user-scalable=yes">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+                      
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css"/>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img src="image/KK.png" alt="Logo Image" style="width: 60%;padding-left: 15%"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" >
+      <span class="navbar-toggler-icon"style="color: royalblue;background-color: #0995DA;" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: royalblue;">HOME   &nbsp; &nbsp; &nbsp; </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> ABOUT  &nbsp; &nbsp; &nbsp;</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> PHYSIOLOGICAL TESTS &nbsp; &nbsp; &nbsp;</a>
+        </li>    
+           <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;"> THERAPIST LIST &nbsp; &nbsp; &nbsp;</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;">  MAGAZINE&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#"style="color: royalblue;">  REGISTER&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</a>
+        </li>
+          
+      </ul>
+    </div>
+  </div>
+</nav>
+
+        
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+    
+</script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+<style>
+
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+
+body {
+  color: #5a5a5a;
+  font-family: 'Open Sans',Arial,sans-serif;
+  font-size: 15px;
+}
+h1,h2,h3,h4,h5{
+    font-family: 'Montserrat', sans-serif;
+}
+a, a:hover, .btn{outline:none!important;}
+.btn-search{background: #FD3A13; border-color: #FD3A13; color: #fff; padding: 7px 10px}
+.btn-search:hover{background: #ca1b1b; border-color: #ca1b1b}
+/*section{padding: 30px 0; float: left; width: 100%}*/
+.card{float: left; width:100%}
+.navbar {border: medium none; float: left; margin-bottom: 0px; width: 100%;  border-radius: 0}
+.title-large {font-size: 20px; margin: 10px 0 5px; line-height: 27px; color: #141517;}
+.title-small { color: #141517; font-size: 16px; font-weight: 400; line-height: 23px; margin: 6px 0 0;}
+.title-x-small {font-size: 18px; margin: 0px;}
+.title-large a, .title-small a, .title-x-small a{color: inherit}
+.banner-sec{float: left; width: 100%; background: #EBEBEB}
+.card-block{padding:0 10px 10px;}
+.card-text{margin: 0}
+.text-time{color: #ff0000; font-weight: 600;}
+.banner-sec .card-img-overlay{padding: 0; top: 3px; left: 7px; height: 20%}
+
+header{float: left; width:100%}
+.small-top{ border-bottom: 1px solid #2b2b2b;float: left; width: 100%; background: #000}
+.small-top .social-icon{float: right;}
+.small-top .social-icon a {border-left: 1px solid #2b2b2b; color: #ca1b1b; float: left; padding: 6px 13px;}
+.small-top .social-icon a:last-child {border-right: 1px solid #2b2b2b;}
+.small-top .social-icon a:hover {color:#FD3A13; text-decoration: none;}
+.small-top .date-sec {font-size: 13px; font-weight: 600; float: left; margin-top: 4px; color: #898989}
+.top-head{background: #141517; width: 100%; float: left; height: 100px;}
+.top-head h1 {color: #fff; font-size: 36px; font-weight: 600; margin: 18px 0 0;}
+.top-head small{float: left; width: 100%; font-size: 14px; color: #c0c0c0; margin-top: 5px; margin-left: 5px;}
+.top-head .admin-bar {text-align: right; margin-top: 22px;}
+.top-head .admin-bar a {color: #fff; line-height: 49px; position: relative; padding:0 7px;}
+.top-head .admin-bar a:hover{color: #ff0000}
+.top-head .admin-bar a i{margin-right: 6px;}
+.top-head .admin-bar .ping {background: #ff0000; border: 3px solid #141517; border-radius: 50%; height: 14px; position: absolute; right: 3px;    top: 13px; width: 14px; z-index: 1;}
+.top-head .admin-bar img {float: right; height: 50px; width: 50px; margin-left: 18px;}
+.top-nav{background: #fff; padding: 0; border-bottom: 1px solid #dbdbdb}
+.top-nav .nav-link {padding-bottom: 0.7rem; padding-top: 0.7rem;}
+.top-nav .navbar-nav .nav-item + .nav-item{margin-left:0}
+.top-nav li a{color: #141517; text-transform: uppercase; font-size: 14px; font-weight: 700; padding: 0 10px; border-bottom: 2px solid #fff}
+.top-nav li a:hover, .top-nav li a:focus, .top-nav li.active a{color: #141517; border-bottom: 2px solid #FD3A13 }
+.top-nav .form-control{border-color: #fff}
+.navbar-toggle{background: #fff;}
+.navbar-toggle .icon-bar{background:#0A2E61; }
+.navbar-brand{display: none;}
+
+.top-slider .carousel-indicators{bottom: 0}
+.top-slider .carousel-indicators li{border:1px solid #000;}
+.top-slider .carousel-indicators .active{background:#000;}
+
+
+.side-bar .nav-tabs{border-bottom:none;}
+.side-bar .nav-tabs .nav-link {color: #aeaeae; text-transform: uppercase; border: none;}
+.side-bar .nav-tabs .nav-link.active, .side-bar .nav-tabs .nav-link:hover{border-bottom:2px solid #ff0000;  text-transform: uppercase; color: #222}
+.sidebar-tabing .media{margin-top: 20px}
+.sidebar-tabing img{width: 120px;height: 100px;}
+.sidebar-tabing .title-small {line-height: 23px; margin-top: 5px; font-size: 18px}
+
+#search {float: right; margin-top: 9px; width: 250px;}
+.search {padding: 5px 0; width: 230px; height: 30px; position: relative; left: 10px; float: left; line-height: 22px;}
+.search input {background: #d0d0d0; border: medium none; border-radius: 3px 0 0 3px; float: left; height: 36px; line-height: 18px; margin-left: 210px; padding: 0 9px; position: absolute; top: -3px; width: 0; -webkit-transition: all 0.7s ease-in-out; -moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out; transition: all 0.7s ease-in-out;}
+.search:hover input, .search input:focus { width: 200px; margin-left: 0px; background: #d0d0d0;}
+.top-nav .btn {position: absolute;right: 0;top: -3px;border-radius:3px;}
+
+.banner-sec{float: left; width:100%;}
+.banner-sec .news-block{margin-bottom: 20px}
+.banner-sec .news-block:last-child{margin-bottom: 0px}
+.banner-sec .news-des {margin-bottom: 5px;}
+.banner-sec .title-large{margin: 18px 0 0}
+.banner-sec .time{margin-top: 0px; font-size: 13px;}
+.banner-sec .carousel-control.left, .banner-sec .carousel-control.right{background: none;}
+.banner-sec .card{margin-bottom:20px;}
+
+.section-01{float: left; width: 100%;  border-top: 1px solid #d5d5d5; border-bottom: 1px solid #d5d5d5}
+.section-01 .heading-large {border-bottom: 2px solid #222; color: #222; float: left; width: 100%; padding:0 0 6px; margin:0 0 18px; text-align: left;}
+.section-01 .heading-large::before, .section-01 .heading-large::after{background: transparent;}
+.section-01 .heading-small {border-bottom: 2px solid #222; color: #222; float: left; margin: 7px 0 0; width: 100%; padding-bottom: 10px; font-size: 18px }
+.section-01 .title-small {margin-bottom: 5px; font-size:17px }
+.section-01 .news-block{border-bottom: 1px dashed #000; padding-bottom: 30px; border: none;}
+.section-01 aside > .news-block{border-bottom: 1px dashed #000; padding-bottom: 19px;}
+.section-01 aside > .news-block:last-child{border-bottom: none; margin-bottom: 20px}
+.section-01 .card{border: none;}
+.section-01 .card-block{padding: 10px 0;}
+.section-01 .video-sec {float: left; margin-top: 30px; width: 100%;}
+.section-01 .video-block {float: left; margin-top: 20px; width: 100%;}
+
+.action-sec{width:100%; float:left; background:#222}
+.action-box{float:left; width:100%; text-align:center;}
+.action-box h2{color:#fff; font-size:20px;}
+
+    
+
+</style>
+
+<script>
+    $('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+
+$(window).load(function() {
+    var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+    var itemlength = $('#myCarousel .item').length;
+    var triggerheight = Math.round(boxheight/itemlength+1);
+    $('#myCarousel .list-group-item').outerHeight(triggerheight);
+});
+
+var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+var dayNames= ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+
+var newDate = new Date();
+newDate.setDate(newDate.getDate() + 1);    
+$('#Date').html(dayNames[newDate.getDay()] + ", " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+</script>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+     
+        <br>  <br>  <br>
+        <section class="banner-sec"> <p>  <br>  <br> </p>  
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card"> <img class="img-fluid" src="image/New%20Year%E2%80%99s%20Resolutions.jpg" alt="" style="height: 150;width:  100%">
+                  <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
+                  <div class="card-body">
+                    <div class="news-title">
+                      <form action="/article" method="post">
+                        <input type="hidden" name="articleName" value="NewYearsResolutions">
+                        <h2 class=" title-small"><a><button type="submit">New Year’s Resolutions</button></a></h2>
+                      </form>
+                    </div>
+                    <p class="card-text"><small class="text-time"><em>2 mins ago</em></small></p>
+                  </div>
+                </div>
+                <div class="card"> 
+                  <img class="img-fluid" src="https://ied.eu/wp-content/uploads/2018/04/business-steps.jpg" alt="" style="height: 150;width:  100%">
+                  <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Wellness</span> </div>
+                  <div class="card-body">
+                    <div class="news-title">
+                      <form action="/article" method="post">
+                        <input type="hidden" name="articleName" value="8StepstoEnhanceYourWellbeing">
+                        <h2 class=" title-small"><a><button type="submit">8 Steps to Enhance Your Wellbeing</button></a></h2>
+                      </form>
+                    </div>
+                    <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card"> <img class="img-fluid" src="image/selfie.webp" alt="" style="height: 150;width:  100%">
+                  <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Self-Help</span> </div>
+                  <div class="card-body">
+                    <div class="news-title">
+                      <form action="/article" method="post">
+                        <input type="hidden" name="articleName" value="EffectiveWaystoOvercomeShame">
+                        <h2 class=" title-small"><a><button type="submit">Effective Ways to Overcome Shame</button></a></h2>
+                      </form>
+                    </div>
+                    <p class="card-text"><small class="text-time"><em>7 mins ago</em></small></p>
+                  </div>
+                </div>
+                <div class="card"> <img class="img-fluid" src="image/First%20Therapy%20Session.jpg" alt="" style="height: 150;width:  100%">
+                  <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Uncategorized</span> </div>
+                  <div class="card-body">
+                    <div class="news-title">
+                      <form action="/article" method="post">
+                        <input type="hidden" name="articleName" value="FirstTherapySessionWhatToExpect">
+                        <h2 class=" title-small"><a><button type="submit">First Therapy Session: What To Expect</button></a></h2>
+                      </form>
+                    </div>
+                    <p class="card-text"><small class="text-time"><em>1 mins ago</em></small></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 top-slider">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <p>  <br> <br> <br>  <br> </p>  
+            <div class="carousel-item active">
+                    <div class="news-block">
+                <div class="news-media"><img class="img-fluid" src="https://rozwoundup.com/wp-content/uploads/2019/05/151222-coincidenceCRAltTEXTURESBlog.jpg" alt="" style="height: 140;width:  100%"></div>
+                <div class="news-title">
+                        <h2 class=" title-large"><a href="https://www.goodtherapy.org/blog/visual-journaling-health-promotion-art-drawing">Visual Journaling: Health Promotion through Art and Drawing</a></h2>
+                      </div>
+                <div class="news-des">What is visual journaling?  Visual journaling [also called art or drawing journaling] has been identified as both an important and accessible approach in expressive arts therapy, counseling....</div>
+                <div class="time-text"><strong>3h ago</strong></div>
+                <div></div>
+              </div>
+                  </div>
+            <div class="carousel-item">
+              
+                    <div class="news-block">
+                <div class="news-media"><img class="img-fluid" src="https://images.unsplash.com/photo-1577864662891-c7b77f10f638?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHZpZGVvJTIwY2FsbHxlbnwwfHwwfHw%3D&w=1000&q=80" alt=""style="height: 140;width:  100%"></div>
+                <div class="news-title">
+                        <h2 class=" title-large"><a href="https://www.goodtherapy.org/blog/Expand-Your-Telehealth-Therapy-Opportunities-to-Grow-Your-Business+">Expand Your Telehealth Therapy Opportunities to Grow Your Business</a></h2>
+                      </div>
+                <div class="news-des">Expand Your Telehealth Therapy Opportunities to Grow Your Business  While telehealth offerings have been around for some time, it wasn’t until the COVID-19 pandemic upended our lives ....</div>
+                <div class="time-text"><strong>2h ago</strong></div>
+                <div></div>
+              </div>
+                  </div>
+            <div class="carousel-item">
+                    <div class="news-block">
+                <div class="news-media"><img class="img-fluid" src="https://wallpaperaccess.com/full/4500625.jpg" alt=""style="height: 140;width:  100%"></div>
+                <div class="news-title">
+                        <h2 class=" title-large"><a href="https://www.goodtherapy.org/blog/Let%27s-Protect-Youth-from-Suicide%3Fp%3D41867">Let’s Protect Our Youth from Suicide </a></h2>
+                      </div>
+                <div class="news-des">Let’s Protect Our Youth from Suicide  Suicide has a tremendous impact on the lives of countless individuals. When someone takes their own life, friends, loved ones, and acquaintances . ...</div>
+                <div class="time-text"><strong>1h ago</strong></div>
+                <div></div>
+              </div>
+                  </div>
+          </div>
+              </div>
+      </div>
+          </div>
+  </div>
+      </section>
+
+<section class="section-01">
+        <div class="container" >
+    <div class="row">
+            <div class="col-lg-8 col-md-12" style="padding: 30px ;">
+        <h3 class="heading-large" >Top Books</h3>
+        <div class="">
+                <div class="col-lg-6 card">
+            <div class="card"> 
+                    <div class="card-body">
+                <div class="news-title"><a href="https://www.amazon.com/Cognitive-Behavioral-Treatment-Borderline-Personality-Disorder/dp/0898621836/">
+                  <h2 class=" title-small"> Cognitive-Behavioral Treatment of Borderline Personality Disorder</h2>
+                  </a></div>
+                <p class="card-text">The book is simplified and highly recommended for therapists who deal with clients with borderline personality disorder or wish to know more about the interventions.</p>
+                <p class="card-text"><small class="text-time"><em>2 Days ago</em></small></p>
+              </div>
+                  </div>
+          </div>
+                <div class="col-lg-6 card">
+            <div class="card"> 
+                    <div class="card-body">
+                <div class="news-title"><a href="https://www.amazon.com/Developing-Mind-Second-Relationships-Interact/dp/1462520677">
+                  <h2 class=" title-small"> The Developing Mind: How Relationships and the Brain Interact to Shape Who We Are</h2>
+                  </a></div>
+                <p class="card-text">The Developing Mind opens a whole new dimension to the science of human connections and its relevance in psychotherapeutic interventions.</p>
+                <p class="card-text"><small class="text-time"><em>1 Days ago</em></small></p>
+              </div>
+                  </div>
+          </div>
+            <div class="col-lg-6 card">
+            <div class="card"> 
+                    <div class="card-body">
+                <div class="news-title"><a href="https://www.amazon.com/Motivational-Interviewing-Helping-People-Applications/dp/1609182278/">
+                  <h2 class=" title-small">Motivational Interviewing: Helping People Change</h2>
+                  </a></div>
+                <p class="card-text">This book is also a recommended read for professionals working as leaders, managers, or corporate recruiters.</p>
+                <p class="card-text"><small class="text-time"><em>11 mins ago</em></small></p>
+              </div>
+                  </div>
+          </div>
+                <div class="col-lg-6 card">
+            <div class="card"> 
+                    <div class="card-body">
+                <div class="news-title"><a href="https://www.amazon.com/Gift-Therapy-Generation-Therapists-Patients/dp/0061719617/">
+                  <h2 class=" title-small">The Gift of Therapy: An Open Letter to a New Generation of Therapists and Their Patients </h2>
+                  </a></div>
+                <p class="card-text">This book is an excellent read for professionals who are starting their journey and for experienced therapists who wish to keep themselves relevant to the current time.</p>
+                <p class="card-text"><small class="text-time"><em>22 mins ago</em></small></p>
+              </div>
+                  </div>
+          </div>
+                
+              </div>
+      </div>
+            <aside class="col-lg-4 side-bar col-md-12"style="padding: 30px 0; float: left; width: 100%">
+        <ul class="nav nav-tabs" role="tablist" id="myTab">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Quotations</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab"> COVID-19</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Results</a> </li>
+              </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content sidebar-tabing" id="nav-tabContent">
+                <div class="tab-pane active" id="home" role="tabpanel">
+                    <div class="media">
+                      <img class="d-flex mr-3" src=" <%= Depp[0]["urlToImage"] %>  " alt="Generic placeholder image">
+                    <div class="media-body">
+                        <div class="news-title">
+                            <h2 class="title-small"> <a href="<%= Depp[0]["url"] %> "> <%= Depp[0]["title"] %> </a> </h2>
+                        </div>
+                        <div class="news-auther"><span class="time"> <%= Depp[0]["author"] %> </span></div>
+                    </div>
+                  </div>
+            <div class="media"><img class="d-flex mr-3" src="<%= Anx[4]["urlToImage"] %>" alt="Generic placeholder image">
+                    <div class="media-body">
+                <div class="news-title">
+                        <h2 class="title-small"> <a href="<%= Anx[4]["url"] %> "> <%= Anx[4]["title"] %> </a> </h2>
+                      </div>
+                <div class="news-auther"><span class="time"> <%= Anx[4]["author"] %> </span></div>
+              </div>
+                  </div>
+            <div class="media">
+              <img class="d-flex mr-3" src=" <%= Ins[0]["urlToImage"] %>  " alt="Generic placeholder image">
+                    <div class="media-body">
+                <div class="news-title">
+                        <h2 class="title-small"> <a href="<%= Ins[0]["url"] %> "> <%= Ins[0]["title"] %> </a> </h2>
+                      </div>
+                <div class="news-auther"><span class="time"> <%= Ins[0]["author"] %>  </span></div>
+              </div>
+                  </div>
+          </div>
+                <div class="tab-pane" id="profile" role="tabpanel">
+            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRxJS5J0kcCFQljdu7buqk_VDNt8Xag5fWPUWj6uMrqJvzb6aLbUqvT3pIjbOci2Qfnts&usqp=CAU" alt="Generic placeholder image"></a>
+                    <div class="media-body">
+                <div class="news-title">
+                        <h2 class="title-small">We know you’re going through a difficult time, no matter the severity of your personal circumstance, things are different now. Adapting to this new normal has its many ups and downs and we want to be able to support you through the process of navigating this new normal,
+Subscribe to our site and undergo an instant psychological session to see an improvement in your mental health.</h2>
+                      </div>
+                <div class="news-auther"><span class="time">Psychonauts team</span></div>
+              </div>
+                  </div>
+           
+          </div>
+                <div class="tab-pane" id="messages" role="tabpanel">
+            <div class="media">  <img class="d-flex mr-3" src="https://miro.medium.com/max/810/0*xSB6iyBYEkBMz-Zd.jpg" alt="Generic placeholder image">
+                    <div class="media-body">
+                <div class="news-title">
+                        <h1 class="title-small">Psychonauts vs.
+face-to-face therapy</h1><br>
+                    <b>70%</b> found Psychonauts to be as effective or more effective than traditional therapy.<br>
+                    <b>90%</b> found Psychonauts to be more convenient than traditional therapy.
+                      </div>
+               
+              </div>
+                  </div>
+           
+          </div>
+              </div>
+        <div class="video-sec">
+                <h4 class="heading-small">Featured Video</h4>
+                <div class="video-block">
+            <div class="embed-responsive embed-responsive-4by3">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w8HxpqOH21A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>               </div>
+          </div>
+              </div>
+      </aside>
+          </div>
+  </div>
+    <br>
+<!--footer -->
+        
+
+		
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous">
+<footer class="footer bg-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+               
+			<div class="footer-left">
+
+				<h3 style="color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;">Psychonauts<span style="color:  #5383d3;">website</span></h3>
+
+				<p class="footer-links" style="font-size: 15; font-family: serif;" >
+			Feeling better starts with a single click ..
+					<a href="#" style="font-size: 20; font-family: serif;">Join us !</a>
+				</p>
+
+				<p class="footer-company-name">Psychonauts &copy; 2022</p>
+			</div>
+
+            </div><!--end col-->
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <h4 class="text-light footer-head">Psychonauts</h4>
+          
+                <ul class="list-unstyled footer-list mt-4">
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> HOME</a></li>
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> PHYSIOLOGICAL TESTS </a></li>
+                                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
+                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> MAGAZINE</a></li>
+
+                </ul>
+            </div><!--end col-->
+
+            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+             <div class="footer-center">
+
+				<div style="font-size: 15; font-family: serif;">
+					
+					<p ><span style="font-size: 17; font-family: serif;"><i class="fa fa-map-marker"></i>&nbsp;Amman </span> , &nbsp;Jordan</p>
+				
+					<p style="font-size: 17; font-family: serif;"><i class="fa fa-phone"></i>&nbsp;028398308</p>
+				
+					
+			</div>
+
+			</div>
+            </div><!--end col-->
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+               	<p class="footer-company-about">
+					<span style="color: white">About our company<br></span><br>
+					Psychonauts is a website for For people who need immediate psychological help.
+				</p>
+
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</footer>
+<footer class="footer bg-footer footer-bar">
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="text-sm-left">
+                    <p class="mb-0">© 2022. Design with <i class="mdi mdi-heart text-danger"></i></p>
+                </div>
+            </div><!--end col-->
+
+            <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <ul class="list-unstyled text-sm-right social-icon social mb-0">
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-google-plus" title="Google +"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-linkedin" title="Linkedin"></i></a></li>
+                </ul><!--end icon-->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</footer>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css">
+<style>
+ 
+.main {
+	height: 550px;;
+	background-color: #262626;
+	color: white;
+	font-size: 38pt;
+	text-align: center;
+	line-height: 550px;
+}
+footer{
+	bottom: 0;
+}
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.main {
+		line-height: normal;
+		font-size: auto;
+	}
+
+}
+
+    
+    </style>
+<style type="text/css">
+body{margin-top:20px;}
+.bg-footer {
+    background-color: #3b4757 !important;
+    
+}
+.footer {
+  padding: 50px 0;
+  position: relative;
+  color: #adb5bd;
+}
+
+.footer .logo-footer {
+  font-weight: 700;
+  font-size: 22px;
+  padding: 2px 0;
+  letter-spacing: 1px;
+}
+
+.footer .footer-head {
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.footer .text-foot {
+  color: #adb5bd;
+}
+
+.footer .footer-list {
+  margin-bottom: 0;
+}
+
+.footer .footer-list li {
+  margin-bottom: 10px;
+}
+
+.footer .footer-list li a {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.footer .footer-list li a:hover {
+  color: #6dc77a !important;
+}
+
+.footer .footer-list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer.footer-bar {
+  padding: 30px 0;
+  border-top: 1px solid #6c757d;
+}
+
+.footer.footer-bar .payment-cards img {
+  height: 25px;
+}
+
+.social-icon.social li a {
+    color: #adb5bd;
+    border-color: #adb5bd;
+}
+.social-icon li a {
+    color: #35404e;
+    border: 1px solid #35404e;
+    display: inline-block;
+    height: 32px;
+    text-align: center;
+    font-size: 15px;
+    width: 32px;
+    line-height: 30px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+.rounded {
+    border-radius: 5px !important;
+}
+</style>
+
+<script type="text/javascript">
+
+</script>
+
+
+
+      </section>
+      
+ 
+      
+      
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</body></html>
