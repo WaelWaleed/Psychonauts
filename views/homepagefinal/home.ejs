@@ -88,8 +88,14 @@
                         <button type="submit" class="btn text-primary ms-3">ٌ Register </button>
                     </form>
                 <% } %> 
-                <% if(name) { %> 
-                    <button type="button" class="btn text-primary ms-3"> <a href="/profile" ><%= name  %></a>  </button>
+                <% if(name) { %>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><%= name  %></a>
+                        <div class="dropdown-menu m-0">
+                            <a href="/profile" class="dropdown-item">Profile</a>
+                            <a href="/logout" class="dropdown-item">Logout</a>
+                        </div>
+                    </div>
                 <% } %> 
             </div>
         </nav> 
