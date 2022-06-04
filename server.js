@@ -122,6 +122,34 @@ app.post('/docRegister', async (req, res) => {
         res.redirect('/docRegister');
     }
 });
+
+app.post('/register', async (req, res) => {
+    try{
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+        const newUser = new userM({
+            id: Date.now().toString(),
+            name: req.body.name,
+            DOB: req.body.DOB,
+            lineSwitch: req.body.lineSwitch,
+            phoneNumber: req.body.phoneNumber,
+            fullNumber: req.body.lineSwitch + req.body.phoneNumber,
+            gender: req.body.gender,
+            email: req.body.email,
+            password: hashedPassword,
+            type: "user"
+        });
+        newUser.save().then(()=>{ 
+            console.log("user added successfuly");
+        });
+        //newUser.save().then(()=>{ console.log("new user added") });
+        res.redirect('/login');
+    }catch{
+        console.log("Didn't Make it");
+        res.redirect('/docRegister');
+    }
+});
+
 /***********  EO Registeration  ***********/
 
 /***********  Log-in/Out  ***********/
