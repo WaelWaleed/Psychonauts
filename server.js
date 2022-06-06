@@ -4,7 +4,7 @@ if(process.env.NODE_ENV !== 'production'){
 
 const express = require('express');
 const app = express();
-const users = [];
+// const users = [];
 const bcrypt = require('bcrypt');
 const flash = require('express-flash');
 const http = require('http');
@@ -22,6 +22,7 @@ const userM = require('./models/userModel');
 const doctorM = require('./models/doctorModel');
 const appointmentM = require('./models/appointmentModel');
 const resultM = require('./models/testResultModel');
+const chatM = require('./models/chatModel');
 
 /************ EO Connect to DB ************/
 
@@ -41,7 +42,8 @@ app.use(session({
 
 const initializePassport = require('./passport-config');
 const passport = require('passport');
-const { Socket } = require('socket.io');
+
+
 // initializePassport(
 //     passport,
 //     email => users.find(user => user.email === email),
@@ -508,33 +510,46 @@ app.post('/deleteAppointment', async (req,res) => {
 
 const socketio = require('socket.io');
 const io = socketio(server);
-
+var users = [];
 io.on('connection', socket => {
     console.log("new socket connected: " + socket.id);
-    socket.emit('message', 'welcome here');
+    // console.log("new user connected: " + session.name);
 
-    socket.broadcast.emit('message','a user has connected');
-
-    // socket.on('urmsg', (msg) => {
-    //     io.emit('message', msg);
-    // })
-    socket.on('sent', (msg) => {
-        io.emit('sent', msg);
+    socket.on('user_connected', function(username) {
+        users[username] = socket.id;
+        io.emit('user_connected', username);
+        console.log(username + " socket id: " + users[username]);
     })
 
-    socket.on('disconnect', () => {
-        io.emit('message', 'someone disconnected');
-    })
+    socket.on('sent_message', async function(data) {
+        // console.log('sent from: ' + data.sender);
+        // console.log('received from: ' + data.receiver);
+        // console.log('message is: ' + data.message);
+        var socketId = users[data.receiver];
+        console.log("socketId: " + socketId);
+        io.to(socketId).emit('new_message', data);
+        const newChat = new chatM({
+            sender: data.sender,
+            receiver: data.receiver,
+            message: data.message
+        });
+        await newChat.save().then(()=>{ console.log("new chat saved"); });
+    });
+
 })
 
-app.get('/chat', (req,res) => {
+app.get('/chat', async (req,res) => {
     const session = req.session;
     if(!session.name){
         res.redirect('/login');
     }else{
-        res.render('chat/chat.ejs', {
-            name: session.name,
-        });
+        await doctorM.findOne({ email: doctorEmail }).then(result=>{
+            console.log(result);
+            res.render('chat/chat.ejs', {
+                name: session.email,
+                doctormail: result.email,
+            });
+        })
     }
 })
 
