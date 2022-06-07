@@ -77,7 +77,7 @@ app.get("/", async (req,res)=>{
     const session = req.session;
     await doctorM.find().then(doctors=>{
         userM.find().then(users=>{
-            appointmentM.find().then(apps=>{
+            appointmentM.find({ reserved: true }).then(apps=>{
                 res.render('homepagefinal/home.ejs', { name: session.name, docs: doctors, users: users, apps: apps});
             })
         })
@@ -94,31 +94,37 @@ app.use("/index", (req, res)=>{
 
 
 app.get('/docRegister', (req, res)=>{
-    res.render('Dregister.ejs');
+    res.render('Dregister.ejs', { message: "", docMessage: "" });
 });
 
 app.post('/docRegister', async (req, res) => {
     try{
         const salt = await bcrypt.genSalt();
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
-        const newDoc = new doctorM({
-            id: Date.now().toString(),
-            name: req.body.name,
-            DOB: req.body.DOB,
-            lineSwitch: req.body.lineSwitch,
-            phoneNumber: req.body.phoneNumber,
-            fullNumber: req.body.lineSwitch + req.body.phoneNumber,
-            gender: req.body.gender,
-            email: req.body.email,
-            password: hashedPassword,
-            type: "doctor"
+        await doctorM.findOne({ email: req.body.email }).then(result => {
+            if(result == null){
+                const newDoc = new doctorM({
+                    id: Date.now().toString(),
+                    name: req.body.name,
+                    DOB: req.body.DOB,
+                    lineSwitch: req.body.lineSwitch,
+                    phoneNumber: req.body.phoneNumber,
+                    fullNumber: req.body.lineSwitch + req.body.phoneNumber,
+                    gender: req.body.gender,
+                    email: req.body.email,
+                    password: hashedPassword,
+                    type: "doctor"
+                });
+                newDoc.save().then(()=>{ 
+                    console.log("Doctor added successfuly");
+                    makeAvailableAppointments(req.body.email); 
+                });
+                //newUser.save().then(()=>{ console.log("new user added") });
+                res.redirect('/login');
+            }else{
+                res.render('Dregister.ejs', { message: "", docMessage: "Email already Exists" });
+            }
         });
-        newDoc.save().then(()=>{ 
-            console.log("Doctor added successfuly");
-            makeAvailableAppointments(req.body.email); 
-        });
-        //newUser.save().then(()=>{ console.log("new user added") });
-        res.redirect('/login');
     }catch{
         console.log("Didn't Make it");
         res.redirect('/docRegister');
@@ -129,23 +135,31 @@ app.post('/register', async (req, res) => {
     try{
         const salt = await bcrypt.genSalt();
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
-        const newUser = new userM({
-            id: Date.now().toString(),
-            name: req.body.name,
-            DOB: req.body.DOB,
-            lineSwitch: req.body.lineSwitch,
-            phoneNumber: req.body.phoneNumber,
-            fullNumber: req.body.lineSwitch + req.body.phoneNumber,
-            gender: req.body.gender,
-            email: req.body.email,
-            password: hashedPassword,
-            type: "user"
-        });
-        newUser.save().then(()=>{ 
-            console.log("user added successfuly");
-        });
-        //newUser.save().then(()=>{ console.log("new user added") });
-        res.redirect('/login');
+        await userM.findOne({ email: req.body.email }).then(result => {
+            // console.log("result: " + result);
+            if(result == null){
+                const newUser = new userM({
+                    id: Date.now().toString(),
+                    name: req.body.name,
+                    DOB: req.body.DOB,
+                    lineSwitch: req.body.lineSwitch,
+                    phoneNumber: req.body.phoneNumber,
+                    fullNumber: req.body.lineSwitch + req.body.phoneNumber,
+                    gender: req.body.gender,
+                    email: req.body.email,
+                    password: hashedPassword,
+                    type: "user"
+                });
+                newUser.save().then(()=>{ 
+                    console.log("user added successfuly");
+                });
+                res.redirect('/login');
+                //newUser.save().then(()=>{ console.log("new user added") });
+            }else{
+                console.log("Email already exists");
+                res.render('Dregister.ejs', { message: "Email already exists", docMessage: "" });
+            }
+        })
     }catch{
         console.log("Didn't Make it");
         res.redirect('/docRegister');
@@ -511,6 +525,7 @@ app.post('/deleteAppointment', async (req,res) => {
 const socketio = require('socket.io');
 const io = socketio(server);
 var users = [];
+
 io.on('connection', socket => {
     console.log("new socket connected: " + socket.id);
     // console.log("new user connected: " + session.name);
@@ -535,7 +550,6 @@ io.on('connection', socket => {
         });
         await newChat.save().then(()=>{ console.log("new chat saved"); });
     });
-
 })
 
 app.get('/chat', async (req,res) => {
@@ -544,7 +558,7 @@ app.get('/chat', async (req,res) => {
         res.redirect('/login');
     }else{
         await doctorM.findOne({ email: doctorEmail }).then(result=>{
-            console.log(result);
+            // console.log(result);
             res.render('chat/chat.ejs', {
                 name: session.email,
                 doctormail: result.email,
@@ -584,34 +598,55 @@ app.post('/feedback', (req, res)=>{
 /***********  TESTS  ***********/
 
 app.get('/test', (req,res)=>{
-    res.render('test/testhomepage.ejs');
+    res.render('test/testhomepage.ejs', { DeppErr: " ", AnxErr: " ", InsErr: " "});
 })
 
 
-app.get('/Insomniatest', (req,res)=>{
+app.get('/Insomniatest', async (req,res)=>{
     const session = req.session;
     if(!session.email){
         res.redirect('/login');
     }else{
-        res.render('test/Insomniatest.ejs');
+        await resultM.findOne({ email: session.email, testName: "Insomnia" }).then(result=>{
+            console.log(result);
+            if(result == null){
+                res.render('test/Insomniatest.ejs');
+            }else{
+                res.render('test/testhomepage.ejs', { DeppErr: " ", AnxErr: " ", InsErr: "already taken this test" });
+            }
+        })
     }
 })
 
-app.get('/Anxietytest', (req,res)=>{
+app.get('/Anxietytest', async (req,res)=>{
     const session = req.session;
     if(!session.email){
         res.redirect('/login');
     }else{
-        res.render('test/Anxietytest.ejs');
+        await resultM.findOne({ email: session.email, testName: "Anxiety" }).then(result=>{
+            console.log(result);
+            if(result == null){
+                res.render('test/Anxietytest.ejs');
+            }else{
+                res.render('test/testhomepage.ejs', { DeppErr: " ", AnxErr: "already taken this test", InsErr: " " });
+            }
+        });
     }
 })
 
-app.get('/Depressiontest', (req,res)=>{
+app.get('/Depressiontest', async (req,res)=>{
     const session = req.session;
     if(!session.email){
         res.redirect('/login');
     }else{
-        res.render('test/Depressiontest.ejs');
+        await resultM.findOne({ email: session.email, testName: "Deppression" }).then(result=>{
+            console.log(result);
+            if(result == null){
+                res.render('test/Depressiontest.ejs');
+            }else{
+                res.render('test/testhomepage.ejs', { DeppErr: "already taken this test", AnxErr: " ", InsErr: " " });
+            }
+        });
     }
 })
 
@@ -797,19 +832,7 @@ app.post('/article', (req, res)=>{
 
 app.get('/news', async (req, res)=>{
     try{
-        // await newsapi.v2.everything({
-        //     q: 'Depression,Anxiety,Insomnia,mentalhealth',
-        //     sortBy: 'relevancy'
-        //     // from: '2022-04-28',
-        //     // to: '2022-05-01',
-        // }).then(result => {
-        //     const article = result["articles"];
-        //     console.log(article);
-        //     res.render('news.ejs', { news: article });
-        // })
 
-
-        // https://newsapi.org/v2/everything?q=bitcoin&
         var url = `http://newsapi.org/v2/everything?` + 
         `q=Insomnia&Anxiety&` +
         `sortBy=relevancy&` +
@@ -893,12 +916,12 @@ async function makeAvailableAppointments(DocEmail){
 async function DeleteAppointment(pat, days, start) {
     console.log( pat + " " + days + " " + start );
     
-    // await appointmentM.find({ , day: filter["day"], from: filter["from"] }).then(result => {
-    //     console.log(result);
-    // });
-    // await appointmentM.findOne({ patient: pat, day:  }).then( result => {
-    //     console.log(result);
-    // });
+    await appointmentM.find({ day: filter["day"], from: filter["from"] }).then(result => {
+        console.log(result);
+    });
+    await appointmentM.findOne({ patient: pat }).then( result => {
+        console.log(result);
+    });
 }
 
 /**********EOFunctions**************/

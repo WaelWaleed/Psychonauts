@@ -94,6 +94,7 @@
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
              </div>
             <input name="name" class="form-control" placeholder="Nickname" type="text"required >
+            
         </div>
             <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -108,6 +109,9 @@
              </div>
             <input name="email" class="form-control" placeholder="Email address" type="email" required>
         </div> <!-- form-group// -->
+        <% if(message != "") { %> 
+          <h6 style="color: red;"> <%= message %>  </h6>
+        <% } %> 
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
@@ -231,7 +235,11 @@
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
              </div>
             <input name="email" class="form-control" placeholder="Email address" type="email" required>
-        </div> <!-- form-group// -->
+        </div>
+        <% if(docMessage != "") { %> 
+          <h6 style="color: red;"> <%= docMessage %>  </h6>
+        <% } %> 
+        <!-- form-group// -->
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
@@ -338,7 +346,7 @@
     
     // When the user clicks on the password field, show the message box
     myInput.onfocus = function() {
-      document.getElementById("message").style.display = "block";
+      document.getElementById("message").style.display = "inline-block";
     }
     
     // When the user clicks outside of the password field, hide the message box

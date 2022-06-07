@@ -83,10 +83,8 @@
                     <a href="#targetname"class="nav-item nav-link">Contact</a>
                 </div>
                 <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal" ><i class="fa fa-search"></i></button>
-                <% if(!name) { %> 
-                    <form action="/login" method="get">
-                        <button type="submit" class="btn text-primary ms-3">ٌ Register </button>
-                    </form>
+                <% if(!name) { %>
+                    <a href="/login" class="btn btn-primary py-2 px-4 ms-3"> Register </a>
                 <% } %> 
                 <% if(name) { %>
                     <div class="nav-item dropdown">
@@ -108,7 +106,7 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="display-1 text-white mb-md-4 animated zoomIn">Feeling better starts with a single message !</h6>
-                            <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
+                            <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +116,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="display-1 text-white mb-md-4 animated zoomIn">Talk to your therapist online privately anytime anywhere!
                                 </h6>
-                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
+                            <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
                         </div>
                     </div>
                 </div>
@@ -323,8 +321,8 @@
 1                        </div>
                        
                         <p class="m-0">
-
-Get matched with a licensed therapist who specializes in teens</p>
+                            Create an account
+                        </p>
                       
                     </div>
                 </div>
@@ -333,7 +331,7 @@ Get matched with a licensed therapist who specializes in teens</p>
                         <div class="service-icon"style="color: white">
                             2
                         </div>
-                        <p class="m-0">Discuss your child's issues and situation with the therapist
+                        <p class="m-0"> Try a physiological test to know your psychological assessment and what specialty that you need.
 </p>
                        
                     </div>
@@ -343,7 +341,7 @@ Get matched with a licensed therapist who specializes in teens</p>
                         <div class="service-icon"style="color: white">
                             
 3                        </div>
-                        <p class="m-0">When you approve, the therapist is connected with your child
+                        <p class="m-0">Choose the suitable therapist from the therapists list 
 </p>
                        
                     </div>
@@ -352,7 +350,7 @@ Get matched with a licensed therapist who specializes in teens</p>
                     <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon"style="color: white">
 4                        </div>
-                        <p class="m-0">Your child uses an app on their phone to communicate with the therapist
+                        <p class="m-0">Book an online session anytime you want with the least time, effort and money
 </p>
                         
                     </div>
@@ -361,7 +359,7 @@ Get matched with a licensed therapist who specializes in teens</p>
                     <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon"style="color: white">
 5                       </div>
-                        <p class="m-0">The therapist interacts with your child over text, phone, and video
+                        <p class="m-0">Commit to attending the session and make sure that you are connected to the Internet
 </p>
                        
                     </div>
@@ -370,7 +368,7 @@ Get matched with a licensed therapist who specializes in teens</p>
                     <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon" style="color: white">
 6                        </div>
-                        <p class="m-0">Therapy is confidential but the therapist will alert you if an intervention is required
+                        <p class="m-0">Commitment to the therapist instructions to get the best possible result
 </p>
                        
                     </div>

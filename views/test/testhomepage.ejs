@@ -83,6 +83,9 @@
                         </div>
                         <div class="text-center py-4">
                             <h4 class="text-primary">Depression </h4>
+                            <% if(DeppErr != " ") { %> 
+                                <h6 style="color: red;">already taken this test</h6>
+                            <% } %> 
                         </div>
                     </div>
                 </div>
@@ -96,6 +99,9 @@
                         </div>
                         <div class="text-center py-4">
                             <h4 class="text-primary">Anxiety</h4>
+                            <% if(AnxErr != " ") { %> 
+                                <h6 style="color: red;">already taken this test</h6>
+                            <% } %> 
                         </div>
                     </div>
                 </div>
@@ -109,6 +115,9 @@
                         </div>
                         <div class="text-center py-4">
                             <h4 class="text-primary">Insomnia</h4>
+                            <% if(InsErr != " ") { %> 
+                                <h6 style="color: red;">already taken this test</h6>
+                            <% } %> 
                         </div>
                     </div>
                 </div>

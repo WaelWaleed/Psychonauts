@@ -76,7 +76,7 @@ h6,
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    color: royalblue;
+    color: royalblue !important;
     font-size: 18px;
     font-weight: 600;
     outline: none;
