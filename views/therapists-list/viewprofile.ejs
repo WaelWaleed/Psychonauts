@@ -992,55 +992,53 @@ $(document).ready(function(){
 
                     <div class="mb-5"><br><br><br>
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">2 Comments</h3>
+                            <h3 class="mb-0"><%= feedBacks.length %> Comments</h3>
                         </div>
-                        <div class="d-flex mb-4">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid rounded" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                                        
+                        
+                        <% for(var i=0; i< feedBacks.length; i++) { %> 
+                            <div class="d-flex mb-4">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                                <div class="ps-3"> <%= feedBacks[i].user %> 
+                                    <span class="gig-rating text-body-2"style="color: orange">
+                                        <i class="fa fa-star" aria-hidden="true" ></i>
+                                        <%= feedBacks[i].rate %>
+                                    </span><br>
+                                    <small><i>01 Jan 2045</i></small>
+                                    <p> <%= feedBacks[i].message %>  </p>
+                                    <br>
+                                    <hr>
+                                </div>
+                            </div>
+                        <% } %> 
 
-                            Osama Horani
-                            <span class="gig-rating text-body-2"style="color: orange">
-                               <i class="fa fa-star" aria-hidden="true" ></i>
-
-                                4.0
-                            </span><br>
-                      <small><i>01 Jan 2045</i></small>
-                                <p>                               Excellent therapist, very nice to deal with.
-</p><br>
-<hr>                        </div>
-                        </div>
-            <div class="d-flex mb-4">
-                          <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-fluid rounded" style="width: 45px; height: 45px;">
-                             <div class="ps-3">
-                                                        
-
-                            Belal Omar
-                            <span class="gig-rating text-body-2"style="color: orange">
-                               <i class="fa fa-star" aria-hidden="true" ></i>
-
-                                4.5
-                            </span><br>
-                      <small><i>21 Jan 2021</i></small>
-                                <p>                              He give me big self love power , I highly recommend it.
-</p><br>
-<hr>                        </div>
-           
-                        </div>
+                        
                    
                     
                     <div class="rounded p-5" style="background-color: ghostwhite;width: 70%">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
                             <h3 class="mb-0">Leave A Comment</h3>
                         </div>
-                        <form>
+                        <form action="DocFeedBack" method="post">
                             <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" placeholder="Your Nick Name" style="height: 55px;">
+                                <div class="col-3 col-sm-6">
+                                    <input type="hidden" name="Demail" value="<%=email%>">
+                                    <input type="text" name="name" class="form-control bg-white border-0" 
+                                        <% if(!user) { %> 
+                                            placeholder = "Your Nick Name"
+                                        <% } %>
+                                        <% if(user) { %>
+                                            value="<%= user %>"
+                                        <% } %> 
+                                        style="height: 55px;" >
+                                </div><br>
+                                <div class="col-9 col-sm-6">
+                                    <input type="number" min="0" max="5" name="rate" class="form-control bg-white border-0" 
+                                        placeholder="Rate out of 5 please"
+                                        style="height: 55px;" ><center>/5.0</center>
                                 </div>
-                                
+
                                 <div class="col-12">
-                                    <textarea class="form-control bg-white border-0" rows="5" placeholder="Your Comment"></textarea>
+                                    <textarea class="form-control bg-white border-0" name="message" rows="5" placeholder="Your Comment"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>

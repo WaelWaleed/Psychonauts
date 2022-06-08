@@ -118,8 +118,7 @@ initial-scale=1.0, user-scalable=yes">
                 <div class="row">
                     <div class="col-sm-3">
                         <li class="list-group-item" style="font-size: 20;">
-                            <center> <%= name %> <span style="font-size: 15;  font-style: italic;color: gray;
-">(Doctor)</span><br><br><a href="url">
+                            <center> <%= name %> <span style="font-size: 15;  font-style: italic;color: gray;">(Doctor)</span><br><br><a href="url">
 
                                     <script
                                         src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -127,9 +126,12 @@ initial-scale=1.0, user-scalable=yes">
                                         <img src="image/MaryamTaha.jpg" alt="User Pic" id="profileImage"
                                             class="img-thumbnail" style="border-radius: 50%;width: 100;">
 
+                                        <form action="/uploadphoto" method="post">
+                                            <input id="imageUpload" type="file" name="profile_photo" accept="image/*" placeholder="Photo" required="" capture>
+                                            <br><br>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
 
-                                        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo"
-                                            required="" capture><br><br>
                                         <script>
 
                                             $("#profileImage").click(function (e) {

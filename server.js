@@ -6,10 +6,12 @@ const express = require('express');
 const app = express();
 // const users = [];
 const bcrypt = require('bcrypt');
+const multer = require('multer');
 const flash = require('express-flash');
 const http = require('http');
 const axios = require('axios');
 const math = require('math');
+const fs = require('fs');
 const methodOverride = require('method-override');
 const server = http.createServer(app);
 
@@ -23,6 +25,8 @@ const doctorM = require('./models/doctorModel');
 const appointmentM = require('./models/appointmentModel');
 const resultM = require('./models/testResultModel');
 const chatM = require('./models/chatModel');
+const DocFeedbackM = require('./models/DocFeedBack');
+const Rates = require('./models/DoctorRatesModel');
 
 /************ EO Connect to DB ************/
 
@@ -71,6 +75,32 @@ app.use(express.static("views/therapists-list"));
 app.use(express.static("views/test"));
 app.use(express.static("views/magaz"));
 
+//set storage
+var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+})
+var upload = multer({ storage: storage });
+
+app.post('/uploadphoto', upload.single('myImage'), (req, res)=>{
+    var image = fs.readFileSync(req.file.path);
+    var encode_image = img.toString('base64');
+    var final_img = {
+        contentType: req.file.mimetype,
+        image: new Buffer(encode_image, 'base64')
+    };
+    imageModel.creat(final_img, function(err, result){
+        if(err){
+            console.log(err);
+        }else{
+            res.contentType(final_img.contentType);
+            res.send(final_img.image);
+        }
+    })
+})
+
+
 
 /***********  INDEX  ***********/
 app.get("/", async (req,res)=>{
@@ -116,6 +146,12 @@ app.post('/docRegister', async (req, res) => {
                     type: "doctor"
                 });
                 newDoc.save().then(()=>{ 
+                    const Rate = new RateM({
+                        email: req.body.email,
+                        rate: 0,
+                        NumOfRates: 0
+                    });
+                    Rate.save();
                     console.log("Doctor added successfuly");
                     makeAvailableAppointments(req.body.email); 
                 });
@@ -414,22 +450,28 @@ app.get('/DocList', async (req,res,)=>{
 var doctorEmail = '';
 
 app.post('/viewProfile', async (req, res)=>{
+    const session = req.session;
     try{
         //console.log("req.body.email: " + req.body.email);
         doctorEmail = req.body.email;
-        //console.log("doctorEmail: " + doctorEmail);
+        // console.log("doctorEmail: " + doctorEmail);
 
         await doctorM.findOne({ email: doctorEmail }).then( result => {
             appointmentM.find({ doctor: doctorEmail }).then( appointments => {
-                //console.log(appointments);
-                res.render('therapists-list/viewprofile.ejs', {
-                    name: result.name,
-                    email: result.email,
-                    specializedIn: result.specializedIn,
-                    fullNumber: result.fullNumber,
-                    Salary: result.Salary,
-                    apps: appointments,
-                });
+                DocFeedbackM.find({ doctor: doctorEmail }).then(feedBack=>{
+                    console.log("feedBacks: " + feedBack);
+                    //console.log(appointments);
+                    res.render('therapists-list/viewprofile.ejs', {
+                        name: result.name,
+                        email: result.email,
+                        specializedIn: result.specializedIn,
+                        fullNumber: result.fullNumber,
+                        Salary: result.Salary,
+                        apps: appointments,
+                        user: session.name,
+                        feedBacks: feedBack, 
+                    })
+                })
             })
             //console.log( "current doc: " + result);
         });
@@ -441,6 +483,28 @@ app.post('/viewProfile', async (req, res)=>{
         res.redirect('/');
     }
 });
+
+app.post('/DocFeedBack', async (req,res)=>{
+    const session = req.session;
+    try{
+        const Rate = parseInt(req.body.rate);
+        const newFeedBack = new DocFeedbackM({
+            user: session.name,
+            doctor: req.body.Demail,
+            message: req.body.message,
+            rate: Rate
+        });
+        await newFeedBack.save().then(()=>{
+            Rating(req.body.Demail, Rate);
+            console.log("new FeedBack saved");
+            res.redirect('/docList');
+        })
+
+    }catch(err){
+        console.log(err);
+        res.redirect('/');
+    }
+})
 
 /***********  EO Doctors list  ***********/
 
@@ -780,6 +844,8 @@ app.post('/saveResult', async (req,res)=>{
 /***********  Magazine  ***********/
 
 const news = require('newsapi');
+const RateM = require('./models/DoctorRatesModel');
+const { networkInterfaces } = require('os');
 const newsapi = new news('83e927dd538d4ea3b8eeef09e2cd9250');
 
 
@@ -922,6 +988,23 @@ async function DeleteAppointment(pat, days, start) {
     await appointmentM.findOne({ patient: pat }).then( result => {
         console.log(result);
     });
+}
+
+async function Rating(Email, Rate){
+    var oldRate = 0;
+    var Rates = 0;
+    await RateM.findOne({ email: Email }).then(result => {
+        oldRate = result.rate;
+        Rates = result.NumOfRates;
+    });
+    Rates++;
+    var avgRate = (oldRate + Rate)/(Rates);
+    await RateM.findOneAndUpdate({ email: Email }, { 
+        rate: avgRate,
+        NumOfRates: Rates
+     }).then(()=>{
+         console.log("rate Updated");
+     });
 }
 
 /**********EOFunctions**************/
