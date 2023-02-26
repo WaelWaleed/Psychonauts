@@ -108,7 +108,9 @@ app.get("/", async (req,res)=>{
     await doctorM.find().then(doctors=>{
         userM.find().then(users=>{
             appointmentM.find({ reserved: true }).then(apps=>{
-                res.render('homepagefinal/home.ejs', { name: session.name, docs: doctors, users: users, apps: apps});
+                feedbackM.find({ Service: "feedback" }).then(feedbacks=>{
+                    res.render('homepagefinal/home.ejs', { name: session.name, docs: doctors, users: users, apps: apps, feedback: feedbacks});
+                })
             })
         })
     })
@@ -232,7 +234,8 @@ app.post('/login', async (req,res)=>{
 
                 res.redirect('/');
             } else { 
-                console.log("wrong password"); 
+                console.log("wrong password");
+                res.redirect('/login'); 
             }
         }else if(await doctorM.findOne({email: req.body.email})){
             const foundUser = await doctorM.find({email: req.body.email});
@@ -260,14 +263,16 @@ app.post('/login', async (req,res)=>{
                 res.redirect('/');
             } else { 
                 console.log("wrong password"); 
+                res.redirect('/login');
             }
         }else{
             console.log("not found");
+            res.redirect('/login');
         }
         
     }catch(err){
-        console.log(err)
-        res.redirect('/login')
+        console.log(err);
+        res.redirect('/login');
     }
 });
 
@@ -459,17 +464,21 @@ app.post('/viewProfile', async (req, res)=>{
         await doctorM.findOne({ email: doctorEmail }).then( result => {
             appointmentM.find({ doctor: doctorEmail }).then( appointments => {
                 DocFeedbackM.find({ doctor: doctorEmail }).then(feedBack=>{
-                    console.log("feedBacks: " + feedBack);
-                    //console.log(appointments);
-                    res.render('therapists-list/viewprofile.ejs', {
-                        name: result.name,
-                        email: result.email,
-                        specializedIn: result.specializedIn,
-                        fullNumber: result.fullNumber,
-                        Salary: result.Salary,
-                        apps: appointments,
-                        user: session.name,
-                        feedBacks: feedBack, 
+                    RateM.findOne({ email: doctorEmail }).then(rate=> {
+                        console.log("feedBacks: " + feedBack);
+                        //console.log(appointments);
+                        res.render('therapists-list/viewprofile.ejs', {
+                            name: result.name,
+                            email: result.email,
+                            specializedIn: result.specializedIn,
+                            fullNumber: result.fullNumber,
+                            Salary: result.Salary,
+                            apps: appointments,
+                            user: session.name,
+                            feedBacks: feedBack, 
+                            userName: session.name,
+                            rates: rate.rate,
+                        })
                     })
                 })
             })
@@ -547,7 +556,10 @@ app.post('/reserve', async (req,res)=>{
 })
 
 app.get('/deleteRecords', async (req,res)=>{
-    await appointmentM.deleteMany({ doctor: "b@b.com" });
+    await chatM.deleteMany({ message: "hii" });
+    await chatM.deleteMany({ message: "hello" });
+    await chatM.deleteMany({ message: "hola" });
+    await chatM.deleteMany({ message: "hi" });
     res.redirect('/viewProfile');
 })
 

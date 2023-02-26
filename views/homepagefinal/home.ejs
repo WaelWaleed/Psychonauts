@@ -35,12 +35,12 @@
    
 
     <!-- Topbar Start -->
-     <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Amman,Jordan</small> &nbsp; &nbsp; &nbsp;
-                  <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i> &nbsp; &nbsp;0799237865</small> &nbsp; &nbsp; &nbsp;
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i> &nbsp; &nbsp;0799237865</small> &nbsp; &nbsp; &nbsp;
                     <small class="text-light"><i class="fa fa-envelope-open me-2"></i> &nbsp; &nbsp;Psychonauts2022@gmail.com</small> &nbsp; &nbsp; &nbsp;
                 </div>
             </div>
@@ -106,7 +106,12 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="display-1 text-white mb-md-4 animated zoomIn">Feeling better starts with a single message !</h6>
-                            <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
+                            <% if(name) { %>
+                                <a href="/docList" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>                                
+                            <% } %>
+                            <% if(!name) { %>
+                                <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
+                            <% } %>    
                         </div>
                     </div>
                 </div>
@@ -116,7 +121,12 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="display-1 text-white mb-md-4 animated zoomIn">Talk to your therapist online privately anytime anywhere!
                                 </h6>
-                            <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
+                                <% if(name) { %>
+                                    <a href="/docList" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>                                
+                                <% } %>
+                                <% if(!name) { %>
+                                    <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started Now !</a>
+                                <% } %> 
                         </div>
                     </div>
                 </div>
@@ -212,13 +222,13 @@
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Parenting</h5>
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Eating disorders</h5>
-                                                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>  Trauma & grief</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>  Trauma & grief</h5>
 
                         </div>
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Relationship Disorders</h5>
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Anxiety & Stress</h5>
-                                                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Family conflict</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Family conflict</h5>
 
                         </div>
                     </div>
@@ -231,14 +241,18 @@
                             <h4 class="text-primary mb-0">07992378659</h4>
                         </div>
                     </div>
-                    <a href="/docRegister" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">Get Started</a>
+                    <% if(name) { %>
+                        <a href="/docList" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started</a>                                
+                    <% } %>
+                    <% if(!name) { %>
+                        <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started</a>
+                    <% } %> 
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
                         <video  autoplay muted loop width="500" height="700"  class="img2" >
-  <source src="image/ab.mov" type="video/ogg">
-</video>
-                       
+                            <source src="image/ab.mov" type="video/ogg">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -451,57 +465,48 @@
                 <h1 class="mb-0">What Our Clients Say About Our Website</h1>
             </div>
             <div class="dania-wael testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <!--  -->
                 <div class="testimonial-item bg-light my-4">
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
 
                         <img class="img-fluid rounded" src="image/sel2.jpeg" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">Momtaz Ibraheem</h4>
-                            <small class="text-uppercase">@momtazibra</small>
+                            <h4 class="text-primary mb-1"><%= feedback[0]["name"] %></h4>
+                            <small class="text-uppercase"><%= feedback[0]["email"] %></small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">It helped me out so much. I was always scared of therapy. Depression is real. Anxiety is real. Not good to keep it bottled up. Worth every penny.                    </div>
+                    <div class="pt-4 pb-5 px-5"> <%= feedback[0]['message'] %> </div>
                 </div>
+                <!--  -->
                 <div class="testimonial-item bg-light my-4">
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
                         <img class="img-fluid rounded" src="image/sel3.webp" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">Ali Khaled</h4>
-                      
-                            <small class="text-uppercase">@abdullahdara</small>
+                            <h4 class="text-primary mb-1"><%= feedback[1]["name"] %></h4>
+                            <small class="text-uppercase"><%= feedback[1]["email"] %></small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                       A very good Website..thank you so much.
-                    </div>
+                    <div class="pt-4 pb-5 px-5"> <%= feedback[1]['message'] %> </div>
                 </div>
                 <div class="testimonial-item bg-light my-4">
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
                         <img class="img-fluid rounded" src="https://www.pngitem.com/pimgs/m/560-5603874_product-image-logo-avatar-minimalist-flat-line-hd.png" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">Hisham Ragheb</h4>
-                            <small class="text-uppercase">@hishragheb22</small>
+                            <h4 class="text-primary mb-1"><%= feedback[2]["name"] %></h4>
+                            <small class="text-uppercase"><%= feedback[2]["email"] %></small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                       After feeling guilty for so long, I'm
-starting to love myself for who I am and feel proud of myself again. I'm starting to let go of many negative feelings that have accompanied me for so many years.
-                    </div>
+                    <div class="pt-4 pb-5 px-5"> <%= feedback[2]['message'] %> </div>
                 </div>
                 <div class="testimonial-item bg-light my-4">
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
                         <img class="img-fluid rounded" src="image/sel4.jpg" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">Sara Osama
-                      </h4>
-                            <small class="text-uppercase">@sar_osa</small>
+                            <h4 class="text-primary mb-1"><%= feedback[3]["name"] %></h4>
+                            <small class="text-uppercase"><%= feedback[3]["email"] %></small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dr Zain Almanaseer is very professional and is a great
-listener when it comes to very sensitive family matters. He has helped me along the way better understand my feelings and focus on my relationship goals with
-my family.
-                    </div>
+                    <div class="pt-4 pb-5 px-5"> <%= feedback[3]['message'] %> </div>
                 </div>
             </div>
         </div>
@@ -545,8 +550,12 @@ my family.
     
     <br><br><p style="font-size: 20;font-family: sans-serif;color :#2d4b75;  ">Tap into a network of licensed, accredited, and experienced therapists who can help you and your family with a range of issues including depression, anxiety, relationships, bullying, trauma, and more. With our therapists, you get the same professionalism and quality you would expect from an in-office therapist, but with the ability to communicate when and how you want.</p>
     <br><br>
-    
-                            <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Matched To The Right Therapist</a>
+    <% if(name) { %>
+        <a href="/docList" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Matched To The Right Therapist</a>                                
+    <% } %>
+    <% if(!name) { %>
+        <a href="/docRegister" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Matched To The Right Therapist</a>
+    <% } %> 
     
 </center>
 <br>         
@@ -575,7 +584,7 @@ my family.
                             </div>
                             <h4 class="mb-3">
 New Year’s Resolutions</h4>
-                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                            <a class="text-uppercase" href="/magHome">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -591,7 +600,7 @@ New Year’s Resolutions</h4>
 </small>
                             </div>
                             <h4 class="mb-3">Effective Ways to Overcome Shame</h4>
-                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                            <a class="text-uppercase" href="/magHome">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -606,7 +615,7 @@ New Year’s Resolutions</h4>
                                 <small class="me-3"><i class="far fa-user text-primary me-2"></i>HALA OSAMA</small>
                             </div>
                             <h4 class="mb-3">8 Steps to Enhance Your Wellbeing</h4>
-                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                            <a class="text-uppercase" href="/magHome">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -638,7 +647,7 @@ New Year’s Resolutions</h4>
 
 				<p class="footer-links" style="font-size: 15; font-family: serif;" >
 			Feeling better starts with a single click ..
-					<a href="#" style="font-size: 20; font-family: serif;">Join us !</a>
+					<a href="/docRegister" style="font-size: 20; font-family: serif;">Join us !</a>
 				</p>
 
 				<p class="footer-company-name">Psychonauts &copy; 2022</p>
@@ -650,10 +659,10 @@ New Year’s Resolutions</h4>
                 <h4 class="text-light footer-head">Psychonauts</h4>
           
                 <ul class="list-unstyled footer-list mt-4">
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> HOME</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> PHYSIOLOGICAL TESTS </a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> BLOG</a></li>
+                    <li><a href="/" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> HOME</a></li>
+                    <li><a href="/test" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> PHYSIOLOGICAL TESTS </a></li>
+                    <li><a href="/docList" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> THERAPIST LIST</a></li>
+                    <li><a href="/magHome" class="text-foot"><i class="mdi mdi-chevron-right mr-1"></i> BLOG</a></li>
 
                 </ul>
             </div><!--end col-->

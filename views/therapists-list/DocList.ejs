@@ -48,7 +48,26 @@
 
 
 <body >
-    <div style=" margin-top:-20px;
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block" style="margin-top:-20px;">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        &nbsp; &nbsp;Amman,Jordan</small> &nbsp; &nbsp; &nbsp;
+                    <small class="me-3 text-light"><i class="fa fa-phone" aria-hidden="true"></i>
+                        &nbsp; &nbsp;0799237865</small> &nbsp; &nbsp; &nbsp;
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i> &nbsp; &nbsp;Psychonauts2022@gmail.com</small> &nbsp; &nbsp; &nbsp;
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                   
+                    <a class="btn btn-sm   " href="/"><p style="color:  #ffffff;font: normal 20px 'Cookie', cursive;margin: 0;">Psychonauts<span style="color:  #5383d3;">WebSite</span></p> </a>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <div style=" margin-top:-22px;
     background:#eee;">
         <br>
 <div class="container" >
@@ -182,12 +201,11 @@
                                     <img class="img-circle" src="https://scontent.shezlong.com/therapist_profile_pictures/qhmhjbkcpivaqecinroxbhslqwbtluyv.jpg" alt="..." >
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading"><br ><span style="color: black ;  font-weight: bold;"> <%= docs[i]["name"]%> </span> <small>Main focus : Posttraumatic Stress Disorder, Addiction</small></h4>
+                                    <h4 class="media-heading"><br ><span style="color: black ;  font-weight: bold;"> Dr. <%= docs[i]["name"]%> </span> <small>Main focus : Posttraumatic Stress Disorder, Addiction</small></h4>
                                     <div class="media-content">
                                         <b style="color: darkblue">Joining Date : </b>4 months ago.<br>
                                         <b style="color: darkblue">Specialties :</b> <%= docs[i]["specializedIn"] %>  <br>
                                         <b style="color: darkblue">Phone Number :</b> <%= docs[i]["fullNumber"] %>.<br>
-                                        <b style="color: darkblue"> Clinic Address : </b>   Amman / Shamiya Trading Center, Wasfi Al Tal St 143.  <br>
                                         <b style="color: darkblue" name="email">Email :</b> <%= docs[i]["email"] %>  <br>
 
                                         <ul class="list-unstyled">

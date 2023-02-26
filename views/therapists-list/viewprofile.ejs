@@ -64,38 +64,35 @@ Amman,Jordan</small> &nbsp; &nbsp; &nbsp;
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="#" class="nav-item nav-link ">HOME</a>
-                    <a href="#ab" class="nav-item nav-link" >ABOUT</a>
+                    <a href="/" class="nav-item nav-link ">HOME</a>
+                    <a href="/" class="nav-item nav-link" >ABOUT</a>
  <div class="nav-item dropdown active">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> THERSPISTS LIST</a>
-                        <div class="dropdown-menu m-0">
-                                                        <a href="#" class="dropdown-item">All Therapists </a>
-
-                                                        <a href="#" class="dropdown-item">My Therapists</a>
-                            
-
-
-                        </div>
+                        <a href="/docList" class="nav-link nav-item" data-bs-toggle="dropdown"> THERSPISTS LIST</a>
+                        
                     </div>
-                                        <a href="#" class="nav-item nav-link">BLOG</a>
+                                        <a href="/magHome" class="nav-item nav-link">BLOG</a>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">PHYSIOLOGICAL TESTS</a>
+                        <a href="/test" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">PHYSIOLOGICAL TESTS</a>
                         <div class="dropdown-menu m-0">
-                                                        <a href="#" class="dropdown-item">Anxiety Test</a>
+                                                        <a href="/Anxietytest" class="dropdown-item">Anxiety Test</a>
 
-                                                        <a href="#" class="dropdown-item">Depression Test</a>
+                                                        <a href="/Deppressiontest" class="dropdown-item">Depression Test</a>
                             
-                                                                                    <a href="#" class="dropdown-item">Insomnia Test</a>
+                                                                                    <a href="/Insomniatest" class="dropdown-item">Insomnia Test</a>
 
 
                         </div>
                     </div>
              
-                    <a href="#targetname"class="nav-item nav-link">Contact</a>
+                    <a href="/"class="nav-item nav-link">Contact</a>
                 </div>
-               
-                <a href="#" class="btn btn-primary py-2 px-4 ms-3">REGISTER</a>
+               <% if(!userName) { %>
+                    <a href="/login" class="btn btn-primary py-2 px-4 ms-3">REGISTER</a>
+                <% } %>
+                <% if(userName) { %>
+                    <a href="/profile" class="btn btn-primary py-2 px-4 ms-3"> <i class="fa fa-user" aria-hidden="true"></i> <%= userName %> </a>
+                <% } %>
             </div>
         </nav>
 
@@ -119,6 +116,7 @@ Amman,Jordan</small> &nbsp; &nbsp; &nbsp;
                         <br>
                       <h4> Dr. <%= name %>  </h4>
                       <p class=" mb-1" style="color: royalblue;font-style: italic">Counselor</p>
+                      <h6> <%= rates %> /5.0</h6>
                       <p class=" font-size-sm"style="color: black">Specialties: <%= specializedIn %>  </p>
                         <div class="container bootstrap snippets bootdey">
     <div class="btn-demo" id="btn-color-targets">

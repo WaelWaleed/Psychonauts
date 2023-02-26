@@ -32,25 +32,32 @@ initial-scale=1.0, user-scalable=yes">
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: royalblue;">HOME &nbsp; &nbsp; &nbsp; </a>
+                        <a class="nav-link" href="/" style="color: royalblue;">HOME &nbsp; &nbsp; &nbsp; </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: royalblue;"> ABOUT &nbsp; &nbsp; &nbsp;</a>
+                        <a class="nav-link" href="/" style="color: royalblue;"> ABOUT &nbsp; &nbsp; &nbsp;</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: royalblue;"> PHYSIOLOGICAL TESTS &nbsp; &nbsp;
+                        <a class="nav-link" href="/test" style="color: royalblue;"> PHYSIOLOGICAL TESTS &nbsp; &nbsp;
                             &nbsp;</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: royalblue;"> THERAPIST LIST &nbsp; &nbsp; &nbsp;</a>
+                        <a class="nav-link" href="/docList" style="color: royalblue;"> THERAPIST LIST &nbsp; &nbsp; &nbsp;</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: royalblue;"> MAGAZINE&nbsp; &nbsp; &nbsp;&nbsp;
+                        <a class="nav-link" href="/magHome" style="color: royalblue;"> BLOG&nbsp; &nbsp; &nbsp;&nbsp;
                             &nbsp; &nbsp;</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: royalblue;"> REGISTER&nbsp; &nbsp; &nbsp;&nbsp;
-                            &nbsp; &nbsp;</a>
+                        <% if(!name) { %>
+                            <a class="nav-link" href="#" style="color: royalblue;"> REGISTER&nbsp; &nbsp; &nbsp;&nbsp;
+                                &nbsp; &nbsp;</a>
+                        <% } %>
+                        <% if(name) { %>
+                            <a class="nav-link" href="#" style="color: royalblue;"><i class="fa fa-user" aria-hidden="true"></i>
+                                <%= name %>&nbsp; &nbsp; &nbsp;&nbsp;
+                                &nbsp; &nbsp;</a>
+                        <% } %>
                     </li>
 
                 </ul>
@@ -125,14 +132,14 @@ initial-scale=1.0, user-scalable=yes">
 
                                     <div id="profile-container">
                                         <img src="image/MaryamTaha.jpg" alt="User Pic" id="profileImage" class="img-thumbnail" style="border-radius: 50%;width: 100;">
-                                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color: black;"></i></a>
+                                        
                                     </div>
                             </center>
                         </li>
                         <br>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Messages
-                            <span class="badge badge-primary badge-pill">34</span>
+                            <span class="badge badge-primary badge-pill">2</span>
                         </li>
                         <br>
 
